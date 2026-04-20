@@ -8,6 +8,9 @@
       name="description"
       content="연세부부상담클리닉 소개 홈페이지입니다. 부부상담, 심리상담, 상담 방식, 원장 소개, 예약 및 오시는 길 정보를 담았습니다."
     />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
@@ -126,7 +129,7 @@
 
       <section class="section intro" id="about">
         <div class="container">
-          <div class="section-center">
+          <div class="section-center reveal-item">
             <p class="eyebrow">센터 이야기</p>
             <h2>
               상담실에 오래 머무르게 하는 것이 아니라, 더 이상 오지 않아도
@@ -140,7 +143,7 @@
           </div>
 
           <div class="intro-grid">
-            <article class="story-card">
+            <article class="story-card reveal-item">
               <p class="section-label">조옥형 박사 메시지</p>
               <h3>따뜻한 마음을 받은 만큼, 두 가지 원칙을 지키겠습니다.</h3>
               <ol class="number-list">
@@ -155,26 +158,44 @@
                 </li>
               </ol>
             </article>
-
-            <aside class="quote-card">
-              <p class="quote-mark">“</p>
-              <p class="quote-text">
-                가장 빠른 시간에, 가장 효과적인 치료로 상담실에 오지 않게 하는
-                것을 목표로 합니다.
-              </p>
-              <div class="mini-stats">
-                <span>부부상담 3번만에 최대 효과 목표</span>
-                <span>치료성공률 95% 이상</span>
-                <span>다른 상담실 대비 절반의 상담료</span>
-              </div>
-            </aside>
           </div>
+
+          <section class="review-showcase reveal-item" aria-label="후기 소개">
+            <div class="review-marquee">
+              <div class="review-marquee-inner">
+                <img
+                  class="review-ribbon-image"
+                  src="./assets/images/review.png"
+                  alt="연세부부상담클리닉 리뷰 이미지 모음"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <img
+                  class="review-ribbon-image"
+                  src="./assets/images/review.png"
+                  alt=""
+                  aria-hidden="true"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+
+              <a
+                class="review-cta"
+                href="https://map.naver.com/p/search/%EC%97%B0%EC%84%B8%EB%B6%80%EB%B6%80%EC%83%81%EB%8B%B4%ED%81%B4%EB%A6%AC%EB%8B%89/place/1571304987?placePath=/review?bk_query=%EC%97%B0%EC%84%B8%EB%B6%80%EB%B6%80%EC%83%81%EB%8B%B4%ED%81%B4%EB%A6%AC%EB%8B%89&entry=pll&fromNxList=true&fromPanelNum=2&locale=ko&photoUsed=true&searchText=%EC%97%B0%EC%84%B8%EB%B6%80%EB%B6%80%EC%83%81%EB%8B%B4%ED%81%B4%EB%A6%AC%EB%8B%89&svcName=map_pcv5&timestamp=202604201416&entry=pll&fromNxList=true&fromPanelNum=2&locale=ko&searchText=%EC%97%B0%EC%84%B8%EB%B6%80%EB%B6%80%EC%83%81%EB%8B%B4%ED%81%B4%EB%A6%AC%EB%8B%89&svcName=map_pcv5&timestamp=202604201416&photoUsed=true&from=nx&searchType=place&c=15.00,0,0,0,dh"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                리뷰 자세히 보러가기
+              </a>
+            </div>
+          </section>
         </div>
       </section>
 
       <section class="section programs" id="programs">
         <div class="container">
-          <div class="section-center">
+          <div class="section-center reveal-item">
             <p class="eyebrow">상담 안내</p>
             <h2>
               관계의 핵심 문제를 빠르게 짚고, 필요한 개입을 적절한 시점에
@@ -187,7 +208,7 @@
           </div>
 
           <div class="program-grid">
-            <article class="program-card">
+            <article class="program-card reveal-item">
               <span class="program-icon" aria-hidden="true">
                 <img
                   src="./assets/images/programs/icon-program-marriage-recovery.png"
@@ -202,7 +223,7 @@
                 다룹니다.
               </p>
             </article>
-            <article class="program-card">
+            <article class="program-card reveal-item">
               <span class="program-icon" aria-hidden="true">
                 <img
                   src="./assets/images/programs/icon-program-emotion-care.png"
@@ -217,7 +238,7 @@
                 살핍니다.
               </p>
             </article>
-            <article class="program-card">
+            <article class="program-card reveal-item">
               <span class="program-icon" aria-hidden="true">
                 <img
                   src="./assets/images/programs/icon-program-psychology-care.png"
@@ -235,7 +256,7 @@
           </div>
 
           <div class="detail-grid">
-            <article class="detail-card">
+            <article class="detail-card reveal-item">
               <h3>부부상담 과목</h3>
               <ol class="topic-list">
                 <li>돌고도는 변명들 - 성격 및 생활양식 차이의 반복</li>
@@ -251,7 +272,7 @@
               </ol>
             </article>
 
-            <article class="detail-card">
+            <article class="detail-card reveal-item">
               <h3>부부 관계를 위해 먼저 해볼 수 있는 것</h3>
               <ul class="guide-list">
                 <li>
@@ -282,7 +303,7 @@
 
       <section class="promise">
         <div class="container">
-          <div class="promise-card">
+          <div class="promise-card reveal-item">
             <p class="eyebrow">연세가 드리는 약속</p>
             <h2>
               부부마다 다른 갈등 구조를 세밀하게 보고, 짧은 상담으로도 변화를
@@ -300,7 +321,7 @@
       <section class="section philosophy">
         <div class="container">
           <div class="philosophy-grid">
-            <div class="philosophy-copy">
+            <div class="philosophy-copy reveal-item">
               <p class="eyebrow">심리치유의 시작점</p>
               <h2>
                 먼저 나를 이해하고, 그 다음 상대를 더 정확하게 이해합니다.
@@ -317,32 +338,32 @@
               </p>
             </div>
 
-            <div class="calm-photo" aria-hidden="true"></div>
+            <div class="calm-photo reveal-item" aria-hidden="true"></div>
           </div>
 
           <div class="feature-grid">
-            <article class="feature-card">
+            <article class="feature-card reveal-item">
               <h3>풍부한 임상 경험</h3>
               <p>
                 2003년 개원 이후 다양한 사례를 꾸준히 다뤄온 전통 있는
                 심리치료클리닉입니다.
               </p>
             </article>
-            <article class="feature-card">
+            <article class="feature-card reveal-item">
               <h3>상황별 치료 기술 적용</h3>
               <p>
                 부부의 목표와 위기 정도에 따라 적절한 기법을 선택해 집중적으로
                 개입합니다.
               </p>
             </article>
-            <article class="feature-card">
+            <article class="feature-card reveal-item">
               <h3>주말·야간 동일 상담비</h3>
               <p>
                 월요일부터 일요일, 공휴일 포함 오전 8시부터 밤 11시까지 예약
                 가능합니다.
               </p>
             </article>
-            <article class="feature-card">
+            <article class="feature-card reveal-item">
               <h3>직접 상담 진행</h3>
               <p>
                 소개를 통해 직접 찾아주시는 분들이 많은 만큼, 조옥형 박사가 책임
@@ -356,7 +377,7 @@
       <section class="section system">
         <div class="system-background">
           <div class="container">
-            <div class="section-center section-center-light">
+            <div class="section-center section-center-light reveal-item">
               <p class="eyebrow">핵심 접근 방식</p>
               <h2>연세부부상담클리닉의 핵심 접근 방식</h2>
               <p>
@@ -366,7 +387,7 @@
             </div>
 
             <div class="system-grid">
-              <article class="system-card">
+              <article class="system-card reveal-item">
                 <span>01</span>
                 <h3>갈등의 구조를 정확히 파악</h3>
                 <p>
@@ -374,7 +395,7 @@
                   정리합니다.
                 </p>
               </article>
-              <article class="system-card">
+              <article class="system-card reveal-item">
                 <span>02</span>
                 <h3>감정 찌꺼기와 대화 방식을 조정</h3>
                 <p>
@@ -382,7 +403,7 @@
                   함께 다룹니다.
                 </p>
               </article>
-              <article class="system-card">
+              <article class="system-card reveal-item">
                 <span>03</span>
                 <h3>원하는 관계의 방향으로 재정렬</h3>
                 <p>
@@ -397,7 +418,7 @@
 
       <section class="section process" id="process">
         <div class="container">
-          <div class="section-center">
+          <div class="section-center reveal-item">
             <p class="eyebrow">상담 진행 순서</p>
             <h2>총 4시간 30분을 3회 또는 4회에 나누어 진행합니다.</h2>
             <p>
@@ -408,7 +429,7 @@
           </div>
 
           <div class="process-grid">
-            <article class="process-step">
+            <article class="process-step reveal-item">
               <span class="step-icon" aria-hidden="true">
                 <img
                   src="./assets/images/process/icon-process-reservation.png"
@@ -423,7 +444,7 @@
                 전화, 문자, 카카오톡으로 편하게 연락 주시면 일정을 조율합니다.
               </p>
             </article>
-            <article class="process-step">
+            <article class="process-step reveal-item">
               <span class="step-icon" aria-hidden="true">
                 <img
                   src="./assets/images/process/icon-process-intake.png"
@@ -439,7 +460,7 @@
                 파악합니다.
               </p>
             </article>
-            <article class="process-step">
+            <article class="process-step reveal-item">
               <span class="step-icon" aria-hidden="true">
                 <img
                   src="./assets/images/process/icon-process-session.png"
@@ -455,7 +476,7 @@
                 조정합니다.
               </p>
             </article>
-            <article class="process-step">
+            <article class="process-step reveal-item">
               <span class="step-icon" aria-hidden="true">
                 <img
                   src="./assets/images/process/icon-process-review.png"
@@ -478,7 +499,7 @@
       <section class="section contact-section" id="director">
         <div class="container">
           <div class="info-grid">
-            <article class="info-card director-card">
+            <article class="info-card director-card reveal-item">
               <img
                 class="card-photo director-profile-photo"
                 src="./assets/images/director/director-jo-okhyeong-real.PNG"
@@ -508,7 +529,7 @@
             </article>
           </div>
 
-          <div class="naver-map-card">
+          <div class="naver-map-card reveal-item">
             <div class="naver-map-copy">
               <p class="section-label">네이버지도</p>
               <p>
@@ -563,5 +584,40 @@
         <p>copyrightⓒ 연세부부상담클리닉 All rights reserved.</p>
       </div>
     </footer>
+    <script>
+      (() => {
+        const items = Array.from(document.querySelectorAll(".reveal-item"));
+        if (!items.length) return;
+
+        items.forEach((item, index) => {
+          item.style.setProperty("--reveal-delay", `${(index % 4) * 80}ms`);
+        });
+
+        const reduceMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)",
+        ).matches;
+
+        if (reduceMotion || !("IntersectionObserver" in window)) {
+          items.forEach((item) => item.classList.add("is-visible"));
+          return;
+        }
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            });
+          },
+          {
+            threshold: 0.16,
+            rootMargin: "0px 0px -10% 0px",
+          },
+        );
+
+        items.forEach((item) => observer.observe(item));
+      })();
+    </script>
   </body>
 </html>
