@@ -128,16 +128,17 @@ li {
 .skip-link {
   position: absolute;
   left: 16px;
-  top: -48px;
+  top: 16px;
   z-index: 100;
   padding: 10px 14px;
   border-radius: 999px;
   background: var(--brown-deep);
   color: #fff;
+  transform: translateY(calc(-100% - 24px));
 }
 
 .skip-link:focus {
-  top: 16px;
+  transform: translateY(0);
 }
 
 .container {
@@ -1270,7 +1271,7 @@ li {
 
 @media (max-width: 920px) {
   :root {
-    --anchor-offset: 104px;
+    --anchor-offset: 72px;
   }
 
   body {
@@ -1424,7 +1425,7 @@ li {
 
 @media (max-width: 620px) {
   :root {
-    --anchor-offset: 96px;
+    --anchor-offset: 68px;
   }
 
   body {
