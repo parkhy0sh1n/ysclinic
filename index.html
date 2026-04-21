@@ -12,6 +12,7 @@
       document.documentElement.classList.add("js");
     </script>
     <link rel="icon" href="./assets/images/logo.svg" type="image/svg+xml" />
+    <meta name="naver-map-client-id" content="31yp15j020" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -603,6 +604,18 @@
 
       <section class="section contact-section" id="director">
         <div class="container">
+          <div class="section-center reveal-item">
+            <p class="eyebrow section-eyebrow-lg">원장 소개</p>
+            <p>
+              <span class="copy-line"
+                >오랜 임상 경험과 상담 연구를 바탕으로,</span
+              >
+              <span class="copy-line"
+                >부부가 원하는 관계 회복의 방향을 함께 찾습니다.</span
+              >
+            </p>
+          </div>
+
           <div class="info-grid">
             <article class="info-card director-card reveal-item">
               <img
@@ -633,64 +646,262 @@
               </div>
             </article>
           </div>
+        </div>
+      </section>
 
-          <div class="naver-map-card reveal-item" id="location">
-            <div class="naver-map-copy">
-              <p class="section-label">네이버지도</p>
-              <p>
-                지도 이미지를 누르거나 버튼을 누르면 네이버지도에서
-                <strong>연세부부상담클리닉</strong> 위치를 바로 확인할 수
-                있습니다.
-              </p>
-              <p class="naver-map-note">대구시 수성구 청수로 108, 2층 204호</p>
-              <ul class="info-list">
-                <li>두산동 퍼플하임수성 2층 204호</li>
-                <li>지상철 3호선 황금역 1번 출구 인근</li>
-                <li>에스케이리더스뷰 아파트에서 두산동 방향 큰길</li>
-                <li>금강회초밥 맞은편 20층 오피스텔 건물</li>
-                <li>건물 지하주차장 이용 가능</li>
-              </ul>
-              <div class="map-actions">
+      <section class="section location-section" id="location">
+        <div class="container">
+          <div class="section-center reveal-item">
+            <p class="eyebrow section-eyebrow-lg">오시는 길</p>
+            <p>
+              <span class="copy-line"
+                >지도를 마우스로 움직이며 위치를 확인하고,</span
+              >
+              <span class="copy-line"
+                >아래 안내를 따라 편하게 찾아오실 수 있습니다.</span
+              >
+            </p>
+          </div>
+
+          <article class="location-card reveal-item">
+            <div class="location-map-shell">
+              <a
+                class="location-map-link"
+                href="https://map.naver.com/p/search/%EC%97%B0%EC%84%B8%EB%B6%80%EB%B6%80%EC%83%81%EB%8B%B4%ED%81%B4%EB%A6%AC%EB%8B%89/place/1571304987?c=15.00,0,0,0,dh&placePath=/home"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                네이버지도에서 보기
+              </a>
+              <div
+                class="location-map-frame"
+                id="naver-map"
+                title="연세부부상담클리닉 네이버 지도"
+                aria-label="연세부부상담클리닉 네이버 지도"
+              ></div>
+              <div class="location-map-fallback" id="naver-map-fallback" hidden>
+                <strong>네이버 지도 연동 대기 중</strong>
+                <p>
+                  `naver-map-client-id`를 입력하면 이 자리에서 지도를 직접
+                  움직일 수 있습니다.
+                </p>
                 <a
-                  class="button button-primary"
-                  href="https://map.naver.com/p/search/%EC%97%B0%EC%84%B8%EB%B6%80%EB%B6%80%EC%83%81%EB%8B%B4%ED%81%B4%EB%A6%AC%EB%8B%89/place/1571304987?c=15.00,0,0,0,dh&placePath=/home?bk_query=%EC%97%B0%EC%84%B8%EB%B6%80%EB%B6%80%EC%83%81%EB%8B%B4%ED%81%B4%EB%A6%AC%EB%8B%89&entry=bmp&from=map&fromPanelNum=2&timestamp=202604201322&locale=ko&svcName=map_pcv5&searchText=%EC%97%B0%EC%84%B8%EB%B6%80%EB%B6%80%EC%83%81%EB%8B%B4%ED%81%B4%EB%A6%AC%EB%8B%89"
+                  class="location-map-fallback__link"
+                  href="https://map.naver.com/p/search/%EC%97%B0%EC%84%B8%EB%B6%80%EB%B6%80%EC%83%81%EB%8B%B4%ED%81%B4%EB%A6%AC%EB%8B%89/place/1571304987?c=15.00,0,0,0,dh&placePath=/home"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >네이버지도 열기</a
                 >
+                  네이버지도 열기
+                </a>
               </div>
             </div>
 
-            <a
-              class="naver-map-preview"
-              href="https://map.naver.com/p/search/%EC%97%B0%EC%84%B8%EB%B6%80%EB%B6%80%EC%83%81%EB%8B%B4%ED%81%B4%EB%A6%AC%EB%8B%89/place/1571304987?c=15.00,0,0,0,dh&placePath=/home?bk_query=%EC%97%B0%EC%84%B8%EB%B6%80%EB%B6%80%EC%83%81%EB%8B%B4%ED%81%B4%EB%A6%AC%EB%8B%89&entry=bmp&from=map&fromPanelNum=2&timestamp=202604201322&locale=ko&svcName=map_pcv5&searchText=%EC%97%B0%EC%84%B8%EB%B6%80%EB%B6%80%EC%83%81%EB%8B%B4%ED%81%B4%EB%A6%AC%EB%8B%89"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                class="card-photo naver-map-image"
-                src="./assets/images/location/clinic-map.PNG"
-                alt="연세부부상담클리닉 네이버지도 프리뷰"
-                loading="lazy"
-                decoding="async"
-              />
-            </a>
-          </div>
+            <div class="location-info-table">
+              <div class="location-info-row">
+                <div class="location-info-label">주소</div>
+                <div class="location-info-value">
+                  대구시 수성구 청수로 108, 두산동 퍼플하임수성 2층 204호
+                </div>
+              </div>
+              <div class="location-info-row">
+                <div class="location-info-label">전화</div>
+                <div class="location-info-value">
+                  <a class="location-phone" href="tel:050714388276">
+                    0507-1438-8276
+                  </a>
+                </div>
+              </div>
+              <div class="location-info-row">
+                <div class="location-info-label">위치 안내</div>
+                <div class="location-info-value">
+                  <ul class="location-guide-list">
+                    <li>두산동 퍼플하임수성 2층 204호</li>
+                    <li>지상철 3호선 황금역 1번 출구 인근</li>
+                    <li>에스케이리더스뷰 아파트에서 두산동 방향 큰길</li>
+                    <li>금강회초밥 맞은편 20층 오피스텔 건물</li>
+                    <li>건물 지하주차장 이용 가능</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <div>
-          <p class="eyebrow">연세부부상담클리닉</p>
-          <strong>가장 빠른 시간에, 가장 효과적인 치료를 지향합니다.</strong>
+        <div class="footer-brand-panel">
+          <img
+            class="footer-logo"
+            src="./assets/images/logo.svg"
+            alt="연세부부상담클리닉 로고"
+            loading="lazy"
+            decoding="async"
+          />
+          <strong class="footer-brand-name">연세부부상담클리닉</strong>
         </div>
-        <p>copyrightⓒ 연세부부상담클리닉 All rights reserved.</p>
+        <div class="footer-copy" aria-label="사업자 정보">
+          <p>
+            상호 : 연세부부상담클리닉
+            <span class="footer-separator">|</span>
+            대표 : 조옥형
+          </p>
+          <p>주소 : 대구시 남구 성당로 8, 4층</p>
+          <p>
+            전화 : 0507-1438-827
+            <span class="footer-separator">|</span>
+            메일 : ysclinic9000@naver.com
+          </p>
+          <p>사업자번호 : 514-90-74924</p>
+          <p>Copyright ⓒ 연세부부상담클리닉 All rights reserved.</p>
+        </div>
       </div>
+      <div class="footer-bottom-bar" aria-hidden="true"></div>
     </footer>
     <script>
       (() => {
+        const header = document.querySelector(".site-header");
+
+        if (header) {
+          let headerTicking = false;
+
+          const syncHeaderState = () => {
+            header.classList.toggle("is-condensed", window.scrollY > 24);
+            headerTicking = false;
+          };
+
+          const onHeaderScroll = () => {
+            if (headerTicking) return;
+            headerTicking = true;
+            window.requestAnimationFrame(syncHeaderState);
+          };
+
+          syncHeaderState();
+          window.addEventListener("scroll", onHeaderScroll, { passive: true });
+        }
+
+        const naverMapRoot = document.getElementById("naver-map");
+        const naverMapFallback = document.getElementById("naver-map-fallback");
+        const naverMapClientId = document
+          .querySelector('meta[name="naver-map-client-id"]')
+          ?.getAttribute("content")
+          ?.trim();
+
+        const locationAddress =
+          "대구시 수성구 청수로 108, 퍼플하임수성 2층 204호";
+
+        const showNaverMapFallback = (message) => {
+          if (!naverMapRoot || !naverMapFallback) return;
+
+          const fallbackText = naverMapFallback.querySelector("p");
+          if (fallbackText && message) fallbackText.textContent = message;
+
+          naverMapRoot.hidden = true;
+          naverMapFallback.hidden = false;
+        };
+
+        const loadNaverMapSdk = (clientId) =>
+          new Promise((resolve, reject) => {
+            if (window.naver?.maps) {
+              resolve(window.naver.maps);
+              return;
+            }
+
+            const existingScript = document.querySelector(
+              'script[data-naver-map-sdk="true"]',
+            );
+
+            if (existingScript) {
+              existingScript.addEventListener("load", () => {
+                if (window.naver?.maps) resolve(window.naver.maps);
+              });
+              existingScript.addEventListener("error", reject);
+              return;
+            }
+
+            const script = document.createElement("script");
+            script.dataset.naverMapSdk = "true";
+            script.src = `https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=${encodeURIComponent(clientId)}&submodules=geocoder`;
+            script.async = true;
+            script.onload = () => {
+              if (window.naver?.maps) {
+                resolve(window.naver.maps);
+                return;
+              }
+
+              reject(new Error("NAVER Maps SDK unavailable"));
+            };
+            script.onerror = () =>
+              reject(new Error("NAVER Maps SDK load failed"));
+            document.head.appendChild(script);
+          });
+
+        const initNaverMap = async () => {
+          if (!naverMapRoot) return;
+
+          if (!naverMapClientId) {
+            showNaverMapFallback(
+              "메타 태그의 naver-map-client-id를 입력하면 네이버 지도를 직접 움직일 수 있습니다.",
+            );
+            return;
+          }
+
+          try {
+            await loadNaverMapSdk(naverMapClientId);
+          } catch (error) {
+            showNaverMapFallback(
+              "네이버 지도 SDK를 불러오지 못했습니다. 클라이언트 ID와 도메인 설정을 확인해 주세요.",
+            );
+            return;
+          }
+
+          window.naver.maps.Service.geocode(
+            { query: locationAddress },
+            (status, response) => {
+              if (
+                status !== window.naver.maps.Service.Status.OK ||
+                !response?.v2?.addresses?.length
+              ) {
+                showNaverMapFallback(
+                  "주소 좌표를 찾지 못했습니다. 주소 또는 네이버 지도 애플리케이션 설정을 확인해 주세요.",
+                );
+                return;
+              }
+
+              const address = response.v2.addresses[0];
+              const position = new window.naver.maps.LatLng(
+                Number(address.y),
+                Number(address.x),
+              );
+
+              const map = new window.naver.maps.Map("naver-map", {
+                center: position,
+                zoom: 17,
+                zoomControl: true,
+                zoomControlOptions: {
+                  position: window.naver.maps.Position.TOP_RIGHT,
+                  style: window.naver.maps.ZoomControlStyle.SMALL,
+                },
+                mapDataControl: false,
+                scaleControl: false,
+                mapTypeControl: false,
+                logoControl: false,
+              });
+
+              new window.naver.maps.Marker({
+                position,
+                map,
+              });
+
+              naverMapRoot.hidden = false;
+              if (naverMapFallback) naverMapFallback.hidden = true;
+            },
+          );
+        };
+
+        initNaverMap();
+
         const items = Array.from(document.querySelectorAll(".reveal-item"));
         if (!items.length) return;
 
