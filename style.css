@@ -594,6 +594,27 @@ li {
   letter-spacing: -0.04em;
 }
 
+.intro-title-compact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 30ch;
+  margin-inline: auto;
+  font-size: clamp(1.75rem, 2.7vw, 2.55rem) !important;
+}
+
+.intro-title-compact .copy-line {
+  width: auto;
+  margin: 0;
+  text-align: center;
+}
+
+@media (min-width: 921px) {
+  .intro-title-compact .copy-line {
+    white-space: nowrap;
+  }
+}
+
 .section-center p:last-child {
   max-width: 60ch;
   margin-inline: auto;
@@ -1018,27 +1039,31 @@ li {
   overflow: hidden;
   min-height: 420px;
   border-radius: var(--radius-xl);
-  border: 1px solid rgba(34, 29, 25, 0.06);
+  isolation: isolate;
   box-shadow: var(--shadow);
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255, 250, 244, 0.1),
-      rgba(255, 245, 234, 0.18)
-    ),
-    url("./assets/images/backgrounds/photo-calm-counseling-room.png") center /
-      cover;
+  background: #f6ede2;
 }
 
 .calm-photo::before {
   content: "";
   position: absolute;
   inset: 0;
+  z-index: 1;
   background: linear-gradient(
     180deg,
     rgba(255, 252, 247, 0.06),
     rgba(87, 63, 44, 0.08)
   );
+}
+
+.calm-photo::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  z-index: 0;
+  background: url("./assets/images/backgrounds/photo-calm-counseling-room.png")
+    center 54% / cover no-repeat;
+  transform: scale(1.015);
 }
 
 .feature-grid {
@@ -1218,6 +1243,7 @@ li {
 
 .section-label-spaced {
   margin-top: 8px;
+  font-size: 0.84rem;
 }
 
 .info-card .card-photo {
