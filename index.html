@@ -27,8 +27,8 @@
     <aside class="quick-sidebar" aria-label="빠른 링크">
       <a
         class="mobile-footer-call"
-        href="tel:01098279000"
-        aria-label="전화 문의 010-9827-9000"
+        href="tel:050714388276"
+        aria-label="전화 문의 0507-1438-8276"
       >
         <span class="header-call__icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
@@ -133,8 +133,8 @@
 
         <a
           class="header-call"
-          href="tel:01098279000"
-          aria-label="전화 문의 010-9827-9000"
+          href="tel:050714388276"
+          aria-label="전화 문의 0507-1438-8276"
         >
           <span class="header-call__icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
@@ -789,7 +789,9 @@
           ?.trim();
 
         const locationAddress =
-          "대구시 수성구 청수로 108, 퍼플하임수성 2층 204호";
+          "대구광역시 수성구 청수로 108, 퍼플하임수성 2층 204호";
+        const locationLat = 35.839928020146;
+        const locationLng = 128.61989801132;
 
         const showNaverMapFallback = (message) => {
           if (!naverMapRoot || !naverMapFallback) return;
@@ -822,7 +824,7 @@
 
             const script = document.createElement("script");
             script.dataset.naverMapSdk = "true";
-            script.src = `https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=${encodeURIComponent(clientId)}&submodules=geocoder`;
+            script.src = `https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=${encodeURIComponent(clientId)}`;
             script.async = true;
             script.onload = () => {
               if (window.naver?.maps) {
@@ -856,48 +858,33 @@
             return;
           }
 
-          window.naver.maps.Service.geocode(
-            { query: locationAddress },
-            (status, response) => {
-              if (
-                status !== window.naver.maps.Service.Status.OK ||
-                !response?.v2?.addresses?.length
-              ) {
-                showNaverMapFallback(
-                  "주소 좌표를 찾지 못했습니다. 주소 또는 네이버 지도 애플리케이션 설정을 확인해 주세요.",
-                );
-                return;
-              }
-
-              const address = response.v2.addresses[0];
-              const position = new window.naver.maps.LatLng(
-                Number(address.y),
-                Number(address.x),
-              );
-
-              const map = new window.naver.maps.Map("naver-map", {
-                center: position,
-                zoom: 17,
-                zoomControl: true,
-                zoomControlOptions: {
-                  position: window.naver.maps.Position.TOP_RIGHT,
-                  style: window.naver.maps.ZoomControlStyle.SMALL,
-                },
-                mapDataControl: false,
-                scaleControl: false,
-                mapTypeControl: false,
-                logoControl: false,
-              });
-
-              new window.naver.maps.Marker({
-                position,
-                map,
-              });
-
-              naverMapRoot.hidden = false;
-              if (naverMapFallback) naverMapFallback.hidden = true;
-            },
+          const position = new window.naver.maps.LatLng(
+            locationLat,
+            locationLng,
           );
+
+          const map = new window.naver.maps.Map("naver-map", {
+            center: position,
+            zoom: 17,
+            zoomControl: true,
+            zoomControlOptions: {
+              position: window.naver.maps.Position.TOP_RIGHT,
+              style: window.naver.maps.ZoomControlStyle.SMALL,
+            },
+            mapDataControl: false,
+            scaleControl: false,
+            mapTypeControl: false,
+            logoControl: false,
+          });
+
+          new window.naver.maps.Marker({
+            position,
+            map,
+            title: locationAddress,
+          });
+
+          naverMapRoot.hidden = false;
+          if (naverMapFallback) naverMapFallback.hidden = true;
         };
 
         initNaverMap();
