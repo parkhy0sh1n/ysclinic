@@ -11,6 +11,7 @@
     <script>
       document.documentElement.classList.add("js");
     </script>
+    <link rel="icon" href="./assets/images/logo.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
@@ -28,7 +29,6 @@
         </span>
         <span class="quick-link__text">
           <strong>네이버예약</strong>
-          <span>바로가기</span>
         </span>
       </a>
 
@@ -43,7 +43,6 @@
         </span>
         <span class="quick-link__text">
           <strong>인스타그램</strong>
-          <span>바로가기</span>
         </span>
       </a>
 
@@ -58,7 +57,6 @@
         </span>
         <span class="quick-link__text">
           <strong>유튜브</strong>
-          <span>바로가기</span>
         </span>
       </a>
 
@@ -72,8 +70,7 @@
           <img src="./assets/icons/quick/kakao-talk.svg" alt="" />
         </span>
         <span class="quick-link__text">
-          <strong>카카오톡 상담</strong>
-          <span>바로가기</span>
+          <strong>카톡상담</strong>
         </span>
       </a>
     </aside>
@@ -86,13 +83,26 @@
         </div>
 
         <nav class="main-nav" aria-label="주요 메뉴">
+          <a href="#director">원장 소개</a>
           <a href="#about">센터 소개</a>
           <a href="#programs">상담 안내</a>
           <a href="#process">진행 방식</a>
-          <a href="#director">원장 소개</a>
         </nav>
 
-        <a class="header-call" href="tel:01098279000">010-9827-9000</a>
+        <a
+          class="header-call"
+          href="tel:01098279000"
+          aria-label="전화 문의 010-9827-9000"
+        >
+          <span class="header-call__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+              <path
+                d="M6.62 10.79a15.06 15.06 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.32.56 3.57.56a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.06 21 3 13.94 3 5a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.19 2.45.56 3.57a1 1 0 0 1-.24 1.02z"
+              />
+            </svg>
+          </span>
+          <span>전화 문의</span>
+        </a>
       </div>
     </header>
 
@@ -111,15 +121,16 @@
               <p class="section-label">따뜻하지만 정확한 회복 상담</p>
               <h1>극심한 고통과 절망 속에서 더 이상 혼자 견디지 마세요.</h1>
               <p class="hero-lead">
-                안녕하세요. 조옥형 박사입니다. 26년 동안 11,500명의 사람들을
-                상담하며 9,000명 이상을 치료해온 경험을 바탕으로, 부부가 원하는
-                관계의 방향을 다시 찾을 수 있도록 돕겠습니다.
+                26년 동안 11,500명의 부부를 상담하며 9,000명 이상을 치료해 온
+                경험을 바탕으로 부부가 원하는 관계의 방향을 다시 찾을 수 있도록
+                돕겠습니다.
               </p>
 
               <div class="hero-pills">
-                <span>26년 임상 경험</span>
-                <span>11,500명 상담 사례</span>
-                <span>9,000명 이상 치료 경험</span>
+                <span>외도</span>
+                <span>이혼위기</span>
+                <span>알콜의존증</span>
+                <span>고부갈등</span>
               </div>
             </div>
           </div>
