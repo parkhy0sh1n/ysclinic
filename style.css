@@ -603,14 +603,37 @@ li {
   font-size: clamp(1.75rem, 2.7vw, 2.55rem) !important;
 }
 
+.programs-title-compact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+  margin-inline: auto;
+  font-size: clamp(1.68rem, 2.55vw, 2.38rem) !important;
+  line-height: 1.2;
+  letter-spacing: -0.045em;
+}
+
 .intro-title-compact .copy-line {
   width: auto;
   margin: 0;
   text-align: center;
 }
 
+.programs-title-compact .copy-line {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin-inline: auto;
+  text-align: center;
+}
+
 @media (min-width: 921px) {
   .intro-title-compact .copy-line {
+    white-space: nowrap;
+  }
+
+  .programs-title-compact .copy-line {
     white-space: nowrap;
   }
 }
@@ -681,6 +704,15 @@ li {
 .info-list {
   margin: 0;
   padding-left: 20px;
+}
+
+.topic-list {
+  list-style: disc;
+}
+
+.guide-list {
+  list-style: none;
+  padding-left: 0;
 }
 
 .number-list li + li,
@@ -1129,7 +1161,7 @@ li {
   background: rgba(255, 255, 255, 0.78);
 }
 
-.system-card span {
+.system-card > span {
   display: block;
   color: rgba(77, 61, 49, 0.58);
   font-size: 2.6rem;
@@ -1138,7 +1170,7 @@ li {
 }
 
 .process-grid {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .process-step {
@@ -1610,7 +1642,6 @@ li {
 
 @media (max-width: 1120px) {
   .feature-grid,
-  .process-grid,
   .info-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
