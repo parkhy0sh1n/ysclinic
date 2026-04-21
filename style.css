@@ -1243,15 +1243,56 @@ li {
 }
 
 @media (max-width: 920px) {
+  body {
+    padding-bottom: calc(120px + env(safe-area-inset-bottom));
+  }
+
   .quick-sidebar {
-    right: 14px;
-    bottom: 14px;
+    left: 0;
+    right: 0;
+    bottom: 0;
     top: auto;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+    padding: 12px 18px calc(12px + env(safe-area-inset-bottom));
     transform: none;
+    animation: none;
+    background: rgba(255, 252, 247, 0.94);
+    backdrop-filter: blur(18px);
+    border-top: 1px solid rgba(34, 29, 25, 0.08);
+    box-shadow: 0 -16px 32px rgba(54, 40, 30, 0.12);
   }
 
   .quick-link {
-    width: 168px;
+    width: 100%;
+    min-width: 0;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 8px;
+    padding: 12px 10px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 12px 24px rgba(54, 40, 30, 0.12);
+  }
+
+  .quick-link:hover,
+  .quick-link:focus-visible {
+    transform: translateY(-2px);
+  }
+
+  .quick-link__text {
+    align-items: center;
+    gap: 4px;
+  }
+
+  .quick-link__text strong {
+    font-size: 0.82rem;
+    line-height: 1.3;
+  }
+
+  .quick-link__text span {
+    display: none;
   }
 
   .header-inner {
@@ -1299,26 +1340,23 @@ li {
 }
 
 @media (max-width: 620px) {
+  body {
+    padding-bottom: calc(108px + env(safe-area-inset-bottom));
+  }
+
   .quick-sidebar {
-    left: 14px;
-    right: 14px;
-    bottom: 12px;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
+    gap: 8px;
+    padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
   }
 
   .quick-link {
-    width: 100%;
-    grid-template-columns: 44px 1fr;
-    gap: 10px;
-    padding: 12px 12px;
+    padding: 10px 6px;
     border-radius: 16px;
   }
 
   .quick-link__icon {
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
     border-radius: 12px;
   }
 
@@ -1328,11 +1366,7 @@ li {
   }
 
   .quick-link__text strong {
-    font-size: 0.9rem;
-  }
-
-  .quick-link__text span {
-    font-size: 0.82rem;
+    font-size: 0.74rem;
   }
 
   .container {
