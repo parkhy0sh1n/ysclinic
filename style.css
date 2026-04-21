@@ -1350,7 +1350,7 @@ li {
 
   .scroll-top-button {
     right: 16px;
-    bottom: calc(146px + env(safe-area-inset-bottom));
+    bottom: calc(186px + env(safe-area-inset-bottom));
     width: 64px;
     height: 64px;
   }
@@ -1513,7 +1513,7 @@ li {
 
   .scroll-top-button {
     right: 12px;
-    bottom: calc(132px + env(safe-area-inset-bottom));
+    bottom: calc(176px + env(safe-area-inset-bottom));
     width: 58px;
     height: 58px;
   }
