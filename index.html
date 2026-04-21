@@ -12,6 +12,12 @@
       document.documentElement.classList.add("js");
     </script>
     <link rel="icon" href="./assets/images/logo.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
@@ -90,6 +96,17 @@
       </a>
     </aside>
 
+    <a
+      class="scroll-top-button"
+      href="#top"
+      aria-label="페이지 최상단으로 이동"
+    >
+      <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+        <path d="M12 19V5" />
+        <path d="M6 11L12 5L18 11" />
+      </svg>
+    </a>
+
     <header class="site-header">
       <div class="container header-inner">
         <div class="brand-wrap">
@@ -142,11 +159,19 @@
             />
             <div class="hero-copy">
               <p class="section-label">따뜻하지만 정확한 회복 상담</p>
-              <h1>극심한 고통과 절망 속에서 더 이상 혼자 견디지 마세요.</h1>
+              <h1 class="hero-script-title">
+                <span class="copy-line">극심한 고통과 절망 속에서</span>
+                <span class="copy-line">더 이상 혼자 견디지 마세요.</span>
+              </h1>
               <p class="hero-lead">
-                26년 동안 11,500명의 부부를 상담하며 9,000명 이상을 치료해 온
-                경험을 바탕으로 부부가 원하는 관계의 방향을 다시 찾을 수 있도록
-                돕겠습니다.
+                <span class="copy-line"
+                  >26년 동안 11,500명의 부부를 상담하며</span
+                >
+                <span class="copy-line"
+                  >9,000명 이상을 치료해 온 경험을 바탕으로</span
+                >
+                <span class="copy-line">부부가 원하는 관계의 방향을</span>
+                <span class="copy-line">다시 찾을 수 있도록 돕겠습니다.</span>
               </p>
 
               <div class="hero-pills">
@@ -165,13 +190,24 @@
           <div class="section-center reveal-item">
             <p class="eyebrow">센터 이야기</p>
             <h2>
-              상담실에 오래 머무르게 하는 것이 아니라, 더 이상 오지 않아도
-              되도록 돕는 것이 목표입니다.
+              <span class="copy-line"
+                >상담실에 오래 머무르게 하는 것이 아니라,</span
+              >
+              <span class="copy-line">더 이상 오지 않아도 되도록</span>
+              <span class="copy-line">돕는 것이 목표입니다.</span>
             </h2>
             <p>
-              높은 만족도로 소개를 통해 직접 찾아주시는 분들이 300팀이 넘습니다.
-              부부마다 다른 갈등의 모양을 세밀하게 살피고, 그 관계가 원하는
-              방향으로 움직일 수 있도록 집중도 높은 상담을 진행합니다.
+              <span class="copy-line"
+                >높은 만족도로 소개를 통해 직접 찾아주시는 분들이 300팀이
+                넘습니다.</span
+              >
+              <span class="copy-line"
+                >부부마다 다른 갈등의 모양을 세밀하게 살피고, 그 관계가 원하는
+                방향으로</span
+              >
+              <span class="copy-line"
+                >움직일 수 있도록 집중도 높은 상담을 진행합니다.</span
+              >
             </p>
           </div>
 
@@ -183,7 +219,8 @@
                 <li>
                   상담료가 다른 상담실보다 높다고 느껴질 수 있지만, 짧은 기간
                   내에 높은 효과를 목표로 하기에 만족감이 크다는 평가를 받고
-                  있습니다. 200개의 후기가 이를 보여줍니다.
+                  있습니다.
+                  <span class="copy-line">200개의 후기가 이를 보여줍니다.</span>
                 </li>
                 <li>
                   부부마다의 상담 목표에 맞는 치료 기술을 적용하여, 위기의
@@ -231,12 +268,19 @@
           <div class="section-center reveal-item">
             <p class="eyebrow">상담 안내</p>
             <h2>
-              관계의 핵심 문제를 빠르게 짚고, 필요한 개입을 적절한 시점에
-              적용합니다.
+              <span class="copy-line">관계의 핵심 문제를 빠르게 짚고,</span>
+              <span class="copy-line"
+                >필요한 개입을 적절한 시점에 적용합니다.</span
+              >
             </h2>
             <p>
-              반복 갈등, 외도, 섹스리스, 의심, 고부갈등, 침묵과 별거, 우울과
-              불안까지 부부 문제와 개인 심리 문제를 함께 다룹니다.
+              <span class="copy-line"
+                >반복 갈등, 외도, 섹스리스, 의심, 고부갈등, 침묵과 별거,</span
+              >
+              <span class="copy-line"
+                >우울과 불안까지 부부 문제와 개인 심리 문제를 함께
+                다룹니다.</span
+              >
             </p>
           </div>
 
@@ -338,14 +382,23 @@
         <div class="container">
           <div class="promise-card reveal-item">
             <p class="eyebrow">연세가 드리는 약속</p>
-            <h2>
-              부부마다 다른 갈등 구조를 세밀하게 보고, 짧은 상담으로도 변화를
-              느낄 수 있도록 돕겠습니다.
+            <h2 class="script-heading">
+              <span class="copy-line"
+                >부부마다 다른 갈등 구조를 세밀하게 보고,</span
+              >
+              <span class="copy-line">짧은 상담으로도 변화를</span>
+              <span class="copy-line">느낄 수 있도록 돕겠습니다.</span>
             </h2>
             <p>
-              단순히 누가 옳고 그른지를 가리는 것이 아니라, 왜 같은 문제로
-              반복해서 상처를 주고받는지 구조를 살피고 회복의 언어를 다시 찾는
-              과정에 집중합니다.
+              <span class="copy-line"
+                >단순히 누가 옳고 그른지를 가리는 것이 아니라,</span
+              >
+              <span class="copy-line"
+                >왜 같은 문제로 반복해서 상처를 주고받는지 구조를 살피고</span
+              >
+              <span class="copy-line"
+                >회복의 언어를 다시 찾는 과정에 집중합니다.</span
+              >
             </p>
           </div>
         </div>
@@ -357,7 +410,10 @@
             <div class="philosophy-copy reveal-item">
               <p class="eyebrow">심리치유의 시작점</p>
               <h2>
-                먼저 나를 이해하고, 그 다음 상대를 더 정확하게 이해합니다.
+                <span class="copy-line">먼저 나를 이해하고,</span>
+                <span class="copy-line"
+                  >그 다음 상대를 더 정확하게 이해합니다.</span
+                >
               </h2>
               <p>
                 “나는 상대방의 어떤 말에 감정이 상하는가?” “왜 화가 나는가?”
@@ -412,10 +468,18 @@
           <div class="container">
             <div class="section-center section-center-light reveal-item">
               <p class="eyebrow">핵심 접근 방식</p>
-              <h2>연세부부상담클리닉의 핵심 접근 방식</h2>
+              <h2>
+                <span class="copy-line">연세부부상담클리닉의</span>
+                <span class="copy-line">핵심 접근 방식</span>
+              </h2>
               <p>
-                감정만 다루거나 조언만 하는 방식이 아니라, 관계 구조와 감정의
-                흐름, 실제 대화 방식까지 함께 다룹니다.
+                <span class="copy-line"
+                  >감정만 다루거나 조언만 하는 방식이 아니라,</span
+                >
+                <span class="copy-line"
+                  >관계 구조와 감정의 흐름, 실제 대화 방식까지 함께
+                  다룹니다.</span
+                >
               </p>
             </div>
 
@@ -453,11 +517,18 @@
         <div class="container">
           <div class="section-center reveal-item">
             <p class="eyebrow">상담 진행 순서</p>
-            <h2>총 4시간 30분을 3회 또는 4회에 나누어 진행합니다.</h2>
+            <h2>
+              <span class="copy-line">총 4시간 30분을</span>
+              <span class="copy-line">3회 또는 4회에 나누어 진행합니다.</span>
+            </h2>
             <p>
-              상담 내용과 효과에 따라 회차별 시간을 조정하며, 원칙적으로는
-              부부가 함께 상담받고 필요 시 일부 시간을 개별상담으로 나누어
-              진행합니다.
+              <span class="copy-line"
+                >상담 내용과 효과에 따라 회차별 시간을 조정하며,</span
+              >
+              <span class="copy-line"
+                >원칙적으로는 부부가 함께 상담받고 필요 시 일부 시간을</span
+              >
+              <span class="copy-line">개별상담으로 나누어 진행합니다.</span>
             </p>
           </div>
 
