@@ -150,10 +150,15 @@ li {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(255, 252, 247, 0.86);
+  background-color: rgba(255, 252, 247, 0.86);
   backdrop-filter: blur(18px);
   border-bottom: 1px solid rgba(34, 29, 25, 0.06);
   box-shadow: 0 10px 28px rgba(52, 38, 28, 0.05);
+  transition:
+    background-color 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    backdrop-filter 0.35s ease;
 }
 
 .header-inner {
@@ -162,6 +167,9 @@ li {
   justify-content: space-between;
   gap: 28px;
   padding: 18px 0;
+  transition:
+    padding 0.35s ease,
+    gap 0.35s ease;
 }
 
 .brand-wrap {
@@ -177,6 +185,11 @@ li {
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
+}
+
+.section-eyebrow-lg {
+  font-size: 1.12rem;
+  letter-spacing: 0.22em;
 }
 
 .brand,
@@ -197,6 +210,9 @@ li {
   gap: 12px;
   font-size: 1.58rem;
   font-weight: 700;
+  transition:
+    font-size 0.35s ease,
+    gap 0.35s ease;
 }
 
 .brand-logo {
@@ -204,6 +220,9 @@ li {
   height: 36px;
   flex: none;
   object-fit: contain;
+  transition:
+    width 0.35s ease,
+    height 0.35s ease;
 }
 
 .copy-line {
@@ -226,6 +245,9 @@ li {
   font-size: 1.04rem;
   font-weight: 700;
   letter-spacing: -0.01em;
+  transition:
+    color 0.25s ease,
+    font-size 0.35s ease;
 }
 
 .main-nav a::after {
@@ -266,6 +288,14 @@ li {
   font-weight: 700;
   white-space: nowrap;
   box-shadow: 0 14px 32px rgba(79, 61, 49, 0.18);
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease,
+    min-height 0.35s ease,
+    padding 0.35s ease,
+    font-size 0.35s ease;
 }
 
 .header-call__icon {
@@ -285,6 +315,38 @@ li {
   display: none;
 }
 
+.site-header.is-condensed {
+  background-color: rgba(255, 252, 247, 0.72);
+  backdrop-filter: blur(24px);
+  border-bottom-color: rgba(34, 29, 25, 0.03);
+  box-shadow: 0 14px 30px rgba(52, 38, 28, 0.08);
+}
+
+.site-header.is-condensed .header-inner {
+  gap: 22px;
+  padding: 12px 0;
+}
+
+.site-header.is-condensed .brand {
+  gap: 10px;
+  font-size: 1.46rem;
+}
+
+.site-header.is-condensed .brand-logo {
+  width: 32px;
+  height: 32px;
+}
+
+.site-header.is-condensed .main-nav a {
+  font-size: 1rem;
+}
+
+.site-header.is-condensed .header-call {
+  min-height: 44px;
+  padding: 0 20px;
+  font-size: 0.93rem;
+}
+
 .hero {
   padding: 52px 0 56px;
 }
@@ -299,7 +361,8 @@ li {
 .system-card,
 .process-step,
 .contact-banner,
-.info-card {
+.info-card,
+.location-card {
   position: relative;
   overflow: hidden;
   border: 1px solid var(--line);
@@ -318,7 +381,8 @@ li {
 .system-card::before,
 .process-step::before,
 .info-card::before,
-.naver-map-card::before {
+.naver-map-card::before,
+.location-card::before {
   content: "";
   position: absolute;
   inset: 0 0 auto;
@@ -339,7 +403,8 @@ li {
 .system-card:hover,
 .process-step:hover,
 .info-card:hover,
-.naver-map-card:hover {
+.naver-map-card:hover,
+.location-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-hover);
   border-color: rgba(134, 102, 80, 0.16);
@@ -1092,6 +1157,11 @@ li {
   padding-bottom: 52px;
 }
 
+.location-section {
+  padding-top: 0;
+  padding-bottom: 52px;
+}
+
 .contact-banner {
   display: flex;
   align-items: center;
@@ -1167,6 +1237,149 @@ li {
   margin: 0;
 }
 
+.location-card {
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  background: rgba(255, 255, 255, 0.88);
+  animation: fade-up 0.8s ease both;
+}
+
+.location-map-shell {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 7.8;
+  background: #ebe6dd;
+}
+
+.location-map-link {
+  position: absolute;
+  left: 18px;
+  top: 18px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 16px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(34, 29, 25, 0.08);
+  color: #00a942;
+  font-weight: 700;
+  box-shadow: 0 12px 24px rgba(54, 40, 30, 0.1);
+}
+
+.location-map-link::after {
+  content: "↗";
+  font-size: 0.95rem;
+}
+
+.location-map-frame {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.location-map-fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 36px;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 251, 245, 0.96),
+      rgba(248, 241, 231, 0.98)
+    ),
+    radial-gradient(
+      circle at top right,
+      rgba(190, 223, 203, 0.44),
+      transparent 30%
+    );
+}
+
+.location-map-fallback[hidden] {
+  display: none;
+}
+
+.location-map-fallback strong {
+  color: var(--brown-deep);
+  font-size: 1.22rem;
+}
+
+.location-map-fallback p {
+  max-width: 34rem;
+  margin: 0;
+  color: var(--muted);
+}
+
+.location-map-fallback__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #06c755, #00a942);
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 12px 24px rgba(6, 199, 85, 0.18);
+}
+
+.location-info-table {
+  display: grid;
+  border-top: 1px solid rgba(34, 29, 25, 0.08);
+}
+
+.location-info-row {
+  display: grid;
+  grid-template-columns: 210px minmax(0, 1fr);
+}
+
+.location-info-row + .location-info-row {
+  border-top: 1px solid rgba(34, 29, 25, 0.08);
+}
+
+.location-info-label,
+.location-info-value {
+  padding: 22px 26px;
+}
+
+.location-info-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(248, 243, 236, 0.72);
+  color: var(--brown-deep);
+  font-weight: 800;
+  text-align: center;
+}
+
+.location-info-value {
+  color: var(--muted);
+  line-height: 1.85;
+}
+
+.location-phone {
+  color: var(--brown-deep);
+  font-size: 1.06rem;
+  font-weight: 800;
+}
+
+.location-guide-list {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.location-guide-list li + li {
+  margin-top: 8px;
+}
+
 .naver-map-card {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
@@ -1222,17 +1435,68 @@ li {
 }
 
 .site-footer {
-  padding: 0 0 34px;
+  margin-top: 18px;
+  background:
+    linear-gradient(180deg, #2d2520 0%, #1f1a17 100%),
+    radial-gradient(
+      circle at top right,
+      rgba(149, 119, 93, 0.18),
+      transparent 28%
+    );
+  color: rgba(233, 223, 214, 0.82);
 }
 
 .footer-inner {
   display: flex;
+  align-items: flex-start;
+  gap: 28px;
+  padding: 26px 0 28px;
+  color: rgba(233, 223, 214, 0.82);
+}
+
+.footer-brand-panel {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  padding-top: 18px;
-  border-top: 1px solid rgba(34, 29, 25, 0.08);
-  color: var(--muted);
+  gap: 10px;
+  min-width: 150px;
+  text-align: center;
+}
+
+.footer-logo {
+  width: 74px;
+  height: 74px;
+  object-fit: contain;
+}
+
+.footer-brand-name {
+  color: #fff6ef;
+  font-size: 1.34rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.footer-copy {
+  display: grid;
+  gap: 6px;
+  padding-top: 10px;
+  color: rgba(216, 204, 193, 0.72);
+}
+
+.footer-copy p {
+  margin: 0;
+  font-size: 0.84rem;
+  line-height: 1.7;
+}
+
+.footer-separator {
+  margin: 0 8px;
+  color: rgba(216, 204, 193, 0.32);
+}
+
+.footer-bottom-bar {
+  height: 8px;
+  background: #0f0c0a;
 }
 
 .story-card,
@@ -1244,6 +1508,10 @@ li {
 .process-step,
 .info-card,
 .naver-map-card {
+  animation: fade-up 0.72s ease both;
+}
+
+.location-card {
   animation: fade-up 0.72s ease both;
 }
 
@@ -1456,6 +1724,28 @@ li {
     display: none;
   }
 
+  .site-header.is-condensed {
+    background-color: rgba(255, 252, 247, 0.78);
+  }
+
+  .site-header.is-condensed .header-inner {
+    gap: 10px;
+    padding: 10px 0 12px;
+  }
+
+  .site-header.is-condensed .brand {
+    font-size: 1.46rem;
+  }
+
+  .site-header.is-condensed .brand-logo {
+    width: 28px;
+    height: 28px;
+  }
+
+  .site-header.is-condensed .main-nav a {
+    font-size: 0.99rem;
+  }
+
   .hero-stage {
     min-height: 560px;
   }
@@ -1481,6 +1771,7 @@ li {
   .system-grid,
   .contact-banner,
   .naver-map-card,
+  .location-card,
   .feature-grid,
   .process-grid,
   .info-grid {
@@ -1498,6 +1789,10 @@ li {
 
   .contact-banner {
     justify-items: flex-start;
+  }
+
+  .location-info-row {
+    grid-template-columns: 160px minmax(0, 1fr);
   }
 }
 
@@ -1625,6 +1920,36 @@ li {
     width: min(220px, 100%);
   }
 
+  .location-map-shell {
+    aspect-ratio: 4 / 3.6;
+  }
+
+  .location-map-link {
+    left: 12px;
+    top: 12px;
+    min-height: 40px;
+    padding: 0 14px;
+    font-size: 0.92rem;
+  }
+
+  .location-map-fallback {
+    padding: 20px;
+  }
+
+  .location-info-row {
+    grid-template-columns: 1fr;
+  }
+
+  .location-info-label,
+  .location-info-value {
+    padding: 16px 18px;
+  }
+
+  .location-info-label {
+    justify-content: flex-start;
+    border-bottom: 1px solid rgba(34, 29, 25, 0.06);
+  }
+
   .step-icon {
     width: 72px;
     height: 72px;
@@ -1640,5 +1965,19 @@ li {
   .footer-inner {
     flex-direction: column;
     align-items: flex-start;
+    gap: 18px;
+  }
+
+  .footer-brand-panel {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .footer-copy {
+    padding-top: 0;
+  }
+
+  .footer-separator {
+    display: none;
   }
 }
