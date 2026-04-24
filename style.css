@@ -771,6 +771,12 @@ li {
   box-shadow: 0 24px 54px rgba(83, 63, 47, 0.12);
 }
 
+@media (min-width: 921px) {
+  .review-ribbon-image {
+    height: clamp(210px, 19.5vw, 310px);
+  }
+}
+
 .review-cta {
   position: absolute;
   left: 50%;
