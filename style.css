@@ -2,6 +2,8 @@
   --font-sans:
     "Pretendard Variable", "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo",
     "Malgun Gothic", sans-serif;
+  --font-one-mobile: "OneStoreMobileGothicTitleFont", "ONE Mobile Gothic",
+    "ONE-Mobile-Gothic", var(--font-sans);
   --bg: #f8f3ec;
   --bg-soft: #fdfaf5;
   --paper: rgba(255, 255, 255, 0.82);
@@ -23,6 +25,15 @@
   --radius-sm: 14px;
   --container: 1180px;
   --anchor-offset: 56px;
+}
+
+@font-face {
+  font-family: "OneStoreMobileGothicTitleFont";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Title.woff")
+    format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
 
 * {
@@ -364,7 +375,11 @@ li {
 }
 
 .hero {
-  padding: 52px 0 56px;
+  padding: 42px 0 48px;
+}
+
+.hero .container {
+  width: min(calc(100% - clamp(36px, 12vw, 250px)), 1800px);
 }
 
 .hero-stage,
@@ -429,9 +444,12 @@ li {
 .hero-stage {
   position: relative;
   overflow: hidden;
-  min-height: 620px;
-  border-radius: 48px;
+  min-height: clamp(620px, 40.5vw, 830px);
+  border-radius: 0 128px 0 168px;
   background: #f7efe5;
+  box-shadow:
+    0 28px 80px rgba(83, 63, 47, 0.14),
+    0 0 70px rgba(233, 213, 190, 0.42);
   animation: fade-up 0.9s ease both;
 }
 
@@ -441,7 +459,7 @@ li {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center right;
   z-index: 0;
 }
 
@@ -459,15 +477,23 @@ li {
   background:
     linear-gradient(
       90deg,
-      rgba(255, 252, 247, 0.92) 0%,
-      rgba(255, 252, 247, 0.76) 32%,
-      rgba(255, 252, 247, 0.26) 66%,
-      rgba(255, 252, 247, 0.08) 100%
+      rgba(255, 255, 255, 0.98) 0%,
+      rgba(255, 255, 255, 0.94) 31%,
+      rgba(255, 255, 255, 0.52) 53%,
+      rgba(255, 255, 255, 0.12) 76%,
+      rgba(255, 255, 255, 0.04) 100%
     ),
     linear-gradient(
       180deg,
-      rgba(255, 250, 244, 0.16) 0%,
-      rgba(255, 244, 228, 0.22) 100%
+      rgba(255, 250, 244, 0.1) 0%,
+      rgba(255, 255, 255, 0.1) 58%,
+      rgba(255, 255, 255, 0.76) 100%
+    ),
+    radial-gradient(
+      ellipse at 30% 92%,
+      rgba(255, 255, 255, 0.96) 0%,
+      rgba(255, 255, 255, 0.74) 24%,
+      rgba(255, 255, 255, 0) 50%
     );
 }
 
@@ -480,7 +506,7 @@ li {
   z-index: 1;
   background: radial-gradient(
     circle,
-    rgba(255, 240, 212, 0.62),
+    rgba(255, 240, 212, 0.36),
     transparent 68%
   );
   animation: soft-float 6s ease-in-out infinite;
@@ -489,23 +515,45 @@ li {
 .hero-copy {
   position: relative;
   z-index: 2;
-  max-width: 580px;
-  padding: 112px 52px 42px;
+  display: flex;
+  flex-direction: column;
+  min-height: clamp(620px, 40.5vw, 830px);
+  max-width: 900px;
+  padding: clamp(78px, 5.4vw, 104px) clamp(46px, 4.9vw, 90px)
+    clamp(70px, 4.6vw, 92px);
   animation: fade-up 1s ease 0.08s both;
 }
 
+.hero-main-copy {
+  max-width: 720px;
+}
+
 .hero-copy h1 {
-  margin: 0;
-  font-family: inherit;
-  font-size: clamp(4.15rem, 6.1vw, 5.75rem);
-  font-weight: 800;
-  line-height: 1.08;
+  margin: 34px 0 0;
+  color: #4f4137;
+  font-family: var(--font-one-mobile);
+  font-size: clamp(3.35rem, 3.18vw, 4.25rem);
+  font-weight: 700;
+  line-height: 1.18;
   max-width: none;
-  letter-spacing: -0.035em;
+  letter-spacing: 0;
 }
 
 .hero-copy .section-label {
-  font-size: 1.08rem;
+  margin: 0;
+  color: #a38470;
+  font-family: var(--font-sans);
+  font-size: clamp(1.28rem, 1.35vw, 1.72rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-transform: none;
+}
+
+.hero-support {
+  width: min(100%, 720px);
+  margin-top: auto;
+  align-self: center;
+  text-align: center;
 }
 
 .script-heading,
@@ -518,11 +566,12 @@ li {
 }
 
 .hero-lead {
-  margin: 20px 0 0;
-  color: var(--muted);
-  font-size: 1.18rem;
-  max-width: 34rem;
-  line-height: 1.8;
+  margin: 28px 0 0;
+  color: #6b6865;
+  font-family: var(--font-sans);
+  font-size: clamp(1.08rem, 1vw, 1.24rem);
+  font-weight: 400;
+  line-height: 1.72;
 }
 
 .hero-actions {
@@ -577,26 +626,35 @@ li {
 .mini-stats {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
   margin-top: 28px;
+}
+
+.hero-pills {
+  margin-top: 0;
 }
 
 .hero-pills span,
 .mini-stats span {
   display: inline-flex;
   align-items: center;
-  min-height: 40px;
-  padding: 0 14px;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 20px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.78);
+  background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(34, 29, 25, 0.06);
-  color: var(--muted);
+  border: 1px solid rgba(168, 129, 102, 0.24);
+  color: #a38470;
   font-size: 0.92rem;
 }
 
 .hero-pills span {
-  font-size: 0.98rem;
+  min-width: 78px;
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 1vw, 1.22rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
 .section {
@@ -2358,16 +2416,27 @@ li {
 
   .hero-stage {
     min-height: 560px;
+    border-radius: 0 82px 0 92px;
   }
 
   .hero-copy {
     max-width: 100%;
-    padding: 88px 28px 32px;
+    min-height: 560px;
+    padding: 70px 28px 44px;
   }
 
   .hero-copy h1 {
-    font-size: clamp(3.4rem, 9.9vw, 4.65rem);
-    line-height: 1.03;
+    font-size: clamp(3.15rem, 8.6vw, 4.35rem);
+    line-height: 1.16;
+  }
+
+  .hero-support {
+    align-self: flex-start;
+    text-align: left;
+  }
+
+  .hero-lead {
+    font-size: 1.08rem;
   }
 
   .script-heading,
@@ -2491,15 +2560,39 @@ li {
 
   .hero-stage {
     min-height: 520px;
-    border-radius: 30px;
+    border-radius: 0 52px 0 58px;
   }
 
   .hero-copy {
-    padding-top: 84px;
+    min-height: 520px;
+    padding: 48px 22px 34px;
   }
 
   .hero-copy h1 {
-    font-size: clamp(2.95rem, 10.8vw, 4rem);
+    margin-top: 24px;
+    font-size: clamp(2.55rem, 10.2vw, 3.7rem);
+    line-height: 1.16;
+  }
+
+  .hero-pills {
+    gap: 8px;
+  }
+
+  .hero-pills span {
+    min-width: 0;
+    min-height: 42px;
+    padding: 0 14px;
+    font-size: 0.98rem;
+  }
+
+  .hero-copy .section-label {
+    font-size: 1.08rem;
+  }
+
+  .hero-lead {
+    margin-top: 18px;
+    font-size: 0.98rem;
+    line-height: 1.72;
   }
 
   .script-heading,
@@ -2631,7 +2724,6 @@ li {
 
   .header-call,
   .button,
-  .hero-pills span,
   .mini-stats span {
     width: 100%;
   }
