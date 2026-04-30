@@ -990,7 +990,7 @@ li {
 
 .clip-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
   justify-items: center;
 }
@@ -1776,7 +1776,6 @@ li {
 }
 
 .feature-card:nth-child(4),
-.clip-card:nth-child(4),
 .process-step:nth-child(4) {
   animation-delay: 0.22s;
 }
