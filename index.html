@@ -295,28 +295,49 @@
             </p>
           </div>
 
-          <div class="intro-grid">
-            <article class="story-card reveal-item">
+          <section class="principle-section reveal-item">
+            <div class="principle-heading">
               <p class="section-label">조옥형 박사의 진료 철학</p>
               <h3>따뜻한 마음을 받은 만큼, 세 가지 원칙을 지키겠습니다.</h3>
-              <ol class="number-list">
-                <li>
-                  상담의 목표는 회기를 늘리는 데 있지 않습니다. 3회기라는 짧은
-                  기간 안에서도 의미있는 변화와 높은 효과를 이끌어내는 것을
-                  원칙으로 합니다.
-                </li>
-                <li>
-                  모든 부부를 같은 방식으로 다루지 않습니다. 각 관계에 맞는
-                  치료적 접근으로 위기의 관계를 원하는 방향으로 회복할 수 있도록
-                  돕겠습니다.
-                </li>
-                <li>
-                  갈등의 표면만 다루지 않습니다. 반복되는 다툼의 방식과 관계의
-                  구조를 함께 살펴, 같은 문제가 되풀이되지 않도록 돕습니다.
-                </li>
-              </ol>
-            </article>
-          </div>
+            </div>
+
+            <div class="principle-grid">
+              <article class="principle-card">
+                <span class="principle-card__number" aria-hidden="true">1</span>
+                <p>
+                  <span class="copy-line"
+                    >상담의 목표는 회기를 늘리는 데 있지 않습니다.</span
+                  >
+                  <span class="copy-line"
+                    >3회기라는 짧은 기간 안에서도 의미있는 변화와 높은 효과를
+                    이끌어내는 것을 원칙으로 합니다.</span
+                  >
+                </p>
+              </article>
+              <article class="principle-card">
+                <span class="principle-card__number" aria-hidden="true">2</span>
+                <p>
+                  <span class="copy-line"
+                    >모든 부부를 같은 방식으로 다루지 않습니다.</span
+                  >
+                  <span class="copy-line"
+                    >각 관계에 맞는 치료적 접근으로 위기의 관계를 원하는
+                    방향으로 회복할 수 있도록 돕겠습니다.</span
+                  >
+                </p>
+              </article>
+              <article class="principle-card">
+                <span class="principle-card__number" aria-hidden="true">3</span>
+                <p>
+                  <span class="copy-line">갈등의 표면만 다루지 않습니다.</span>
+                  <span class="copy-line"
+                    >반복되는 다툼의 방식과 관계의 구조를 함께 살펴, 같은 문제가
+                    되풀이되지 않도록 돕습니다.</span
+                  >
+                </p>
+              </article>
+            </div>
+          </section>
 
           <section class="review-showcase reveal-item" aria-label="후기 소개">
             <div class="review-marquee">
@@ -416,51 +437,82 @@
             <div class="calm-photo reveal-item" aria-hidden="true"></div>
           </div>
 
-          <div class="feature-grid">
-            <article class="feature-card reveal-item">
-              <h3>풍부한 임상 경험</h3>
-              <p>
-                <span class="copy-line">2003년 개원 이후</span>
-                <span class="copy-line">다양한 사례를 꾸준히 다루며</span>
-                <span class="copy-line"
-                  >각 갈등의 결을 깊이 있게 살펴왔습니다.</span
-                >
-              </p>
-            </article>
-            <article class="feature-card reveal-item">
-              <h3>상황별 치료 기술 적용</h3>
-              <p>
-                <span class="copy-line"
-                  >부부의 관계 상태와 상담 목표에 따라</span
-                >
-                <span class="copy-line"
-                  >적절한 기법을 선택해 집중적으로 개입합니다.</span
-                >
-              </p>
-            </article>
-            <article class="feature-card reveal-item">
-              <h3>주말·야간 동일 상담비</h3>
-              <p>
-                <span class="copy-line"
-                  >평일이 어려운 분들도 상담을 이어갈 수 있도록</span
-                >
-                <span class="copy-line">월요일부터 일요일까지 공휴일 포함</span>
-                <span class="copy-line"
-                  >오전 8시부터 밤 11시까지 예약 가능합니다.</span
-                >
-              </p>
-            </article>
-            <article class="feature-card reveal-item">
-              <h3>직접 상담 진행</h3>
-              <p>
-                <span class="copy-line"
-                  >처음부터 끝까지 조옥형 박사가 직접 상담하며</span
-                >
-                <span class="copy-line"
-                  >관계의 흐름을 놓치지 않고 함께 살펴봅니다.</span
-                >
-              </p>
-            </article>
+          <div
+            class="feature-carousel reveal-item"
+            data-feature-carousel
+            aria-label="상담 특징"
+          >
+            <button
+              class="feature-carousel-button feature-carousel-button--prev"
+              type="button"
+              data-feature-carousel-prev
+              aria-label="이전 상담 특징 보기"
+            >
+              <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                <path d="M15 6L9 12L15 18" />
+              </svg>
+            </button>
+
+            <div class="feature-carousel-viewport">
+              <div class="feature-grid">
+                <article class="feature-card">
+                  <h3>풍부한 임상경험</h3>
+                  <p>
+                    <span class="copy-line"
+                      >2003년 개원 이후 다양한 사례를 꾸준히 다루며</span
+                    >
+                    <span class="copy-line"
+                      >각 갈등의 결을 깊이 있게 살펴왔습니다.</span
+                    >
+                  </p>
+                </article>
+                <article class="feature-card">
+                  <h3>상황별 치료 기술 적용</h3>
+                  <p>
+                    <span class="copy-line"
+                      >부부 관계 상태와 상담 목표에 따라</span
+                    >
+                    <span class="copy-line"
+                      >적절한 기법을 선택해 집중적으로 개입합니다.</span
+                    >
+                  </p>
+                </article>
+                <article class="feature-card">
+                  <h3>주말 · 야간 동일 상담비</h3>
+                  <p>
+                    <span class="copy-line"
+                      >평일이 어려운 분들을 위해 월요일부터 일요일까지(공휴일
+                      포함)</span
+                    >
+                    <span class="copy-line"
+                      >오전 8시부터 밤 11시까지 예약 가능합니다.</span
+                    >
+                  </p>
+                </article>
+                <article class="feature-card">
+                  <h3>1인 상담 진행</h3>
+                  <p>
+                    <span class="copy-line"
+                      >처음부터 끝까지 조옥형 박사가 직접 상담하며</span
+                    >
+                    <span class="copy-line"
+                      >관계의 흐름을 놓치지 않고 함께 살펴봅니다.</span
+                    >
+                  </p>
+                </article>
+              </div>
+            </div>
+
+            <button
+              class="feature-carousel-button feature-carousel-button--next"
+              type="button"
+              data-feature-carousel-next
+              aria-label="다음 상담 특징 보기"
+            >
+              <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                <path d="M9 6L15 12L9 18" />
+              </svg>
+            </button>
           </div>
         </div>
       </section>
@@ -656,57 +708,68 @@
             </article>
           </div>
 
-          <div class="detail-grid">
-            <article class="detail-card reveal-item">
-              <h3>주요 상담 주제</h3>
-              <ol class="topic-list">
-                <li>
-                  끝나지 않는 변명과 오해 - 성격과 생활방식의 차이에서 비롯되는
-                  반복된 갈등
-                </li>
-                <li>
-                  몸으로 남는 감정의 상처 - 오래 쌓인 서운함과 감정의 찌꺼기
-                </li>
-                <li>관계를 흔드는 치명적인 배신 - 외도</li>
-                <li>가까워지지 못하는 부부 관계 - 섹스리스</li>
-                <li>부부 사이를 흔드는 가족 문제 - 시댁·친정 갈등</li>
-                <li>두려움과 위협이 스며든 관계 - 폭언과 폭력</li>
-                <li>멈춰버린 관계의 시간 - 침묵, 각방, 별거</li>
-                <li>
-                  불안과 질투에 잠식된 관계 - 의심, 의처증, 의부증, 집요한 질투
-                </li>
-                <li>마음이 무뎌진 상태 - 무감동, 무공감, 무기력</li>
-                <li>관계를 어렵게 만드는 성격의 문제 - 성격장애</li>
-              </ol>
-            </article>
+          <section
+            class="topic-showcase reveal-item"
+            aria-labelledby="topic-title"
+          >
+            <div class="topic-showcase-head">
+              <p class="eyebrow">주요 상담 주제</p>
+              <h3 id="topic-title">부부 관계에서 자주 다루는 핵심 문제</h3>
+            </div>
 
-            <article class="detail-card reveal-item">
-              <h3>부부 관계 회복은 '이렇게' 시작됩니다.</h3>
-              <ul class="guide-list">
-                <li>1. 감정이 격해진 순간에는 해결보다 진정이 먼저입니다.</li>
-                <li>
-                  2. 상처와 분노의 원인을 스스로 이해하는 과정이 필요합니다.
-                </li>
-                <li>
-                  3. 감정이 정리된 뒤에야 비로소 문제의 본질을 놓치지 않는
-                  대화가 가능합니다.
-                </li>
-                <li>
-                  4. 고부갈등과 명절 스트레스 역시 부부 간의 다시 조율되어야 할
-                  중요한 주제입니다.
-                </li>
-              </ul>
-              <p class="detail-note">
-                <span class="copy-line"
-                  >필요에 따라 치료적 개입을 적용하여 관계 안에서 실제 변화가
-                  일어날 수 있도록</span
-                >
-                <span class="copy-line"
-                  >연세부부상담클리닉 조옥형 박사가 돕습니다.</span
-                >
-              </p>
-            </article>
-          </div>
+            <div class="topic-circle-grid">
+              <article class="topic-circle topic-circle--conflict">
+                <span class="topic-circle__index" aria-hidden="true">01</span>
+                <h4>끝나지 않는 변명과 오해</h4>
+                <p>성격 차이에서 비롯되는 반복된 갈등</p>
+              </article>
+              <article class="topic-circle topic-circle--emotion">
+                <span class="topic-circle__index" aria-hidden="true">02</span>
+                <h4>몸으로 남는 감정의 상처</h4>
+                <p>오래 쌓인 서운함과 감정의 찌꺼기</p>
+              </article>
+              <article class="topic-circle topic-circle--betrayal">
+                <span class="topic-circle__index" aria-hidden="true">03</span>
+                <h4>관계를 흔드는 치명적인 배신</h4>
+                <p>외도</p>
+              </article>
+              <article class="topic-circle topic-circle--distance">
+                <span class="topic-circle__index" aria-hidden="true">04</span>
+                <h4>가까워지지 못하는 부부 관계</h4>
+                <p>섹스리스</p>
+              </article>
+              <article class="topic-circle topic-circle--family">
+                <span class="topic-circle__index" aria-hidden="true">05</span>
+                <h4>부부 사이를 흔드는 가족 문제</h4>
+                <p>시댁·친정 갈등</p>
+              </article>
+              <article class="topic-circle topic-circle--violence">
+                <span class="topic-circle__index" aria-hidden="true">06</span>
+                <h4>두려움과 위협이 스며든 관계</h4>
+                <p>폭언과 폭력</p>
+              </article>
+              <article class="topic-circle topic-circle--silence">
+                <span class="topic-circle__index" aria-hidden="true">07</span>
+                <h4>멈춰버린 관계의 시간</h4>
+                <p>침묵, 각방, 별거</p>
+              </article>
+              <article class="topic-circle topic-circle--doubt">
+                <span class="topic-circle__index" aria-hidden="true">08</span>
+                <h4>불안과 질투에 잠식된 관계</h4>
+                <p>의심, 의처증, 의부증, 집요한 질투</p>
+              </article>
+              <article class="topic-circle topic-circle--numb">
+                <span class="topic-circle__index" aria-hidden="true">09</span>
+                <h4>마음이 무뎌진 상태</h4>
+                <p>무감동, 무공감, 무기력</p>
+              </article>
+              <article class="topic-circle topic-circle--personality">
+                <span class="topic-circle__index" aria-hidden="true">10</span>
+                <h4>관계를 어렵게 만드는 성격의 문제</h4>
+                <p>성격장애</p>
+              </article>
+            </div>
+          </section>
         </div>
       </section>
 
@@ -1057,6 +1120,76 @@
         };
 
         initNaverMap();
+
+        const featureCarousel = document.querySelector(
+          "[data-feature-carousel]",
+        );
+
+        if (featureCarousel) {
+          const featureTrack = featureCarousel.querySelector(".feature-grid");
+          const featureCards = featureTrack
+            ? Array.from(featureTrack.children)
+            : [];
+          const featurePrevButton = featureCarousel.querySelector(
+            "[data-feature-carousel-prev]",
+          );
+          const featureNextButton = featureCarousel.querySelector(
+            "[data-feature-carousel-next]",
+          );
+          let featureCarouselIndex = 0;
+
+          const getFeatureVisibleCount = () =>
+            window.matchMedia("(max-width: 620px)").matches ? 1 : 2;
+
+          const updateFeatureCarousel = () => {
+            if (
+              !featureTrack ||
+              !featureCards.length ||
+              !featurePrevButton ||
+              !featureNextButton
+            ) {
+              return;
+            }
+
+            const visibleCount = getFeatureVisibleCount();
+            const maxIndex = Math.max(0, featureCards.length - visibleCount);
+            featureCarouselIndex = Math.min(featureCarouselIndex, maxIndex);
+
+            const trackStyle = window.getComputedStyle(featureTrack);
+            const columnGap = Number.parseFloat(trackStyle.columnGap) || 0;
+            const cardWidth = featureCards[0].getBoundingClientRect().width;
+            const offset = featureCarouselIndex * (cardWidth + columnGap);
+
+            featureTrack.style.transform = `translateX(-${offset}px)`;
+            featurePrevButton.disabled = featureCarouselIndex <= 0;
+            featureNextButton.disabled = featureCarouselIndex >= maxIndex;
+          };
+
+          const moveFeatureCarousel = (direction) => {
+            const visibleCount = getFeatureVisibleCount();
+            const maxIndex = Math.max(0, featureCards.length - visibleCount);
+            featureCarouselIndex = Math.max(
+              0,
+              Math.min(
+                maxIndex,
+                featureCarouselIndex + direction * visibleCount,
+              ),
+            );
+
+            updateFeatureCarousel();
+          };
+
+          featurePrevButton?.addEventListener("click", () =>
+            moveFeatureCarousel(-1),
+          );
+          featureNextButton?.addEventListener("click", () =>
+            moveFeatureCarousel(1),
+          );
+          window.addEventListener("resize", () => {
+            window.requestAnimationFrame(updateFeatureCarousel);
+          });
+          updateFeatureCarousel();
+        }
 
         const items = Array.from(document.querySelectorAll(".reveal-item"));
         if (!items.length) return;
