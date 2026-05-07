@@ -46,6 +46,15 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "OneStoreMobileGothicBodyBold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Bold.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -1119,6 +1128,10 @@ li {
   padding: 0 0 10px;
 }
 
+.contact-section .review-showcase {
+  margin-top: clamp(28px, 3vw, 44px);
+}
+
 .review-marquee {
   position: relative;
   overflow: hidden;
@@ -1758,45 +1771,76 @@ li {
   line-height: 1.78;
 }
 
+.philosophy {
+  background:
+    radial-gradient(
+      circle at 16% 10%,
+      rgba(228, 205, 178, 0.3),
+      transparent 26%
+    ),
+    linear-gradient(180deg, #fbf7f0 0%, #f6ede3 100%);
+}
+
 .philosophy-grid {
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.92fr);
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 980px;
+  margin-inline: auto;
   align-items: stretch;
 }
 
 .philosophy-copy {
-  padding: 18px 4px 0;
+  padding: clamp(20px, 3.4vw, 46px) 0;
 }
 
-.calm-photo {
-  position: relative;
-  overflow: hidden;
-  min-height: 420px;
-  border-radius: var(--radius-xl);
-  isolation: isolate;
-  box-shadow: var(--shadow);
-  background: #f6ede2;
+.promise-copy .eyebrow {
+  margin-bottom: clamp(18px, 2.4vw, 30px);
+  color: #75685d;
+  font-size: clamp(1.12rem, 1.24vw, 1.42rem);
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
-.calm-photo::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 252, 247, 0.06),
-    rgba(87, 63, 44, 0.08)
-  );
+.promise-copy h2 {
+  margin: 0 0 clamp(22px, 2.6vw, 34px);
+  color: #33271f;
+  font-family: "OneStoreMobileGothicBodyBold", var(--font-one-mobile);
+  font-size: clamp(1.92rem, 2.75vw, 3.12rem);
+  font-weight: normal;
+  line-height: 1.28;
+  letter-spacing: 0;
 }
 
-.calm-photo::after {
-  content: "";
-  position: absolute;
-  inset: -2px;
-  z-index: 0;
-  background: url("./assets/images/backgrounds/photo-calm-counseling-room.png")
-    center 54% / cover no-repeat;
-  transform: scale(1.015);
+.promise-copy__questions {
+  margin-bottom: clamp(18px, 2.2vw, 28px);
+}
+
+.promise-copy__questions p {
+  margin: 0;
+  color: #33271f;
+  font-family: var(--font-one-mobile);
+  font-size: clamp(1.06rem, 1.24vw, 1.36rem);
+  font-weight: 500;
+  line-height: 1.72;
+}
+
+.promise-copy__body {
+  max-width: 860px;
+}
+
+.promise-copy__body p {
+  margin: 0;
+  color: #33271f;
+  font-family: "OneStoreMobileGothicBody", var(--font-one-mobile);
+  font-size: clamp(0.98rem, 1.04vw, 1.16rem);
+  font-weight: normal;
+  line-height: 1.82;
+}
+
+.promise-copy__body p + p {
+  margin-top: clamp(18px, 2.2vw, 28px);
+  padding-top: clamp(18px, 2vw, 26px);
+  border-top: 1px solid rgba(117, 104, 93, 0.26);
 }
 
 .feature-grid {
@@ -3260,6 +3304,23 @@ li {
 
   .promise-card h2.script-heading {
     font-size: clamp(1.7rem, 6.8vw, 2.18rem);
+  }
+
+  .promise-copy .eyebrow {
+    font-size: clamp(0.98rem, 4.2vw, 1.14rem);
+  }
+
+  .promise-copy h2 {
+    font-size: clamp(1.58rem, 7vw, 1.96rem);
+    line-height: 1.24;
+  }
+
+  .promise-copy__questions p {
+    font-size: clamp(0.98rem, 4.3vw, 1.12rem);
+  }
+
+  .promise-copy__body p {
+    font-size: clamp(0.9rem, 3.8vw, 0.98rem);
   }
 
   .story-card,
