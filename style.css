@@ -5,6 +5,11 @@
   --font-one-mobile:
     "OneStoreMobileGothicTitleFont", "ONE Mobile Gothic", "ONE-Mobile-Gothic",
     var(--font-sans);
+  --font-chosun-myungjo:
+    "ChosunilboMyungjo", "Chosunilbo_myungjo", "조선일보명조", serif;
+  --font-bon-myungjo:
+    "Noto Serif KR", "Source Han Serif KR", "Source Han Serif K",
+    "Noto Serif CJK KR", "본명조", serif;
   --bg: #f8f3ec;
   --bg-soft: #fdfaf5;
   --paper: rgba(255, 255, 255, 0.82);
@@ -51,6 +56,15 @@
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Bold.woff")
     format("woff");
   font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ChosunilboMyungjo";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/Chosunilbo_myungjo.woff")
+    format("woff");
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
@@ -311,7 +325,7 @@ body.is-consult-popup-open {
 
 .consult-popup__content h2 {
   margin: 0;
-  color: #33261e;
+  color: #4a2f22;
   font-family: var(--font-one-mobile);
   font-size: clamp(2.8rem, 4.2vw, 4.52rem);
   font-weight: 700;
@@ -4146,10 +4160,10 @@ body.is-consult-popup-open {
   width: 100%;
   max-width: 520px;
   margin-inline: auto;
-  color: #2d241e;
-  font-family: "OneStoreMobileGothicBody", var(--font-one-mobile);
-  font-size: 1.82rem;
-  font-weight: normal;
+  color: #4a2f22;
+  font-family: var(--font-bon-myungjo);
+  font-size: 1.6rem;
+  font-weight: 700;
   line-height: 1.56;
   letter-spacing: 0.04em;
   text-align: center;
@@ -4157,9 +4171,9 @@ body.is-consult-popup-open {
 }
 
 .consult-popup__content h2 strong {
-  color: #8a6046;
+  color: #b9825f;
   font: inherit;
-  font-size: 1.04em;
+  font-size: 1.12em;
 }
 
 .consult-popup__content h2 .copy-line {
@@ -4169,7 +4183,7 @@ body.is-consult-popup-open {
 }
 
 .consult-popup__content h2 .copy-line:nth-child(2) {
-  transform: translateX(-12px);
+  transform: none;
 }
 
 .consult-popup__mobile-break {
@@ -4203,9 +4217,9 @@ body.is-consult-popup-open {
   z-index: 1;
   margin: 0;
   color: #332a24;
-  font-family: "OneStoreMobileGothicBody", var(--font-sans);
+  font-family: var(--font-bon-myungjo);
   font-size: 1.18rem;
-  font-weight: normal;
+  font-weight: 400;
   line-height: 1.76;
   letter-spacing: 0;
 }
@@ -4228,9 +4242,9 @@ body.is-consult-popup-open {
   border-radius: 999px;
   background: linear-gradient(135deg, #92765d 0%, #6b513c 100%);
   color: #fffdf9;
-  font-family: "OneStoreMobileGothicBody", var(--font-one-mobile);
+  font-family: var(--font-bon-myungjo);
   font-size: 1.42rem;
-  font-weight: normal;
+  font-weight: 500;
   line-height: 1;
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.18),
@@ -4291,9 +4305,9 @@ body.is-consult-popup-open {
 .consult-popup__checkbox {
   gap: 14px;
   color: #2f2823;
-  font-family: "OneStoreMobileGothicBody", var(--font-sans);
+  font-family: var(--font-bon-myungjo);
   font-size: 1.12rem;
-  font-weight: normal;
+  font-weight: 500;
 }
 
 .consult-popup__checkbox span {
@@ -4358,7 +4372,7 @@ body.is-consult-popup-open {
   }
 
   .consult-popup__content h2 {
-    font-size: clamp(1.58rem, 5.1vw, 1.82rem);
+    font-size: clamp(1.34rem, 4.3vw, 1.6rem);
     line-height: 1.56;
   }
 
@@ -4437,7 +4451,7 @@ body.is-consult-popup-open {
   }
 
   .consult-popup__content h2 {
-    font-size: clamp(1.72rem, 8.1vw, 2.48rem);
+    font-size: clamp(1.24rem, 5.1vw, 1.38rem);
   }
 
   .consult-popup__content h2 .copy-line {
@@ -4501,7 +4515,7 @@ body.is-consult-popup-open {
 
   .consult-popup__content h2 {
     max-width: 100%;
-    font-size: clamp(1.42rem, 6.1vw, 1.62rem);
+    font-size: clamp(1.18rem, 4.9vw, 1.34rem);
     line-height: 1.58;
     letter-spacing: 0.03em;
   }
