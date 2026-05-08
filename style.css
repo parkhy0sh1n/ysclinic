@@ -4064,11 +4064,14 @@ body.is-consult-popup-open {
 
 .consult-popup {
   padding: 16px;
+  justify-content: center;
   background: rgba(38, 35, 30, 0.62);
   backdrop-filter: blur(6px);
 }
 
 .consult-popup__panel {
+  display: flex;
+  flex-direction: column;
   width: min(calc(100vw - 32px), 580px);
   height: min(818px, calc(100vh - 32px));
   max-height: min(818px, calc(100vh - 32px));
@@ -4103,6 +4106,7 @@ body.is-consult-popup-open {
 
 .consult-popup__content {
   position: relative;
+  flex: 1 1 auto;
   padding: 54px 34px 0;
   text-align: center;
 }
@@ -4162,7 +4166,7 @@ body.is-consult-popup-open {
   margin-inline: auto;
   color: #4a2f22;
   font-family: var(--font-bon-myungjo);
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   font-weight: 700;
   line-height: 1.56;
   letter-spacing: 0.04em;
@@ -4218,7 +4222,7 @@ body.is-consult-popup-open {
   margin: 0;
   color: #332a24;
   font-family: var(--font-bon-myungjo);
-  font-size: 1.18rem;
+  font-size: 1.1rem;
   font-weight: 400;
   line-height: 1.76;
   letter-spacing: 0;
@@ -4295,34 +4299,37 @@ body.is-consult-popup-open {
 }
 
 .consult-popup__footer {
-  display: block;
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
   min-height: 0;
-  padding: 44px 42px 34px;
+  padding: 0 42px 34px;
   border-top: 0;
   background: transparent;
 }
 
 .consult-popup__checkbox {
-  gap: 14px;
+  gap: 10px;
   color: #2f2823;
   font-family: var(--font-bon-myungjo);
-  font-size: 1.12rem;
+  font-size: 1rem;
   font-weight: 500;
 }
 
 .consult-popup__checkbox span {
-  width: 28px;
-  height: 28px;
-  border: 2px solid rgba(94, 75, 62, 0.42);
+  width: 22px;
+  height: 22px;
+  border: 1.5px solid rgba(94, 75, 62, 0.42);
   background: rgba(255, 255, 255, 0.48);
 }
 
 .consult-popup__checkbox span::after {
-  left: 7px;
+  left: 5px;
   top: 2px;
-  width: 9px;
-  height: 17px;
+  width: 7px;
+  height: 13px;
   border-color: #6f4a32;
+  border-width: 0 2px 2px 0;
 }
 
 @media (max-width: 920px) {
@@ -4372,7 +4379,7 @@ body.is-consult-popup-open {
   }
 
   .consult-popup__content h2 {
-    font-size: clamp(1.34rem, 4.3vw, 1.6rem);
+    font-size: clamp(1.4rem, 4.5vw, 1.7rem);
     line-height: 1.56;
   }
 
@@ -4382,7 +4389,7 @@ body.is-consult-popup-open {
   }
 
   .consult-popup__description {
-    font-size: clamp(1rem, 3vw, 1.18rem);
+    font-size: clamp(0.96rem, 2.8vw, 1.1rem);
     line-height: 1.76;
   }
 
@@ -4421,17 +4428,17 @@ body.is-consult-popup-open {
   }
 
   .consult-popup__footer {
-    padding: 44px 42px 34px;
+    padding: 0 42px 34px;
   }
 
   .consult-popup__checkbox {
-    gap: 14px;
-    font-size: clamp(1rem, 3.4vw, 1.12rem);
+    gap: 10px;
+    font-size: 1rem;
   }
 
   .consult-popup__checkbox span {
-    width: 28px;
-    height: 28px;
+    width: 22px;
+    height: 22px;
   }
 }
 
@@ -4451,7 +4458,7 @@ body.is-consult-popup-open {
   }
 
   .consult-popup__content h2 {
-    font-size: clamp(1.24rem, 5.1vw, 1.38rem);
+    font-size: clamp(1.3rem, 5.4vw, 1.48rem);
   }
 
   .consult-popup__content h2 .copy-line {
@@ -4459,7 +4466,7 @@ body.is-consult-popup-open {
   }
 
   .consult-popup__description {
-    font-size: clamp(0.92rem, 4.2vw, 1.12rem);
+    font-size: clamp(0.88rem, 4vw, 1.04rem);
   }
 
   .consult-popup__cta {
@@ -4515,7 +4522,7 @@ body.is-consult-popup-open {
 
   .consult-popup__content h2 {
     max-width: 100%;
-    font-size: clamp(1.18rem, 4.9vw, 1.34rem);
+    font-size: clamp(1.22rem, 5vw, 1.42rem);
     line-height: 1.58;
     letter-spacing: 0.03em;
   }
@@ -4542,7 +4549,7 @@ body.is-consult-popup-open {
   }
 
   .consult-popup__description {
-    font-size: clamp(0.9rem, 3.55vw, 1rem);
+    font-size: clamp(0.86rem, 3.4vw, 0.96rem);
     line-height: 1.72;
   }
 
@@ -4581,16 +4588,16 @@ body.is-consult-popup-open {
   }
 
   .consult-popup__footer {
-    padding: 32px 36px 28px;
+    padding: 0 36px 28px;
   }
 
   .consult-popup__checkbox {
-    gap: 12px;
+    gap: 10px;
     font-size: 1rem;
   }
 
   .consult-popup__checkbox span {
-    width: 28px;
-    height: 28px;
+    width: 22px;
+    height: 22px;
   }
 }
