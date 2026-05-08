@@ -23,6 +23,112 @@
   <body>
     <a class="skip-link" href="#main">본문 바로가기</a>
 
+    <div class="consult-popup" data-consult-popup hidden>
+      <section
+        class="consult-popup__panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="consult-popup-title"
+        aria-describedby="consult-popup-description"
+      >
+        <button
+          class="consult-popup__close"
+          type="button"
+          data-consult-popup-close
+          aria-label="팝업 닫기"
+        ></button>
+
+        <div class="consult-popup__content">
+          <div class="consult-popup__emblem" aria-hidden="true">
+            <svg viewBox="0 0 80 80" focusable="false">
+              <circle cx="30" cy="22" r="6" />
+              <circle cx="50" cy="22" r="6" />
+              <path
+                d="M29 36c-6.4 7.1-4.3 17.3 10.9 26.9C55.2 53.3 57.2 43.1 51 36c-4.2-4.8-8.4-3.5-11 2.1C37.3 32.5 33.2 31.2 29 36z"
+              />
+            </svg>
+          </div>
+          <h2 id="consult-popup-title">
+            <span class="copy-line"
+              >깊이 있는 상담을<span class="consult-popup__mobile-break"
+                ><br /></span
+              ><span class="consult-popup__desktop-space"> </span>약속드리기
+              위해,</span
+            >
+            <span class="copy-line"
+              >하루 상담은 <strong>30팀</strong>으로<span
+                class="consult-popup__mobile-break"
+                ><br /></span
+              ><span class="consult-popup__desktop-space"> </span>제한하고
+              있습니다.</span
+            >
+          </h2>
+          <div class="consult-popup__divider" aria-hidden="true"></div>
+          <p class="consult-popup__description" id="consult-popup-description">
+            <span class="copy-line">한 분 한 분의 이야기를 충분히 듣고,</span>
+            <span class="copy-line">더 깊이 있는 상담을 진행하기 위해</span>
+            <span class="copy-line"
+              >하루 상담 가능 인원을 제한하고 있습니다.</span
+            >
+          </p>
+          <p class="consult-popup__description">
+            <span class="copy-line"
+              >문의해 주신 순서에 따라 차례로 상담을 안내해드리며,</span
+            >
+            <span class="copy-line"
+              >상황에 따라 다소 대기 시간이 발생할 수 있는 점</span
+            >
+            <span class="copy-line">너른 양해 부탁드립니다.</span>
+          </p>
+          <a
+            class="consult-popup__cta"
+            href="https://pf.kakao.com/_xhBHkn"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-consult-popup-cta
+          >
+            <svg viewBox="0 0 40 40" focusable="false" aria-hidden="true">
+              <path
+                d="M8.9 31.4c8.9-3.8 15.1-10.1 18.8-18.9"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-width="2.4"
+              />
+              <path
+                d="M13.8 25.4c-5.1-2.4-6.9-7.3-5.5-14.8 6.1 3.7 8 8.6 5.5 14.8z"
+                fill="currentColor"
+              />
+              <path
+                d="M21.3 19.2c-3.5-4.2-3.3-9.2.6-15 4 5.5 3.8 10.5-.6 15z"
+                fill="currentColor"
+              />
+              <path
+                d="M15.8 28.1c5.5-1.6 10.1.2 13.8 5.5-6.6 1.6-11.2-.3-13.8-5.5z"
+                fill="currentColor"
+              />
+              <path
+                d="M24.3 22.9c2.6-5 7.2-7.1 13.8-6.4-3 6.1-7.6 8.2-13.8 6.4z"
+                fill="currentColor"
+              />
+            </svg>
+            <span class="consult-popup__cta-divider" aria-hidden="true"></span>
+            <span>상담 문의하기</span>
+            <span class="consult-popup__cta-arrow" aria-hidden="true"></span>
+          </a>
+          <span class="consult-popup__plant" aria-hidden="true"></span>
+        </div>
+
+        <div class="consult-popup__footer">
+          <label class="consult-popup__checkbox">
+            <input type="checkbox" data-consult-popup-today />
+            <span aria-hidden="true"></span>
+            <strong>오늘 하루 보지 않기</strong>
+          </label>
+        </div>
+      </section>
+    </div>
+
     <aside class="quick-sidebar" aria-label="빠른 링크">
       <a
         class="mobile-footer-location"
@@ -1151,6 +1257,77 @@
             }
           });
         });
+
+        const consultPopup = document.querySelector("[data-consult-popup]");
+
+        if (consultPopup) {
+          const closeButtons = consultPopup.querySelectorAll(
+            "[data-consult-popup-close], [data-consult-popup-cta]",
+          );
+          const todayCheckbox = consultPopup.querySelector(
+            "[data-consult-popup-today]",
+          );
+          const storageKey = "yonseiConsultPopupHiddenUntil";
+
+          const getNextMidnight = () => {
+            const midnight = new Date();
+            midnight.setHours(24, 0, 0, 0);
+            return midnight.getTime();
+          };
+
+          const getHiddenUntil = () => {
+            try {
+              const hiddenUntil = Number.parseInt(
+                window.localStorage.getItem(storageKey) || "0",
+                10,
+              );
+              return Number.isFinite(hiddenUntil) ? hiddenUntil : 0;
+            } catch (error) {
+              return 0;
+            }
+          };
+
+          const setHiddenUntil = () => {
+            try {
+              window.localStorage.setItem(storageKey, String(getNextMidnight()));
+            } catch (error) {
+              // Storage can be unavailable in private browsing modes.
+            }
+          };
+
+          const openConsultPopup = () => {
+            consultPopup.hidden = false;
+            document.body.classList.add("is-consult-popup-open");
+          };
+
+          const closeConsultPopup = () => {
+            if (todayCheckbox?.checked) setHiddenUntil();
+            consultPopup.hidden = true;
+            document.body.classList.remove("is-consult-popup-open");
+          };
+
+          if (Date.now() >= getHiddenUntil()) {
+            openConsultPopup();
+          }
+
+          closeButtons.forEach((button) => {
+            button.addEventListener("click", closeConsultPopup);
+          });
+
+          todayCheckbox?.addEventListener("change", () => {
+            if (todayCheckbox.checked) closeConsultPopup();
+          });
+
+          consultPopup.addEventListener("click", (event) => {
+            if (event.target === consultPopup) closeConsultPopup();
+          });
+
+          window.addEventListener("keydown", (event) => {
+            if (event.key === "Escape" && !consultPopup.hidden) {
+              closeConsultPopup();
+            }
+          });
+        }
 
         const naverMapRoot = document.getElementById("naver-map");
         const naverMapFallback = document.getElementById("naver-map-fallback");
