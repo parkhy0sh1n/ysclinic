@@ -2,9 +2,9 @@
   --font-sans:
     "Pretendard Variable", "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo",
     "Malgun Gothic", sans-serif;
+  /* 제목용 폰트: 명조 계열로 변경 (상담·심리 업종에 맞는 정중한 신뢰 톤) */
   --font-one-mobile:
-    "OneStoreMobileGothicTitleFont", "ONE Mobile Gothic", "ONE-Mobile-Gothic",
-    var(--font-sans);
+    "Noto Serif KR", "Source Han Serif KR", "ChosunilboMyungjo", "본명조", serif;
   --font-chosun-myungjo:
     "ChosunilboMyungjo", "Chosunilbo_myungjo", "조선일보명조", serif;
   --font-bon-myungjo:
@@ -19,6 +19,8 @@
   --green: #7a9480;
   --brown: #866650;
   --brown-deep: #3f3128;
+  --accent: #c15f3a;
+  --accent-deep: #a64e2e;
   --ink: #1d1713;
   --muted: #62574f;
   --line: rgba(34, 29, 25, 0.09);
@@ -633,7 +635,7 @@ body.is-consult-popup-open {
 .eyebrow,
 .section-label {
   margin: 0 0 10px;
-  color: var(--brown);
+  color: var(--accent);
   font-size: clamp(1.42rem, 1.75vw, 1.9rem);
   font-weight: 800;
   line-height: 1.35;
@@ -972,13 +974,13 @@ body.is-consult-popup-open {
 }
 
 .hero-script-title {
-  font-family: "OneStoreMobileGothicBody", var(--font-one-mobile);
-  font-weight: normal;
+  font-family: var(--font-one-mobile);
+  font-weight: 700;
 }
 
 .hero-copy h1.hero-script-title {
-  font-family: "OneStoreMobileGothicBody", var(--font-one-mobile);
-  font-weight: normal;
+  font-family: var(--font-one-mobile);
+  font-weight: 700;
 }
 
 .hero-copy .section-label {
@@ -1446,7 +1448,7 @@ body.is-consult-popup-open {
   height: 46px;
   margin-bottom: 28px;
   border-radius: 50%;
-  background: linear-gradient(180deg, #9c8358, #705c3e);
+  background: linear-gradient(180deg, var(--accent), var(--accent-deep));
   color: #fffaf2;
   font-size: 1.12rem;
   font-weight: 800;
@@ -1942,7 +1944,7 @@ body.is-consult-popup-open {
   align-items: center;
   justify-content: center;
   gap: 0;
-  color: #8b6a4d;
+  color: var(--accent);
   font-family: var(--font-sans);
   font-size: clamp(0.96rem, 1vw, 1.12rem);
   font-weight: 700;
@@ -2045,13 +2047,13 @@ body.is-consult-popup-open {
   padding: 0;
   margin-bottom: 10px;
   border-radius: 50%;
-  border: 1px solid rgba(143, 122, 100, 0.18);
+  border: none;
   background: var(--topic-badge);
-  color: var(--topic-accent-strong);
+  color: #fff;
   font-size: 0.82rem;
   font-weight: 800;
   line-height: 1;
-  box-shadow: none;
+  box-shadow: 0 4px 10px rgba(83, 63, 47, 0.18);
 }
 
 .topic-circle__index::after {
@@ -2066,7 +2068,7 @@ body.is-consult-popup-open {
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: #8b6a4d;
+  color: #3f352e;
   font-family: var(--font-one-mobile);
   font-size: clamp(0.94rem, 0.98vw, 1.08rem);
   line-height: 1.24;
@@ -2077,38 +2079,38 @@ body.is-consult-popup-open {
   max-width: 19ch;
   margin: 8px auto 0;
   min-height: 0;
-  color: #5d5248;
-  font-size: clamp(0.72rem, 0.74vw, 0.82rem);
-  font-weight: 600;
+  color: var(--topic-accent-strong);
+  font-size: clamp(0.74rem, 0.76vw, 0.84rem);
+  font-weight: 700;
   line-height: 1.42;
 }
 
 .topic-circle--conflict,
 .topic-circle--distance,
 .topic-circle--silence {
-  --topic-accent: #8f7a64;
-  --topic-accent-strong: #6b5745;
-  --topic-badge: #f3ede5;
-  --topic-soft: rgba(143, 122, 100, 0.08);
+  --topic-accent: #5f8268;
+  --topic-accent-strong: #466b54;
+  --topic-badge: #557a62;
+  --topic-soft: rgba(85, 122, 98, 0.13);
 }
 
 .topic-circle--emotion,
 .topic-circle--doubt,
 .topic-circle--numb {
-  --topic-accent: #8f7a64;
-  --topic-accent-strong: #6b5745;
-  --topic-badge: #f3ede5;
-  --topic-soft: rgba(143, 122, 100, 0.08);
+  --topic-accent: #cf7350;
+  --topic-accent-strong: #b1542f;
+  --topic-badge: #c15f3a;
+  --topic-soft: rgba(193, 95, 58, 0.11);
 }
 
 .topic-circle--betrayal,
 .topic-circle--family,
 .topic-circle--violence,
 .topic-circle--personality {
-  --topic-accent: #8f7a64;
-  --topic-accent-strong: #6b5745;
-  --topic-badge: #f3ede5;
-  --topic-soft: rgba(143, 122, 100, 0.08);
+  --topic-accent: #a9854f;
+  --topic-accent-strong: #876335;
+  --topic-badge: #9c7a4e;
+  --topic-soft: rgba(156, 122, 78, 0.13);
 }
 
 .story-card,
@@ -2198,7 +2200,7 @@ body.is-consult-popup-open {
 
 .promise-copy .eyebrow {
   margin-bottom: clamp(18px, 2.4vw, 30px);
-  color: #75685d;
+  color: var(--accent);
   font-size: clamp(1.12rem, 1.24vw, 1.42rem);
   font-weight: 800;
   letter-spacing: 0;
@@ -2208,9 +2210,9 @@ body.is-consult-popup-open {
 .promise-copy h2 {
   margin: 0 0 clamp(22px, 2.6vw, 34px);
   color: #33271f;
-  font-family: "OneStoreMobileGothicBodyBold", var(--font-one-mobile);
+  font-family: var(--font-one-mobile);
   font-size: clamp(1.92rem, 2.75vw, 3.12rem);
-  font-weight: normal;
+  font-weight: 700;
   line-height: 1.28;
   letter-spacing: 0;
 }
@@ -2235,7 +2237,7 @@ body.is-consult-popup-open {
 .promise-copy__body p {
   margin: 0;
   color: #33271f;
-  font-family: "OneStoreMobileGothicBody", var(--font-one-mobile);
+  font-family: var(--font-sans);
   font-size: clamp(0.98rem, 1.04vw, 1.16rem);
   font-weight: normal;
   line-height: 1.82;
@@ -4599,5 +4601,161 @@ body.is-consult-popup-open {
   .consult-popup__checkbox span {
     width: 22px;
     height: 22px;
+  }
+}
+
+/* === 실적 숫자 배지 (히어로 아래 대비 띠 + 시선 주목) === */
+.stat-band {
+  margin: clamp(10px, 2vw, 26px) 0;
+  padding: clamp(38px, 5vw, 66px) 0;
+  background: linear-gradient(135deg, #56695c 0%, #45584c 100%);
+  color: #f4ece0;
+}
+
+.stat-band__list {
+  --stat-gap: clamp(20px, 4vw, 52px);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--stat-gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stat-band__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.stat-band__item + .stat-band__item::before {
+  content: "";
+  position: absolute;
+  left: calc(var(--stat-gap) / -2);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 58px;
+  background: rgba(244, 236, 224, 0.28);
+}
+
+.stat-band__num {
+  font-family: var(--font-sans);
+  font-size: clamp(2.7rem, 5vw, 4.3rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.stat-band__value {
+  display: inline-block;
+  min-width: var(--stat-value-min-width, auto);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-band__unit {
+  margin-left: 4px;
+  font-size: 0.4em;
+  font-weight: 700;
+  color: #e2cfb4;
+}
+
+.stat-band__label {
+  font-size: clamp(0.95rem, 1.1vw, 1.16rem);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: rgba(244, 236, 224, 0.86);
+}
+
+@media (max-width: 620px) {
+  .stat-band__list {
+    --stat-gap: 12px;
+  }
+  .stat-band__item + .stat-band__item::before {
+    height: 42px;
+  }
+  .stat-band__label {
+    word-break: keep-all;
+  }
+}
+
+/* === 섹션 배경 교차 (베이지 ↔ 세이지 리듬) === */
+/* 번갈아 배치: 히어로(베이지) → 숫자띠(딥그린) → 원장(베이지) →
+   센터소개(세이지) → 약속(베이지) → 클립(세이지) → 상담안내(베이지) →
+   진행순서(세이지) → 오시는길(베이지) → 푸터(딥브라운) */
+.intro,
+.clip-section,
+.process {
+  background: linear-gradient(180deg, #eef2ec 0%, #e6ede3 100%);
+}
+
+/* === 포인트 컬러: 핵심 수치 강조 === */
+.process-title-highlight {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* === 레이아웃 변주: 센터 소개 2단 비대칭 (좌 제목 / 우 설명) === */
+.intro-split {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(28px, 5vw, 76px);
+  align-items: center;
+  max-width: var(--container);
+  margin: 0 auto clamp(40px, 4.5vw, 64px);
+  text-align: left;
+  animation: fade-up 0.75s ease both;
+}
+
+.intro-split .eyebrow {
+  text-align: left;
+}
+
+.intro-split .intro-title-compact {
+  align-items: flex-start;
+  max-width: none;
+  margin: 10px 0 0;
+  text-align: left;
+}
+
+.intro-split .intro-title-compact .copy-line {
+  text-align: left;
+  white-space: normal;
+}
+
+.intro-split__body {
+  padding-left: clamp(18px, 2vw, 30px);
+  border-left: 3px solid var(--accent);
+}
+
+.intro-split__body p {
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1.02rem, 1vw, 1.18rem);
+  line-height: 1.85;
+}
+
+@media (max-width: 760px) {
+  .intro-split {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    text-align: center;
+  }
+  .intro-split .eyebrow,
+  .intro-split .intro-title-compact,
+  .intro-split .intro-title-compact .copy-line {
+    text-align: center;
+  }
+  .intro-split .intro-title-compact {
+    align-items: center;
+  }
+  .intro-split__body {
+    padding-left: 0;
+    border-left: none;
   }
 }
