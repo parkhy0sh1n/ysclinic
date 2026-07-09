@@ -3221,6 +3221,37 @@ body.is-consult-popup-open {
   .info-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .contact-section .info-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .director-card {
+    grid-template-columns: minmax(220px, 300px) minmax(360px, 1fr);
+    gap: clamp(24px, 3vw, 36px);
+    padding-inline: clamp(24px, 3vw, 36px);
+  }
+}
+
+@media (max-width: 1040px) {
+  .director-card {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 30px;
+  }
+
+  .director-profile {
+    align-items: center;
+    text-align: center;
+  }
+
+  .director-content {
+    width: min(100%, 680px);
+  }
+
+  .director-card .director-profile-photo {
+    width: min(300px, 100%);
+  }
 }
 
 @media (max-width: 920px) {
