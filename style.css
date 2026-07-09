@@ -2458,7 +2458,9 @@ body.is-consult-popup-open {
 
 .process-grid {
   position: relative;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 960px;
+  margin: 0 auto;
   gap: clamp(28px, 3vw, 38px);
   align-items: stretch;
   padding-top: 0;
@@ -2489,21 +2491,7 @@ body.is-consult-popup-open {
 }
 
 .process-step::after {
-  content: "";
-  position: absolute;
-  left: calc(100% + 1px);
-  top: 70px;
-  width: clamp(28px, 3vw, 38px);
-  height: 1px;
-  background:
-    radial-gradient(circle at 50% 50%, #536d4e 0, #536d4e 4px, transparent 5px),
-    linear-gradient(#cfcac3, #cfcac3);
-  background-repeat: no-repeat;
-  background-size:
-    100% 100%,
-    100% 1px;
-  background-position: center, center;
-  pointer-events: none;
+  display: none;
 }
 
 .process-step:last-child::after {
@@ -2548,8 +2536,8 @@ body.is-consult-popup-open {
 }
 
 .process-step p {
-  max-width: 24ch;
-  min-height: clamp(112px, 8vw, 136px);
+  max-width: 36ch;
+  min-height: clamp(210px, 15vw, 260px);
   margin: 0 auto;
   color: #4a4946;
   font-size: clamp(0.95rem, 1vw, 1.06rem);
@@ -2776,6 +2764,12 @@ body.is-consult-popup-open {
   font-weight: 500;
   line-height: 1.08;
   letter-spacing: -0.06em;
+}
+
+.doctor-title-gap {
+  display: inline-block;
+  margin-left: 0.34em;
+  letter-spacing: 0;
 }
 
 .director-summary {
@@ -3727,20 +3721,56 @@ body.is-consult-popup-open {
   }
 
   .promise-copy .eyebrow {
-    font-size: clamp(0.98rem, 4.2vw, 1.14rem);
+    max-width: 20ch;
+    margin: 0 auto 18px;
+    font-size: clamp(1rem, 4vw, 1.12rem);
+    line-height: 1.45;
+    text-align: center;
+    word-break: keep-all;
   }
 
   .promise-copy h2 {
-    font-size: clamp(1.58rem, 7vw, 1.96rem);
-    line-height: 1.24;
+    margin-bottom: 22px;
+    font-size: clamp(1.72rem, 7.2vw, 2.16rem);
+    line-height: 1.3;
+    text-align: center;
+    word-break: keep-all;
+  }
+
+  .promise-copy__questions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 7px;
+    max-width: 220px;
+    margin: 0 auto 22px;
   }
 
   .promise-copy__questions p {
-    font-size: clamp(0.98rem, 4.3vw, 1.12rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 38px;
+    border: 1px solid rgba(83, 109, 78, 0.16);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.5);
+    font-family: var(--font-sans);
+    font-size: clamp(0.9rem, 3.8vw, 1rem);
+    font-weight: 700;
+    line-height: 1.2;
   }
 
   .promise-copy__body p {
-    font-size: clamp(0.9rem, 3.8vw, 0.98rem);
+    max-width: 31ch;
+    margin-inline: auto;
+    font-size: clamp(0.92rem, 3.7vw, 1rem);
+    line-height: 1.78;
+    text-align: left;
+    word-break: keep-all;
+  }
+
+  .promise-copy__body p + p {
+    margin-top: 20px;
+    padding-top: 20px;
   }
 
   .story-card,
@@ -4647,13 +4677,51 @@ body.is-consult-popup-open {
 }
 
 @media (max-width: 620px) {
+  .stat-band {
+    margin: 0;
+    padding: 26px 0;
+  }
+
   .stat-band__list {
-    --stat-gap: 12px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    width: min(100%, 360px);
+    margin: 0 auto;
   }
+
+  .stat-band__item {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: baseline;
+    gap: 16px;
+    padding: 16px 4px;
+    text-align: left;
+  }
+
   .stat-band__item + .stat-band__item::before {
-    height: 42px;
+    display: none;
   }
+
+  .stat-band__item + .stat-band__item {
+    border-top: 1px solid rgba(244, 236, 224, 0.16);
+  }
+
+  .stat-band__num {
+    order: 2;
+    font-size: clamp(2.3rem, 11vw, 3.2rem);
+    text-align: right;
+  }
+
+  .stat-band__unit {
+    margin-left: 2px;
+    font-size: 0.38em;
+  }
+
   .stat-band__label {
+    order: 1;
+    font-size: clamp(0.92rem, 3.8vw, 1.04rem);
+    line-height: 1.35;
     word-break: keep-all;
   }
 }
@@ -4860,6 +4928,10 @@ body.is-consult-popup-open {
     line-height: 1.15;
     white-space: nowrap;
   }
+
+  .main-nav {
+    display: none;
+  }
 }
 
 @media (max-width: 760px) {
@@ -4959,6 +5031,16 @@ body.is-consult-popup-open {
   font-weight: 800;
   line-height: 1.18;
   letter-spacing: -0.04em;
+}
+
+.topic-showcase-description {
+  margin: clamp(12px, 1.2vw, 16px) 0 0;
+  color: rgba(65, 54, 45, 0.72);
+  font-size: clamp(0.9rem, 0.95vw, 1.05rem);
+  font-weight: 500;
+  line-height: 1.65;
+  letter-spacing: 0;
+  word-break: keep-all;
 }
 
 .topic-circle-grid {
@@ -5082,26 +5164,23 @@ body.is-consult-popup-open {
   font-size: clamp(1rem, 1.08vw, 1.22rem);
 }
 
-.topic-circle--conflict,
-.topic-circle--distance,
-.topic-circle--family,
-.topic-circle--silence,
-.topic-circle--doubt {
-  --topic-accent-strong: #58775f;
-  --topic-badge: #58775f;
-  --topic-corner: rgba(122, 148, 128, 0.18);
-  --topic-text: #4f7659;
-}
-
-.topic-circle--betrayal,
-.topic-circle--violence,
-.topic-circle--numb,
-.topic-circle--personality {
+.topic-circle {
   --topic-accent-strong: #bd5a36;
   --topic-badge: #c15f3a;
   --topic-corner: rgba(219, 141, 106, 0.2);
   --topic-text: #bd5a36;
   --corner-x: 100%;
+}
+
+.topic-circle:nth-child(2),
+.topic-circle:nth-child(4),
+.topic-circle:nth-child(6),
+.topic-circle:nth-child(8) {
+  --topic-accent-strong: #58775f;
+  --topic-badge: #58775f;
+  --topic-corner: rgba(122, 148, 128, 0.18);
+  --topic-text: #4f7659;
+  --corner-x: 12%;
 }
 
 @media (max-width: 1120px) and (min-width: 761px) {
