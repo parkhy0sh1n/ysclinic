@@ -1004,7 +1004,7 @@ body.is-consult-popup-open {
   margin: 0;
   color: #a38470;
   font-family: var(--font-sans);
-  font-size: clamp(1.08rem, 1vw, 1.24rem);
+  font-size: clamp(1.2rem, 1.18vw, 1.42rem);
   font-weight: 400;
   line-height: 1.72;
 }
@@ -1029,7 +1029,7 @@ body.is-consult-popup-open {
   margin: clamp(14px, 1.4vw, 22px) 0 0;
   color: #a38470;
   font-family: var(--font-sans);
-  font-size: clamp(1.08rem, 1vw, 1.24rem);
+  font-size: clamp(1.2rem, 1.18vw, 1.42rem);
   font-weight: 400;
   line-height: 1.72;
 }
@@ -3710,13 +3710,13 @@ body.is-consult-popup-open {
   }
 
   .hero-support-note {
-    font-size: 0.95rem;
+    font-size: 1.05rem;
     line-height: 1.72;
   }
 
   .hero-lead {
     margin-top: 14px;
-    font-size: 0.94rem;
+    font-size: 1.04rem;
     line-height: 1.68;
   }
 
@@ -6158,6 +6158,18 @@ html:not(.js) .director-panel__body > * {
     .director-panel__body {
     width: min(390px, 32cqi);
   }
+
+  /* 진료 철학은 작성된 문장 단위 그대로 줄바꿈한다. */
+  .director-panel--right .director-panel__body > *,
+  .director-showcase.is-open-right
+    .director-panel--right
+    .director-panel__body {
+    width: min(540px, 55cqi);
+  }
+
+  .director-panel--right .director-principle .copy-line {
+    white-space: nowrap;
+  }
 }
 
 /* --- 「조옥형 박사의 상담 스타일」 블록 ---
@@ -6679,13 +6691,12 @@ html:not(.js) .director-panel__body > * {
   margin-top: clamp(38px, 4vw, 56px);
   padding: clamp(24px, 2.6vw, 34px) 0 0;
   border: 0;
-  border-top: 1px solid rgba(63, 49, 40, 0.16);
   border-radius: 0;
   background: none;
 }
 
 .session-cta__title {
-  color: var(--muted);
+  color: var(--accent);
   font-weight: 700;
   font-size: clamp(0.8rem, 0.86vw, 0.9rem);
   letter-spacing: 0.14em;
@@ -6701,24 +6712,22 @@ html:not(.js) .director-panel__body > * {
   gap: clamp(14px, 1.6vw, 24px);
 }
 
-/* 기본은 밑줄 링크, 전화만 실체 있는 버튼 */
+/* 세 문의 링크를 동일한 버튼 스타일로 통일 */
 .session-cta__button {
-  padding: 0;
+  padding: 13px 22px;
   border: 0;
-  border-radius: 0;
-  background: none;
-  color: var(--brown-deep);
+  border-radius: 4px;
+  background: var(--brown-deep);
+  color: #f6efe6;
   font-weight: 600;
-  text-underline-offset: 5px;
-  text-decoration: underline;
-  text-decoration-color: rgba(63, 49, 40, 0.28);
+  text-decoration: none;
 }
 
 .session-cta__button:hover {
   transform: none;
   box-shadow: none;
-  color: var(--accent-deep);
-  text-decoration-color: var(--accent);
+  background: var(--accent-deep);
+  color: #fff8f2;
 }
 
 .session-cta__button--primary {
@@ -6732,6 +6741,27 @@ html:not(.js) .director-panel__body > * {
 .session-cta__button--primary:hover {
   background: var(--accent-deep);
   color: #fff8f2;
+}
+
+/* 문의 버튼은 문구 길이와 관계없이 모두 같은 크기로 표시 */
+.session-cta__button {
+  flex: 0 0 156px;
+  justify-content: center;
+  width: 156px;
+  min-height: 52px;
+  padding: 12px 14px;
+}
+
+.session-cta__button[href*="booking.naver.com"]:hover,
+.session-cta__button[href*="booking.naver.com"]:focus-visible {
+  background: #03c75a;
+  color: #ffffff;
+}
+
+.session-cta__button[href*="pf.kakao.com"]:hover,
+.session-cta__button[href*="pf.kakao.com"]:focus-visible {
+  background: #fee500;
+  color: #191919;
 }
 
 @media (max-width: 900px) {
@@ -6955,13 +6985,28 @@ html:not(.js) .director-panel__body > * {
 }
 
 .session-process .session-card__head {
+  position: relative;
   display: flex;
   align-items: center;
   gap: clamp(12px, 1.3vw, 17px);
-  padding: clamp(18px, 1.9vw, 24px) clamp(18px, 1.8vw, 23px)
-    clamp(13px, 1.3vw, 17px);
+  margin: 0 clamp(18px, 1.8vw, 23px);
+  padding: clamp(18px, 1.9vw, 24px) 0 clamp(13px, 1.3vw, 17px);
+  border-bottom: 1px solid rgba(190, 151, 82, 0.88);
   border-radius: 14px 14px 0 0;
   background: transparent;
+}
+
+.session-process .session-card__head::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  width: 8px;
+  height: 8px;
+  border: 1px solid #be9752;
+  background: #fffdf8;
+  box-shadow: inset 0 0 0 2px #fffdf8;
+  transform: translateX(-50%) rotate(45deg);
 }
 
 .session-card__icon {
@@ -7007,7 +7052,8 @@ html:not(.js) .director-panel__body > * {
   align-content: start;
   gap: clamp(8px, 0.9vw, 12px);
   margin: 0;
-  padding: 0 clamp(18px, 1.8vw, 23px) clamp(20px, 2vw, 27px);
+  padding: clamp(18px, 1.6vw, 22px) clamp(18px, 1.8vw, 23px)
+    clamp(20px, 2vw, 27px);
 }
 
 .session-process .session-card__list li {
@@ -7075,11 +7121,12 @@ html:not(.js) .director-panel__body > * {
   }
 
   .session-process .session-card__head {
-    padding: 17px 18px 12px;
+    margin: 0 18px;
+    padding: 17px 0 12px;
   }
 
   .session-process .session-card__list {
-    padding: 0 18px 20px;
+    padding: 18px 18px 20px;
   }
 
   .session-process .session-card__list li {
