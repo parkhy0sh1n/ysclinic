@@ -5273,3 +5273,1832 @@ body.is-consult-popup-open {
     line-height: 1.28;
   }
 }
+
+/* 조옥형 박사 소개 — 학력·경력 | 사진 | 진료철학 3단 구성 */
+.director-showcase {
+  --director-gap: clamp(26px, 3.2vw, 54px);
+
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.94fr) minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  gap: 14px var(--director-gap);
+  align-items: start;
+  align-content: center;
+  min-height: min(68vh, 620px);
+  margin-top: clamp(26px, 3vw, 44px);
+  padding: clamp(40px, 4.6vw, 76px) clamp(24px, 3.4vw, 60px);
+  border: 1px solid rgba(191, 139, 82, 0.14);
+  border-radius: 34px;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.98),
+      rgba(255, 252, 247, 0.92)
+    ),
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(205, 159, 104, 0.09),
+      transparent 44%
+    );
+  box-shadow: 0 28px 76px rgba(83, 63, 47, 0.12);
+  isolation: isolate;
+  /* 등장 전 좌우로 밀려 있는 항목이 가로 스크롤을 만들지 않도록 */
+  overflow: hidden;
+}
+
+/* 좌·우 컬럼을 그리드에 직접 태워 소제목이 같은 행에 놓이도록 한다 */
+.director-showcase__col {
+  display: contents;
+}
+
+.director-showcase__col--left > * {
+  grid-column: 1;
+}
+
+.director-showcase__col--right > * {
+  grid-column: 3;
+}
+
+.director-showcase__col > .section-label-spaced {
+  grid-row: 1;
+  min-width: 0;
+}
+
+.director-showcase__col > .director-credentials,
+.director-showcase__col > .director-principles {
+  grid-row: 2;
+  min-width: 0;
+}
+
+.director-showcase__portrait {
+  position: relative;
+  z-index: 1;
+  grid-column: 2;
+  grid-row: 1 / 3;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 clamp(4px, 0.8vw, 14px);
+}
+
+.director-showcase__portrait::before,
+.director-showcase__portrait::after {
+  content: "";
+  position: absolute;
+  top: 4%;
+  bottom: 4%;
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(197, 139, 85, 0.28),
+    transparent
+  );
+}
+
+.director-showcase__portrait::before {
+  left: calc(var(--director-gap) * -0.5);
+}
+
+.director-showcase__portrait::after {
+  right: calc(var(--director-gap) * -0.5);
+}
+
+.director-showcase__portrait .director-specialist {
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.director-showcase__portrait .director-specialist::after {
+  display: none;
+}
+
+.director-showcase__portrait h3 {
+  margin: 0 0 26px;
+  color: #3f3128;
+  font-size: clamp(2.1rem, 2.9vw, 3.2rem);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.06em;
+}
+
+.director-portrait-photo {
+  display: block;
+  width: min(370px, 100%);
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center top;
+  border: 2px solid rgba(197, 139, 85, 0.68);
+  border-radius: 28px;
+  box-shadow: 0 34px 72px rgba(83, 63, 47, 0.22);
+}
+
+.director-credentials {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.director-credentials li {
+  position: relative;
+  padding: 11px 0 11px 30px;
+  color: #4d4037;
+  font-size: clamp(0.95rem, 1.02vw, 1.12rem);
+  line-height: 1.5;
+  word-break: keep-all;
+  border-bottom: 1px solid rgba(197, 139, 85, 0.14);
+}
+
+.director-credentials li:last-child {
+  border-bottom: 0;
+}
+
+.director-credentials li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1.32em;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #c58b55;
+  box-shadow: 0 0 0 4px rgba(197, 139, 85, 0.1);
+}
+
+.director-principles {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(14px, 1.4vw, 20px);
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  min-width: 0;
+}
+
+.director-principle {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+  min-width: 0;
+}
+
+.director-principle__number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, var(--accent), var(--accent-deep));
+  color: #fffaf2;
+  font-size: 0.96rem;
+  font-weight: 800;
+  line-height: 1;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.24),
+    0 8px 18px rgba(83, 63, 47, 0.14);
+}
+
+.director-principle p {
+  min-width: 0;
+  margin: 0;
+  padding-top: 5px;
+  color: #40362f;
+  font-size: clamp(0.9rem, 0.96vw, 1.02rem);
+  font-weight: 500;
+  line-height: 1.78;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+/* 클리닉 소개 — 100팀 강조 */
+.intro-split__body p.intro-figure {
+  margin: 0 0 12px;
+  line-height: 1;
+}
+
+.intro-figure strong {
+  display: inline-block;
+  color: var(--accent-deep);
+  font-size: clamp(2.4rem, 4.4vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+@media (max-width: 1040px) {
+  .director-showcase {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: none;
+    gap: 10px;
+  }
+
+  .director-showcase__col--left > *,
+  .director-showcase__col--right > * {
+    grid-column: 1;
+  }
+
+  .director-showcase__col > .section-label-spaced,
+  .director-showcase__col > .director-credentials,
+  .director-showcase__col > .director-principles {
+    grid-row: auto;
+  }
+
+  .director-showcase__col--right > .section-label-spaced {
+    margin-top: clamp(22px, 3.4vw, 34px);
+  }
+
+  .director-showcase__portrait {
+    order: -1;
+    grid-column: 1;
+    grid-row: auto;
+    padding: 0;
+    margin-bottom: clamp(18px, 2.6vw, 28px);
+  }
+
+  .director-showcase__portrait::before,
+  .director-showcase__portrait::after {
+    display: none;
+  }
+}
+
+@media (max-width: 620px) {
+  .director-showcase {
+    padding: 26px 20px 30px;
+    border-radius: 24px;
+  }
+
+  .director-portrait-photo {
+    width: min(240px, 100%);
+    border-radius: 20px;
+  }
+
+  .director-principle {
+    grid-template-columns: 30px minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .director-principle__number {
+    width: 30px;
+    height: 30px;
+    font-size: 0.88rem;
+  }
+}
+
+/* 클리닉 소개 + 부부상담 안내 통합 섹션 */
+.clinic-programs .intro-split {
+  margin-bottom: clamp(48px, 5.4vw, 88px);
+}
+
+/* 박사 소개 — 사진을 축으로 좌우 정보가 스크롤 진입 시 펼쳐지는 연출.
+   컨테이너 자체의 기본 reveal 은 끄고, 자식들을 차례로 등장시킨다. */
+.js .director-showcase.reveal-item {
+  opacity: 1;
+  transform: none;
+  filter: none;
+  transition: none;
+}
+
+.js .director-showcase__portrait,
+.js .director-showcase .section-label-spaced,
+.js .director-showcase .director-credentials li,
+.js .director-showcase .director-principle {
+  opacity: 0;
+  transition:
+    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.js .director-showcase__portrait {
+  transform: scale(0.92);
+  transition-delay: 0ms;
+  transition-duration: 0.85s;
+}
+
+.js .director-showcase__col--left .section-label-spaced,
+.js .director-showcase .director-credentials li {
+  transform: translate3d(-64px, 0, 0);
+}
+
+.js .director-showcase__col--right .section-label-spaced,
+.js .director-showcase .director-principle {
+  transform: translate3d(64px, 0, 0);
+}
+
+/* 순차 연출: ① 사진 먼저 → ② 좌측 학력·경력이 촤라라락 → ③ 우측 진료철학이 촤르르륵 */
+.js .director-showcase__col--left .section-label-spaced {
+  transition-delay: 650ms;
+}
+.js .director-showcase .director-credentials li:nth-child(1) {
+  transition-delay: 780ms;
+}
+.js .director-showcase .director-credentials li:nth-child(2) {
+  transition-delay: 890ms;
+}
+.js .director-showcase .director-credentials li:nth-child(3) {
+  transition-delay: 1000ms;
+}
+.js .director-showcase .director-credentials li:nth-child(4) {
+  transition-delay: 1110ms;
+}
+.js .director-showcase .director-credentials li:nth-child(5) {
+  transition-delay: 1220ms;
+}
+
+.js .director-showcase__col--right .section-label-spaced {
+  transition-delay: 1450ms;
+}
+.js .director-showcase .director-principle:nth-child(1) {
+  transition-delay: 1580ms;
+}
+.js .director-showcase .director-principle:nth-child(2) {
+  transition-delay: 1720ms;
+}
+.js .director-showcase .director-principle:nth-child(3) {
+  transition-delay: 1860ms;
+}
+
+.js .director-showcase.is-visible .director-showcase__portrait,
+.js .director-showcase.is-visible .section-label-spaced,
+.js .director-showcase.is-visible .director-credentials li,
+.js .director-showcase.is-visible .director-principle {
+  opacity: 1;
+  transform: none;
+  will-change: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .director-showcase__portrait,
+  .js .director-showcase .section-label-spaced,
+  .js .director-showcase .director-credentials li,
+  .js .director-showcase .director-principle {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+@media (max-width: 1040px) {
+  .director-showcase {
+    min-height: 0;
+  }
+
+  /* 세로로 쌓일 때는 좌우로 밀지 않고 아래에서 올라오게 */
+  .js .director-showcase__col--left .section-label-spaced,
+  .js .director-showcase .director-credentials li,
+  .js .director-showcase__col--right .section-label-spaced,
+  .js .director-showcase .director-principle {
+    transform: translate3d(0, 28px, 0);
+  }
+}
+
+/* 클리닉 소개 — 가운데 정렬 */
+.clinic-programs .intro-split,
+.clinic-programs .intro-split .eyebrow {
+  text-align: center;
+}
+
+.clinic-programs .intro-split__body {
+  justify-items: center;
+  padding-left: 0;
+}
+
+/* 좌측 세로 강조선을 100팀 아래 짧은 가로선으로 바꾼다 */
+.clinic-programs .intro-split__body::before {
+  order: 2;
+  position: static;
+  width: 56px;
+  height: 3px;
+  margin: clamp(18px, 2vw, 26px) auto clamp(22px, 2.4vw, 32px);
+}
+
+.clinic-programs .intro-figure {
+  order: 1;
+  margin-bottom: 0;
+}
+
+.clinic-programs .intro-split__body > p:not(.intro-figure) {
+  order: 3;
+}
+
+/* ─────────────────────────────────────────────
+   조옥형 박사 소개 — 다크 프리미엄 리디자인
+   사진 원본의 짙은 나무·붉은 의자 톤을 배경으로 흡수시켜
+   저해상도 약점을 가리고 무게감을 준다.
+   ───────────────────────────────────────────── */
+.director-showcase {
+  --gold: #c9a46a;
+  --gold-soft: rgba(201, 164, 106, 0.28);
+  --ivory: #f4ece1;
+
+  border: 1px solid var(--gold-soft);
+  border-radius: 32px;
+  background:
+    radial-gradient(
+      circle at 50% 10%,
+      rgba(201, 164, 106, 0.16),
+      transparent 44%
+    ),
+    linear-gradient(180deg, #33261e 0%, #241b16 100%);
+  box-shadow: 0 40px 90px rgba(31, 23, 18, 0.34);
+}
+
+.director-showcase .director-specialist {
+  color: var(--gold);
+}
+
+.director-showcase__portrait h3 {
+  color: var(--ivory);
+  font-weight: 400;
+}
+
+.director-showcase .section-label-spaced {
+  color: #dcbb88;
+}
+
+.director-showcase .section-label-spaced::after {
+  background: var(--gold-soft);
+}
+
+.director-showcase__portrait::before,
+.director-showcase__portrait::after {
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(201, 164, 106, 0.34),
+    transparent
+  );
+}
+
+.director-showcase .director-credentials li {
+  color: rgba(244, 236, 225, 0.84);
+  border-bottom: 1px solid rgba(201, 164, 106, 0.16);
+}
+
+.director-showcase .director-credentials li::before {
+  background: var(--gold);
+  box-shadow: 0 0 0 4px rgba(201, 164, 106, 0.12);
+}
+
+.director-showcase .director-principle__number {
+  background: linear-gradient(180deg, #d9b47a, #b98d4f);
+  color: #2a201a;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.32),
+    0 8px 18px rgba(0, 0, 0, 0.3);
+}
+
+.director-showcase .director-principle p {
+  color: rgba(244, 236, 225, 0.78);
+  font-weight: 400;
+}
+
+/* 사진 — 얼굴 중심 타이트 크롭 + 톤 보정 + 이중 금선 프레임 */
+.director-portrait {
+  position: relative;
+  overflow: hidden;
+  width: min(365px, 100%);
+  aspect-ratio: 4 / 5;
+  margin: 0;
+  border-radius: 24px;
+  box-shadow:
+    0 0 0 1px rgba(201, 164, 106, 0.55),
+    0 30px 64px rgba(0, 0, 0, 0.46);
+}
+
+.director-portrait::before {
+  content: "";
+  position: absolute;
+  inset: 9px;
+  z-index: 2;
+  border: 1px solid rgba(233, 206, 160, 0.26);
+  border-radius: 16px;
+  pointer-events: none;
+}
+
+.director-portrait::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      ellipse at 50% 34%,
+      transparent 52%,
+      rgba(26, 19, 15, 0.28)
+    ),
+    linear-gradient(180deg, rgba(58, 40, 28, 0.03), rgba(36, 27, 22, 0.3));
+}
+
+.director-showcase .director-portrait-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 13%;
+  transform: scale(1.16);
+  filter: contrast(1.02) saturate(0.94) brightness(1.18) sepia(0.03);
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+@media (max-width: 620px) {
+  .director-portrait {
+    width: min(280px, 100%);
+    border-radius: 20px;
+  }
+}
+
+/* =========================================================
+   조옥형 박사 소개 — 인터랙티브 패널 (클릭/탭 토글)
+   처음엔 사진만 + 좌우 라벨. 라벨을 누르면 사진이 옆으로 밀리며
+   해당 내용이 펼쳐진다(한 번에 한쪽만). 다크패널 색상은 기존 유지.
+   ========================================================= */
+.director-showcase {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(8px, 1.4vw, 24px);
+  grid-template-columns: none;
+  grid-template-rows: none;
+}
+
+/* 컨테이너 자체를 스크롤 진입 시 통째로 페이드업 */
+.js .director-showcase.reveal-item {
+  opacity: 0;
+  transform: translate3d(0, 40px, 0);
+  filter: none;
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.js .director-showcase.reveal-item.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* 사진: 슬라이드의 축, 크기 고정. 개별 리빌은 끄고 컨테이너 리빌에 맡김 */
+.js .director-showcase .director-showcase__portrait,
+.director-showcase .director-showcase__portrait {
+  grid-column: auto;
+  grid-row: auto;
+  flex: 0 0 auto;
+  opacity: 1 !important;
+  transform: none !important;
+}
+.director-showcase__portrait::before,
+.director-showcase__portrait::after {
+  display: none;
+}
+
+/* 좌우 패널 */
+.director-panel {
+  flex: 0 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  overflow: hidden;
+}
+.director-panel--left {
+  align-items: flex-end;
+  text-align: right;
+}
+.director-panel--right {
+  align-items: flex-start;
+  text-align: left;
+}
+
+/* 라벨(탭) 버튼 — 항상 보이는 클릭 유도 요소 */
+.director-panel__tab {
+  flex: 0 0 auto;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 12px 14px;
+  border: 0;
+  background: transparent;
+  color: #dcbb88;
+  cursor: pointer;
+  font-family: inherit;
+  white-space: nowrap;
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+.director-panel--left .director-panel__tab {
+  align-items: flex-end;
+}
+.director-panel--right .director-panel__tab {
+  align-items: flex-start;
+}
+.director-panel__tab:hover {
+  color: #f0d5a6;
+}
+.director-panel__tab:focus-visible {
+  outline: 2px solid rgba(201, 164, 106, 0.7);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+.director-panel__tab-title {
+  position: relative;
+  padding-bottom: 9px;
+  font-size: clamp(1.05rem, 1.3vw, 1.34rem);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+.director-panel__tab-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(201, 164, 106, 0.65),
+    transparent
+  );
+}
+.director-panel__tab-hint {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: rgba(220, 187, 136, 0.72);
+}
+.director-panel__tab-plus {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+/* 펼쳐지는 내용 — width 애니메이션이 사진을 옆으로 밀어낸다 */
+.director-panel__body {
+  flex: 0 0 auto;
+  width: 0;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  transition:
+    width 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.4s ease 0.05s;
+}
+/* 애니메이션 중 텍스트 리플로우 방지: 내부 목록 폭 고정 */
+.director-panel__body > * {
+  width: clamp(228px, 27vw, 336px);
+  max-width: 76vw;
+}
+
+/* 열림 상태 */
+.director-showcase.is-open-left .director-panel--left .director-panel__body,
+.director-showcase.is-open-right .director-panel--right .director-panel__body {
+  width: clamp(228px, 27vw, 336px);
+  max-height: 640px;
+  opacity: 1;
+  pointer-events: auto;
+  padding-top: 12px;
+}
+.director-showcase.is-open-left .director-panel--left .director-panel__tab,
+.director-showcase.is-open-right .director-panel--right .director-panel__tab {
+  color: #f4ece1;
+}
+.director-showcase.is-open-left .director-panel--left .director-panel__tab-plus,
+.director-showcase.is-open-right
+  .director-panel--right
+  .director-panel__tab-plus {
+  transform: rotate(45deg);
+}
+
+/* 내용 항목은 스크롤 스태거 대신 항상 표시(가시성은 패널 열림이 제어) */
+.director-panel__body .director-credentials li,
+.director-panel__body .director-principle {
+  opacity: 1 !important;
+  transform: none !important;
+  transition-delay: 0s !important;
+}
+
+/* JS 미동작 시 폴백: 내용을 펼쳐서 보여준다 */
+html:not(.js) .director-panel__body {
+  width: auto;
+  max-height: none;
+  opacity: 1;
+  pointer-events: auto;
+}
+html:not(.js) .director-panel__body > * {
+  width: auto;
+}
+
+/* --- 모바일/태블릿: 슬라이드 대신 세로 아코디언 --- */
+@media (max-width: 1040px) {
+  .director-showcase {
+    flex-direction: column;
+    align-items: stretch;
+    gap: clamp(12px, 3vw, 20px);
+  }
+  .director-showcase .director-showcase__portrait {
+    order: -1;
+    align-self: center;
+  }
+  .director-panel,
+  .director-panel--left,
+  .director-panel--right {
+    align-items: stretch;
+    text-align: left;
+  }
+  .director-panel__tab {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 16px 2px;
+    border-top: 1px solid rgba(201, 164, 106, 0.18);
+  }
+  .director-panel--left .director-panel__tab,
+  .director-panel--right .director-panel__tab {
+    align-items: center;
+  }
+  .director-panel__tab-title {
+    padding-bottom: 0;
+  }
+  .director-panel__tab-title::after {
+    display: none;
+  }
+  .director-panel__body {
+    width: 100% !important;
+    max-height: 0;
+    transition:
+      max-height 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 0.35s ease;
+  }
+  .director-panel__body > * {
+    width: 100%;
+    max-width: 100%;
+  }
+  .director-showcase.is-open-left .director-panel--left .director-panel__body,
+  .director-showcase.is-open-right
+    .director-panel--right
+    .director-panel__body {
+    width: 100% !important;
+    max-height: 960px;
+    padding-top: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .director-panel__body,
+  .js .director-showcase.reveal-item,
+  .director-panel__tab-plus {
+    transition: none !important;
+  }
+}
+
+/* --- 학력·경력 항목: 데스크탑 패널에서 항상 한 줄로 유지 ---
+   패널 폭은 clamp(228px, 27vw, 336px)로 줄어드는데 글자 크기는 0.95rem에서
+   멈춰 1440px 미만에서 두 줄로 깨졌다. 글자 크기를 패널 폭과 같은 vw 기준으로
+   내리고 왼쪽 들여쓰기를 줄여 한 줄에 들어가게 한다. */
+@media (min-width: 1041px) {
+  .director-panel__body .director-credentials li {
+    padding-left: 22px;
+    padding-right: 2px; /* overflow:hidden 경계에서 마지막 글자가 잘리는 것 방지 */
+    font-size: clamp(0.7rem, 1.08vw, 0.92rem);
+    line-height: 1.45;
+  }
+  .director-panel__body .director-credentials li::before {
+    width: 8px;
+    height: 8px;
+    top: 1.28em;
+  }
+}
+
+/* 철학 문단도 패널 경계(overflow:hidden)에서 줄 끝 글자가 잘리지 않도록 여유 */
+.director-panel__body .director-principles {
+  padding-right: 6px;
+}
+
+/* --- 박사 소개 패널: 글 칸이 좁아 문장이 욱여넣어진 느낌을 해소 ---
+   전체 폭(컨테이너 안쪽 935~1081px)은 고정이라 패널만 넓히면 넘친다.
+   → 패널이 열린 동안 사진을 365px에서 300px로 줄여 그만큼을 글에 넘긴다. */
+@media (min-width: 1041px) {
+  .director-showcase.is-open-left .director-portrait,
+  .director-showcase.is-open-right .director-portrait {
+    width: min(300px, 100%);
+    transition: width 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /* 넓어진 자리만큼 패널 확장 (열림 상태 + 내부 고정폭을 함께) */
+  .director-panel__body > *,
+  .director-showcase.is-open-left .director-panel--left .director-panel__body,
+  .director-showcase.is-open-right
+    .director-panel--right
+    .director-panel__body {
+    width: clamp(300px, 30vw, 390px);
+  }
+
+  /* 번호 원을 줄여 글 칸을 더 확보 */
+  .director-panel__body .director-principle {
+    grid-template-columns: 30px minmax(0, 1fr);
+    gap: 12px;
+  }
+  .director-panel__body .director-principle__number {
+    width: 30px;
+    height: 30px;
+  }
+
+  /* 넓어진 칸에 맞춰 글자·행간 여유 */
+  .director-panel__body .director-principle p {
+    font-size: clamp(0.9rem, 1.02vw, 1rem);
+    line-height: 1.85;
+  }
+  .director-panel__body .director-principles {
+    gap: clamp(18px, 1.8vw, 26px);
+  }
+  .director-panel__body .director-credentials li {
+    font-size: clamp(0.84rem, 1.15vw, 1rem);
+    padding: 12px 2px 12px 24px;
+  }
+}
+
+/* --- 라벨·본문 글자 잘림의 진짜 원인 ---
+   .director-panel 이 flex:0 1 auto + overflow:hidden 이라 자리가 모자라면
+   패널이 먼저 찌그러지면서 그 안의 라벨/문단을 잘라냈다. 반대로 사진은
+   flex:0 0 auto 라 절대 양보하지 않았다. → 양보 순서를 뒤집는다.
+   폭 기준도 뷰포트(vw)가 아니라 컨테이너(cqi)로 바꿔 확대/축소·해상도에
+   상관없이 실제 남는 자리에 맞춘다. */
+@media (min-width: 1041px) {
+  .director-showcase {
+    container-type: inline-size;
+  }
+
+  /* 패널은 절대 찌그러지지 않는다 = 글자가 잘리지 않는다 */
+  .director-panel {
+    flex: 0 0 auto;
+  }
+
+  /* 자리가 모자라면 사진이 먼저 양보한다 */
+  .director-showcase .director-showcase__portrait {
+    flex: 0 1 auto;
+    min-width: 0;
+  }
+  .director-showcase.is-open-left .director-portrait,
+  .director-showcase.is-open-right .director-portrait {
+    width: min(300px, 100%);
+  }
+
+  /* 패널 폭을 컨테이너 실측 폭 기준으로 */
+  .director-panel__body > *,
+  .director-showcase.is-open-left .director-panel--left .director-panel__body,
+  .director-showcase.is-open-right
+    .director-panel--right
+    .director-panel__body {
+    width: min(390px, 32cqi);
+  }
+}
+
+/* --- 「조옥형 박사의 상담 스타일」 블록 ---
+   기존 promise-copy__body의 `p + p { border-top }`을 그대로 쓰면 문단마다
+   구분선이 생겨 산만해진다. 위쪽에 선 하나만 두고 문단은 간격으로만 나눈다. */
+.promise-copy__style {
+  max-width: 62ch; /* 한 줄 길이를 읽기 좋은 범위로 제한 */
+  margin-top: clamp(18px, 2.2vw, 28px);
+  padding-top: clamp(18px, 2vw, 26px);
+  border-top: 1px solid rgba(117, 104, 93, 0.26);
+}
+
+.promise-copy__style-title {
+  margin: 0 0 clamp(12px, 1.5vw, 20px);
+  color: var(--accent-deep);
+  font-family: var(--font-one-mobile);
+  font-size: clamp(1.1rem, 1.3vw, 1.38rem);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  word-break: keep-all;
+}
+
+.promise-copy__style p {
+  margin: 0;
+  color: #33271f;
+  font-family: var(--font-sans);
+  font-size: clamp(0.98rem, 1.04vw, 1.16rem);
+  font-weight: normal;
+  line-height: 1.85;
+  word-break: keep-all; /* 단어 중간에서 잘리지 않게 */
+}
+
+.promise-copy__style p + p {
+  margin-top: clamp(11px, 1.3vw, 17px);
+}
+
+@media (max-width: 620px) {
+  .promise-copy__style {
+    max-width: 31ch;
+    margin-inline: auto;
+    text-align: left;
+  }
+
+  .promise-copy__style-title {
+    font-size: clamp(1.02rem, 4.4vw, 1.16rem);
+    text-align: left;
+  }
+
+  .promise-copy__style p {
+    font-size: clamp(0.92rem, 3.7vw, 1rem);
+    line-height: 1.78;
+  }
+}
+
+/* 위쪽 약속 블록을 삭제해 상담 스타일이 첫 요소가 되면 구분선·여백은 불필요 */
+.promise-copy__style:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+/* h3 → h2로 승격(문서 구조·SEO). 다만 `.promise-copy h2`(0,1,1)와
+   `.philosophy-copy h2`가 더 구체적이라 그대로 두면 3rem 대제목이 되어버린다.
+   선택자 구체성을 올려 기존 크기·색을 유지한다. */
+.promise-copy .promise-copy__style-title {
+  margin: 0 0 clamp(20px, 2.4vw, 30px);
+  color: #33271f; /* 다른 섹션 대제목과 같은 잉크색 */
+  font-family: var(--font-one-mobile);
+  font-size: clamp(1.6rem, 2.4vw, 2.35rem);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.03em;
+  text-align: left;
+  word-break: keep-all;
+}
+
+/* 대제목임을 알리는 테라코타 밑줄 */
+.promise-copy .promise-copy__style-title::after {
+  content: "";
+  display: block;
+  width: 54px;
+  height: 3px;
+  margin-top: clamp(12px, 1.4vw, 18px);
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+@media (max-width: 620px) {
+  .promise-copy .promise-copy__style-title {
+    margin-bottom: clamp(16px, 4vw, 22px);
+    font-size: clamp(1.34rem, 5.6vw, 1.68rem);
+    line-height: 1.34;
+    text-align: left;
+  }
+
+  .promise-copy .promise-copy__style-title::after {
+    width: 44px;
+    margin-top: 12px;
+  }
+}
+
+/* ==========================================================================
+   상담 과정 — 1·2·3차 카드 + 안내 문구 + 예약 CTA
+   레퍼런스의 남색·금색 대신 사이트 팔레트(베이지·세이지그린·테라코타)로,
+   원형 아이콘 대신 이미 쓰고 있는 '번호 원' 모티브로 통일.
+   ========================================================================== */
+.session-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 1.8vw, 26px);
+  max-width: 1040px;
+  margin: clamp(30px, 3.4vw, 46px) auto 0;
+  padding: 0;
+  list-style: none;
+}
+
+.session-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgba(122, 148, 128, 0.34);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 14px 32px rgba(84, 70, 56, 0.06);
+}
+
+/* 머리 띠 — 번호 원 + 회차 제목 */
+.session-card__head {
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 1vw, 14px);
+  padding: clamp(14px, 1.5vw, 18px) clamp(16px, 1.7vw, 22px);
+  background: linear-gradient(180deg, #4f6b52, #3f5743);
+}
+
+.session-card__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: clamp(30px, 2.6vw, 36px);
+  height: clamp(30px, 2.6vw, 36px);
+  border-radius: 50%;
+  background: linear-gradient(180deg, var(--accent), var(--accent-deep));
+  color: #fff8f2;
+  font-family: var(--font-sans);
+  font-size: clamp(0.92rem, 1vw, 1.06rem);
+  font-weight: 700;
+  line-height: 1;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.session-card__head h3 {
+  margin: 0;
+  color: #f4ece1;
+  font-family: var(--font-one-mobile);
+  font-size: clamp(1.06rem, 1.24vw, 1.32rem);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.session-card__list {
+  display: grid;
+  align-content: start;
+  gap: clamp(10px, 1.1vw, 15px);
+  margin: 0;
+  padding: clamp(18px, 1.9vw, 26px) clamp(16px, 1.7vw, 22px)
+    clamp(20px, 2.1vw, 28px);
+  list-style: none;
+}
+
+.session-card__list li {
+  position: relative;
+  padding-left: 17px;
+  color: #40362f;
+  font-size: clamp(0.92rem, 0.98vw, 1.04rem);
+  line-height: 1.6;
+  word-break: keep-all;
+}
+
+.session-card__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* 세 카드를 받는 한 줄 카피 */
+.session-quote {
+  max-width: 1040px;
+  margin: clamp(20px, 2.2vw, 30px) auto 0;
+  padding: clamp(14px, 1.5vw, 20px) clamp(16px, 1.8vw, 24px);
+  border-top: 1px solid rgba(122, 148, 128, 0.3);
+  border-bottom: 1px solid rgba(122, 148, 128, 0.3);
+  color: var(--brown-deep);
+  font-family: var(--font-one-mobile);
+  font-size: clamp(1.02rem, 1.3vw, 1.36rem);
+  font-weight: 700;
+  line-height: 1.55;
+  text-align: center;
+  letter-spacing: -0.02em;
+  word-break: keep-all;
+}
+
+.session-quote::before {
+  content: "“ ";
+}
+.session-quote::after {
+  content: " ”";
+}
+
+/* 카드 아래 안내 문구 */
+.session-note {
+  max-width: 860px;
+  margin: clamp(18px, 2vw, 26px) auto 0;
+  text-align: center;
+}
+
+.session-note p {
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(0.9rem, 0.96vw, 1rem);
+  line-height: 1.8;
+  word-break: keep-all;
+}
+
+.session-note p + p {
+  margin-top: 6px;
+}
+
+/* 예약 문의 — 카드가 아니라 행동 유도 밴드 */
+.session-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(18px, 2.4vw, 34px);
+  max-width: 1040px;
+  margin: clamp(30px, 3.4vw, 46px) auto 0;
+  padding: clamp(22px, 2.4vw, 32px) clamp(22px, 2.6vw, 38px);
+  border: 1px solid rgba(197, 139, 85, 0.28);
+  border-radius: var(--radius-md);
+  background: linear-gradient(
+    120deg,
+    rgba(245, 237, 226, 0.92),
+    rgba(233, 238, 231, 0.92)
+  );
+}
+
+.session-cta__copy {
+  min-width: 0;
+}
+
+.session-cta__title {
+  margin: 0 0 6px;
+  color: var(--accent-deep);
+  font-family: var(--font-sans);
+  font-size: clamp(0.94rem, 1vw, 1.06rem);
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.session-cta__lead {
+  margin: 0;
+  max-width: 46ch;
+  color: #40362f;
+  font-size: clamp(0.92rem, 0.98vw, 1.04rem);
+  line-height: 1.72;
+  word-break: keep-all;
+}
+
+.session-cta__actions {
+  display: flex;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.session-cta__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border: 1px solid rgba(63, 49, 40, 0.16);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--brown-deep);
+  font-family: var(--font-sans);
+  font-size: clamp(0.88rem, 0.94vw, 0.98rem);
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    background-color 0.22s ease;
+}
+
+.session-cta__button svg {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+}
+
+.session-cta__button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(84, 70, 56, 0.14);
+}
+
+.session-cta__button--primary {
+  border-color: transparent;
+  background: linear-gradient(180deg, var(--accent), var(--accent-deep));
+  color: #fff8f2;
+}
+
+@media (max-width: 900px) {
+  .session-cards {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .session-cta {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .session-cta__lead {
+    max-width: none;
+  }
+
+  .session-cta__actions {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .session-cta__actions {
+    flex-direction: column;
+  }
+
+  .session-cta__button {
+    justify-content: center;
+  }
+}
+
+/* ==========================================================================
+   상담 과정 v2 — 카드 상자를 걷어낸 편집(인쇄물) 레이아웃
+   상자·그라데이션·그림자·컬러 원 배지를 전부 없애고, 얇은 괘선과
+   명조 숫자만으로 구획한다. 세 회차를 가로 진행선 하나로 꿰어
+   '따로 노는 카드 3개'가 아니라 하나의 과정으로 읽히게 한다.
+   ========================================================================== */
+.session-track {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  max-width: 1020px;
+  margin: clamp(38px, 4vw, 58px) auto 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* 진행선은 넣지 않는다 — 섹션 배경이 교차색이라 숫자 뒤 배경을 맞출 수 없고,
+   세 칸의 h3 밑줄이 이미 같은 높이에서 이어져 가로 리듬을 만든다. */
+
+.session-step {
+  position: relative;
+  padding: 0 clamp(20px, 2.4vw, 38px);
+}
+
+/* 칸 사이 세로 괘선 (첫 칸 제외) */
+.session-step + .session-step::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 34px;
+  bottom: 6px;
+  width: 1px;
+  background: rgba(63, 49, 40, 0.12);
+}
+
+.session-step:first-child {
+  padding-left: 0;
+}
+.session-step:last-child {
+  padding-right: 0;
+}
+
+/* 숫자 — 진행선 위에 얹혀 선을 끊는다 */
+.session-step__num {
+  position: relative;
+  display: inline-block;
+  margin: 0 0 clamp(12px, 1.3vw, 18px);
+  color: var(--accent);
+  font-family: var(--font-one-mobile);
+  font-size: clamp(1.24rem, 1.5vw, 1.6rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.06em;
+}
+
+.session-step h3 {
+  margin: 0 0 clamp(14px, 1.5vw, 20px);
+  padding-bottom: clamp(12px, 1.3vw, 16px);
+  border-bottom: 1px solid rgba(63, 49, 40, 0.14);
+  color: var(--brown-deep);
+  font-family: var(--font-one-mobile);
+  font-size: clamp(1.16rem, 1.42vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.session-step ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.session-step li {
+  position: relative;
+  padding-left: 16px;
+  color: #453a32;
+  font-size: clamp(0.93rem, 0.99vw, 1.05rem);
+  line-height: 1.72;
+  word-break: keep-all;
+}
+
+.session-step li + li {
+  margin-top: clamp(8px, 0.9vw, 12px);
+}
+
+/* 점 대신 짧은 선 — 표 같은 느낌을 덜어낸다 */
+.session-step li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.86em;
+  width: 8px;
+  height: 1px;
+  background: var(--accent);
+}
+
+/* 첫 회차만 살짝 강조 — 셋이 똑같이 균일하지 않도록 */
+.session-step:first-child .session-step__num,
+.session-step:first-child h3 {
+  color: var(--accent-deep);
+}
+.session-step:first-child h3 {
+  border-bottom-color: rgba(193, 95, 58, 0.34);
+}
+
+/* 인용 — 가운데 정렬 액자 대신 왼쪽에 큰 따옴표를 매단 편집형 */
+.session-pullquote {
+  position: relative;
+  max-width: 1020px;
+  margin: clamp(40px, 4.4vw, 62px) auto 0;
+  padding-left: clamp(46px, 5vw, 72px);
+}
+
+.session-pullquote::before {
+  content: "“";
+  position: absolute;
+  left: 0;
+  top: clamp(-18px, -1.2vw, -8px);
+  color: rgba(122, 148, 128, 0.42);
+  font-family: var(--font-one-mobile);
+  font-size: clamp(3.4rem, 5vw, 5.4rem);
+  line-height: 1;
+}
+
+.session-pullquote blockquote {
+  margin: 0;
+  color: var(--brown-deep);
+  font-family: var(--font-one-mobile);
+  font-size: clamp(1.14rem, 1.55vw, 1.62rem);
+  font-weight: 700;
+  line-height: 1.62;
+  letter-spacing: -0.02em;
+  word-break: keep-all;
+}
+
+.session-pullquote figcaption {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: clamp(12px, 1.3vw, 18px);
+  color: var(--muted);
+  font-family: var(--font-sans);
+  font-size: clamp(0.84rem, 0.9vw, 0.94rem);
+  letter-spacing: 0.01em;
+}
+
+.session-pullquote figcaption::before {
+  content: "";
+  width: 26px;
+  height: 1px;
+  background: rgba(63, 49, 40, 0.3);
+}
+
+/* 안내 문구 — 가운데가 아니라 인용문과 같은 축에 */
+.session-note {
+  max-width: 1020px;
+  margin: clamp(22px, 2.4vw, 32px) auto 0;
+  padding-left: clamp(46px, 5vw, 72px);
+  text-align: left;
+}
+
+/* 예약 밴드 — 그라데이션·알약 3개를 걷어낸다 */
+.session-cta {
+  align-items: flex-end;
+  max-width: 1020px;
+  margin-top: clamp(38px, 4vw, 56px);
+  padding: clamp(24px, 2.6vw, 34px) 0 0;
+  border: 0;
+  border-top: 1px solid rgba(63, 49, 40, 0.16);
+  border-radius: 0;
+  background: none;
+}
+
+.session-cta__title {
+  color: var(--muted);
+  font-weight: 700;
+  font-size: clamp(0.8rem, 0.86vw, 0.9rem);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.session-cta__lead {
+  max-width: 52ch;
+}
+
+.session-cta__actions {
+  align-items: center;
+  gap: clamp(14px, 1.6vw, 24px);
+}
+
+/* 기본은 밑줄 링크, 전화만 실체 있는 버튼 */
+.session-cta__button {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  color: var(--brown-deep);
+  font-weight: 600;
+  text-underline-offset: 5px;
+  text-decoration: underline;
+  text-decoration-color: rgba(63, 49, 40, 0.28);
+}
+
+.session-cta__button:hover {
+  transform: none;
+  box-shadow: none;
+  color: var(--accent-deep);
+  text-decoration-color: var(--accent);
+}
+
+.session-cta__button--primary {
+  padding: 13px 22px;
+  border-radius: 4px;
+  background: var(--brown-deep);
+  color: #f6efe6;
+  text-decoration: none;
+}
+
+.session-cta__button--primary:hover {
+  background: var(--accent-deep);
+  color: #fff8f2;
+}
+
+@media (max-width: 900px) {
+  .session-track {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .session-track::before {
+    display: none;
+  }
+
+  .session-step {
+    padding: 0 0 clamp(20px, 4vw, 28px);
+  }
+
+  .session-step + .session-step {
+    padding-top: clamp(20px, 4vw, 28px);
+    border-top: 1px solid rgba(63, 49, 40, 0.12);
+  }
+
+  .session-step + .session-step::before {
+    display: none;
+  }
+
+  .session-step:last-child {
+    padding-bottom: 0;
+  }
+
+  .session-pullquote,
+  .session-note {
+    padding-left: clamp(34px, 8vw, 52px);
+  }
+}
+
+/* ==========================================================================
+   상담 과정 v3 — 편집 레이아웃은 유지하되 '만들다 만 느낌'을 없앤다.
+   세 칸을 하나의 종이(패널) 위에 올리고, 각 칸에 소요시간·한 줄 요약을
+   더해 빈 세로 공간을 메운다. 인용은 패널 바닥의 푸터 띠로 붙여
+   가로로 남던 여백까지 쓴다.
+   ========================================================================== */
+.session-panel {
+  max-width: 1060px;
+  margin: clamp(32px, 3.6vw, 50px) auto 0;
+  padding: clamp(28px, 3vw, 46px) clamp(22px, 2.8vw, 46px) clamp(8px, 1vw, 14px);
+  border: 1px solid rgba(63, 49, 40, 0.11);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 18px 44px rgba(84, 70, 56, 0.05);
+}
+
+.session-panel .session-track {
+  margin: 0;
+  max-width: none;
+}
+
+.session-panel .session-step {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* 번호 + 소요시간을 한 줄에 (장부처럼) */
+.session-step__meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 0 0 clamp(8px, 0.9vw, 12px);
+}
+
+.session-step__time {
+  color: var(--muted);
+  font-family: var(--font-sans);
+  font-size: clamp(0.76rem, 0.82vw, 0.86rem);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.session-panel .session-step__num {
+  margin: 0;
+}
+
+.session-panel .session-step h3 {
+  margin-bottom: clamp(10px, 1.1vw, 14px);
+  padding-bottom: clamp(10px, 1.1vw, 14px);
+}
+
+/* 한 줄 요약 — 목록만 덩그러니 있던 자리를 채운다 */
+.session-step__lead {
+  margin: 0 0 clamp(12px, 1.3vw, 18px);
+  color: #5b4f46;
+  font-family: var(--font-sans);
+  font-size: clamp(0.88rem, 0.94vw, 0.98rem);
+  line-height: 1.66;
+  word-break: keep-all;
+}
+
+/* 인용 — 패널 바닥 푸터 띠 */
+.session-panel .session-pullquote {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: clamp(10px, 1.4vw, 26px);
+  max-width: none;
+  margin: clamp(24px, 2.6vw, 36px) 0 0;
+  padding: clamp(18px, 1.9vw, 26px) 0 clamp(20px, 2.1vw, 28px)
+    clamp(38px, 4vw, 56px);
+  border-top: 1px solid rgba(63, 49, 40, 0.12);
+}
+
+.session-panel .session-pullquote::before {
+  top: clamp(4px, 0.6vw, 12px);
+  font-size: clamp(2.6rem, 3.6vw, 4rem);
+}
+
+.session-panel .session-pullquote blockquote {
+  flex: 1 1 420px;
+  font-size: clamp(1.06rem, 1.34vw, 1.42rem);
+  line-height: 1.6;
+}
+
+.session-panel .session-pullquote figcaption {
+  flex: 0 0 auto;
+  margin-top: 0;
+}
+
+/* 안내 문구는 패널 밖, 축만 맞춘다 */
+.session-note {
+  max-width: 1060px;
+  padding-left: clamp(22px, 2.8vw, 46px);
+}
+
+@media (max-width: 900px) {
+  .session-panel {
+    padding: clamp(22px, 5vw, 30px) clamp(18px, 4.4vw, 26px);
+  }
+
+  .session-panel .session-step {
+    padding-bottom: clamp(20px, 4vw, 28px);
+  }
+
+  .session-panel .session-step + .session-step {
+    padding-top: clamp(20px, 4vw, 28px);
+  }
+
+  .session-panel .session-step:last-child {
+    padding-bottom: 0;
+  }
+
+  .session-panel .session-pullquote {
+    padding-left: clamp(30px, 8vw, 44px);
+    padding-bottom: 4px;
+  }
+
+  .session-note {
+    padding-left: clamp(18px, 4.4vw, 26px);
+  }
+}
+
+/* 전화 보조 번호(박사 직통)와 푸터 연락처 링크 */
+.location-phone-sub {
+  color: inherit;
+  font-size: 0.94em;
+  white-space: nowrap;
+}
+
+.location-phone-sub .location-phone {
+  font-size: inherit;
+}
+
+.footer-contact-link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.32);
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+}
+
+.footer-contact-link:hover {
+  text-decoration-color: currentColor;
+}
+
+/* 상담 3회기 — 참고 이미지의 네이비·골드 카드 구성을 사이트 톤에 맞춰 적용 */
+.session-process {
+  max-width: 1080px;
+  margin: clamp(30px, 3.6vw, 48px) auto 0;
+}
+
+.session-process .session-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(18px, 2vw, 28px);
+  max-width: none;
+  margin: 0;
+}
+
+.session-process .session-card {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  min-height: 100%;
+  overflow: visible;
+  border: 1px solid rgba(190, 151, 82, 0.72);
+  border-radius: 14px;
+  background: rgba(255, 253, 248, 0.92);
+  box-shadow: 0 16px 34px rgba(10, 30, 65, 0.08);
+}
+
+.session-process .session-card:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  right: calc(clamp(18px, 2vw, 28px) / -2 - 5px);
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #be9752;
+  border-right: 2px solid #be9752;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.session-process .session-card__head {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 1.3vw, 17px);
+  padding: clamp(18px, 1.9vw, 24px) clamp(18px, 1.8vw, 23px)
+    clamp(13px, 1.3vw, 17px);
+  border-radius: 14px 14px 0 0;
+  background: transparent;
+}
+
+.session-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: clamp(50px, 4.6vw, 60px);
+  height: clamp(50px, 4.6vw, 60px);
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.session-card__icon img {
+  display: block;
+  flex: 0 0 auto;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center;
+  filter: none;
+  image-rendering: auto;
+  transform: none;
+}
+
+.session-process .session-card__head h3 {
+  margin: 0;
+  color: #0a234c;
+  font-family: var(--font-one-mobile);
+  font-size: clamp(1.28rem, 1.55vw, 1.62rem);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  word-break: keep-all;
+}
+
+.session-process .session-card__list {
+  display: grid;
+  align-content: start;
+  gap: clamp(8px, 0.9vw, 12px);
+  margin: 0;
+  padding: 0 clamp(18px, 1.8vw, 23px) clamp(20px, 2vw, 27px);
+}
+
+.session-process .session-card__list li {
+  position: relative;
+  min-width: 0;
+  padding-left: 15px;
+  color: #3b342e;
+  font-size: clamp(0.88rem, 0.94vw, 1rem);
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+  word-break: keep-all;
+}
+
+.session-process .session-card__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.68em;
+  width: 6px;
+  height: 6px;
+  border-radius: 1px;
+  background: #be9752;
+  transform: rotate(45deg);
+}
+
+.session-process .session-quote {
+  max-width: 980px;
+  margin: clamp(22px, 2.6vw, 34px) auto 0;
+  padding: clamp(14px, 1.5vw, 19px) clamp(18px, 2vw, 28px);
+  border-top: 1px solid rgba(190, 151, 82, 0.5);
+  border-bottom: 1px solid rgba(190, 151, 82, 0.5);
+  color: #0a234c;
+  font-family: var(--font-one-mobile);
+  font-size: clamp(1rem, 1.28vw, 1.3rem);
+  font-weight: 700;
+  line-height: 1.55;
+  text-align: center;
+  letter-spacing: -0.02em;
+  word-break: keep-all;
+}
+
+.session-process .session-quote::before,
+.session-process .session-quote::after {
+  content: none;
+}
+
+/* 열린 학력·경력/부부상담 철학 패널의 본문은 높이 제한으로 잘리지 않게 한다. */
+.director-showcase.is-open-left .director-panel--left .director-panel__body,
+.director-showcase.is-open-right .director-panel--right .director-panel__body {
+  max-height: none;
+  overflow: visible;
+}
+
+@media (max-width: 900px) {
+  .session-process .session-cards {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .session-process .session-card:not(:last-child)::after {
+    top: auto;
+    right: 50%;
+    bottom: -13px;
+    transform: translateX(50%) rotate(135deg);
+  }
+
+  .session-process .session-card__head {
+    padding: 17px 18px 12px;
+  }
+
+  .session-process .session-card__list {
+    padding: 0 18px 20px;
+  }
+
+  .session-process .session-card__list li {
+    font-size: clamp(0.93rem, 3.6vw, 1rem);
+    overflow-wrap: normal;
+  }
+}
+
+@media (max-width: 420px) {
+  .session-process .session-card__head h3 {
+    font-size: 1.24rem;
+  }
+
+  .session-card__icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .location-phone-sub {
+    white-space: normal;
+  }
+}
