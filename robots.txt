@@ -1,0 +1,9 @@
+# 모든 검색엔진 크롤러 허용 (네이버 크롤러: Yeti, 구글: Googlebot)
+User-agent: *
+Allow: /
+
+User-agent: Yeti
+Allow: /
+
+# ⚠️ 도메인 구매 후 example.com 을 실제 도메인으로 교체하세요
+Sitemap: https://example.com/sitemap.xml
