@@ -625,7 +625,8 @@ body.is-consult-popup-open {
 }
 
 .brand-wrap .eyebrow {
-  margin-left: 48px;
+  margin-left: 0;
+  padding-left: 48px;
   margin-bottom: 4px;
   font-size: 0.94rem;
   line-height: 1.2;
@@ -795,7 +796,8 @@ body.is-consult-popup-open {
 }
 
 .site-header.is-condensed .brand-wrap .eyebrow {
-  margin-left: 42px;
+  margin-left: 0;
+  padding-left: 42px;
 }
 
 .site-header.is-condensed .main-nav a {
@@ -6135,6 +6137,12 @@ html:not(.js) .director-panel__body > * {
     container-type: inline-size;
   }
 
+  /* 숨겨진 본문 내용이 닫힌 패널의 가로 폭을 밀어내지 않도록 격리 */
+  .director-panel__body {
+    min-width: 0;
+    contain: inline-size;
+  }
+
   /* 패널은 절대 찌그러지지 않는다 = 글자가 잘리지 않는다 */
   .director-panel {
     flex: 0 0 auto;
@@ -6169,6 +6177,46 @@ html:not(.js) .director-panel__body > * {
 
   .director-panel--right .director-principle .copy-line {
     white-space: nowrap;
+  }
+
+  /* 우측 철학 패널이 열릴 때 세 영역을 명시적으로 나눠 잘림·겹침 방지 */
+  .director-showcase.is-open-right {
+    display: grid;
+    grid-template-columns: 160px minmax(220px, 270px) minmax(0, 525px);
+    align-items: center;
+    justify-content: center;
+  }
+
+  .director-showcase.is-open-right .director-panel--left {
+    position: static;
+    width: 100%;
+    min-width: 0;
+    overflow: visible;
+    align-items: flex-end;
+    text-align: right;
+    transform: none;
+  }
+
+  .director-showcase.is-open-right
+    .director-panel--left
+    .director-panel__tab {
+    align-items: flex-end;
+  }
+
+  .director-showcase.is-open-right .director-showcase__portrait,
+  .director-showcase.is-open-right .director-panel--right {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .director-showcase.is-open-right
+    .director-panel--right
+    .director-panel__body,
+  .director-showcase.is-open-right
+    .director-panel--right
+    .director-panel__body
+    > * {
+    width: 100%;
   }
 }
 
@@ -6698,8 +6746,8 @@ html:not(.js) .director-panel__body > * {
 .session-cta__title {
   color: var(--accent);
   font-weight: 700;
-  font-size: clamp(0.8rem, 0.86vw, 0.9rem);
-  letter-spacing: 0.14em;
+  font-size: clamp(1.2rem, 1.35vw, 1.46rem);
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -6765,6 +6813,15 @@ html:not(.js) .director-panel__body > * {
 }
 
 @media (max-width: 900px) {
+  .session-cta {
+    align-items: stretch;
+  }
+
+  .session-cta__actions {
+    width: 100%;
+    justify-content: center;
+  }
+
   .session-track {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -6796,7 +6853,30 @@ html:not(.js) .director-panel__body > * {
   }
 }
 
-/* ==========================================================================
+@media (max-width: 480px) {
+  .session-cta__actions {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .session-cta__button,
+  .session-cta__button--primary {
+    flex: none;
+    width: 100%;
+    min-width: 0;
+    min-height: 50px;
+    padding: 10px 6px;
+    font-size: 0.8rem;
+  }
+
+  .session-cta__button svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* ========================================================================== 
    상담 과정 v3 — 편집 레이아웃은 유지하되 '만들다 만 느낌'을 없앤다.
    세 칸을 하나의 종이(패널) 위에 올리고, 각 칸에 소요시간·한 줄 요약을
    더해 빈 세로 공간을 메운다. 인용은 패널 바닥의 푸터 띠로 붙여
