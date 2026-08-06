@@ -208,7 +208,7 @@
       <a
         class="mobile-footer-call"
         href="tel:01098279000"
-        aria-label="박사와 직접 통화 010-9827-9000"
+        aria-label="통화하기 010-9827-9000"
       >
         <span class="header-call__icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
@@ -217,7 +217,7 @@
             />
           </svg>
         </span>
-        <span>박사 통화</span>
+        <span>통화하기</span>
       </a>
 
       <a
@@ -225,6 +225,7 @@
         href="https://booking.naver.com/booking/13/bizes/1133249"
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="네이버 예약 열기"
       >
         <span class="quick-link__icon" aria-hidden="true">
           <img src="./assets/icons/quick/naver-booking.svg" alt="" />
@@ -239,6 +240,7 @@
         href="https://www.instagram.com/ysclinic_26years/"
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="인스타그램 열기"
       >
         <span class="quick-link__icon" aria-hidden="true">
           <img src="./assets/icons/quick/instagram.svg" alt="" />
@@ -253,6 +255,7 @@
         href="https://www.youtube.com/@bubugujodae"
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="유튜브 열기"
       >
         <span class="quick-link__icon" aria-hidden="true">
           <img src="./assets/icons/quick/youtube.svg" alt="" />
@@ -267,6 +270,7 @@
         href="https://pf.kakao.com/_xhBHkn"
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="카카오톡 상담 열기"
       >
         <span class="quick-link__icon" aria-hidden="true">
           <img src="./assets/icons/quick/kakao-talk.svg" alt="" />
@@ -291,15 +295,18 @@
     <header class="site-header">
       <div class="container header-inner">
         <div class="brand-wrap">
-          <p class="eyebrow">대구 수성구 부부상담 전문클리닉</p>
           <a class="brand" href="#top">
             <img
               class="brand-logo"
               src="./assets/images/logo.svg"
-              alt=""
-              aria-hidden="true"
+              alt="연세부부상담클리닉"
             />
-            <span>연세부부상담클리닉</span>
+            <span class="brand-copy">
+              <small class="header-eyebrow"
+                >대구 수성구 부부상담 전문클리닉</small
+              >
+              <strong class="brand-name">연세부부상담클리닉</strong>
+            </span>
           </a>
         </div>
 
@@ -318,7 +325,7 @@
           <span class="header-call__icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
               <path
-                d="M6.62 10.79a15.06 15.06 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.32.56 3.57.56a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.06 21 3 13.94 3 5a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.19 2.45.56 3.57a1 1 0 0 1-.24 1.02z"
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.8a2 2 0 0 1-.45 2.11L8.07 9.9a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.32 1.84.55 2.8.68A2 2 0 0 1 22 16.92Z"
               />
             </svg>
           </span>
@@ -329,33 +336,43 @@
 
     <main id="main">
       <section class="hero" id="top">
-        <div class="container">
-          <div class="hero-stage">
-            <img
-              class="hero-image"
-              src="./assets/images/hero/hero-couple-counseling-main.png"
-              alt=""
-              aria-hidden="true"
-              decoding="async"
-            />
-            <div class="hero-copy">
-              <div class="hero-main-copy">
-                <div class="hero-pills">
-                  <span>외도</span>
-                  <span>이혼위기</span>
-                  <span>중독</span>
-                  <span>극에 달한 싸움</span>
-                  <span>고부갈등</span>
-                </div>
+        <aside class="hero-side-rail" aria-hidden="true">
+          <span class="hero-side-rail__line"></span>
+          <span class="hero-side-rail__label"
+            >YONSEI COUPLE COUNSELING CLINIC</span
+          >
+          <span class="hero-side-rail__line hero-side-rail__line--bottom"></span>
+          <span class="hero-side-rail__swatches"></span>
+        </aside>
 
-                <h1 class="hero-script-title">
-                  <span class="copy-line">부부상담</span>
-                  <span class="copy-line">10회? 20회?</span>
-                  <span class="copy-line">길게 받지 마세요.</span>
-                </h1>
+        <div class="hero-stage">
+          <span class="hero-dot-pattern" aria-hidden="true"></span>
+
+          <div class="hero-copy">
+            <div class="hero-main-copy">
+              <div class="hero-pills">
+                <span class="is-active">외도</span>
+                <span>이혼위기</span>
+                <span>중독</span>
+                <span>극에 달한 싸움</span>
+                <span>고부갈등</span>
               </div>
 
-              <div class="hero-support">
+              <h1 class="hero-script-title">
+                <span class="copy-line">부부상담</span>
+                <span class="copy-line">10회? 20회?</span>
+                <span class="copy-line">길게 받지 마세요.</span>
+              </h1>
+            </div>
+
+            <div class="hero-support">
+              <span class="hero-support__icon" aria-hidden="true">
+                <svg viewBox="0 0 64 72" focusable="false">
+                  <path d="M32 3 57 13v19c0 18-10.5 29.4-25 37C17.5 61.4 7 50 7 32V13L32 3Z" />
+                  <path d="m20 35 8 8 17-19" />
+                </svg>
+              </span>
+              <div class="hero-support__copy">
                 <p class="hero-support-note">
                   상담은 길게 받아야만 효과가 있는 것은 아닙니다.
                 </p>
@@ -367,6 +384,16 @@
                 </p>
               </div>
             </div>
+          </div>
+
+          <div class="hero-visual">
+            <img
+              class="hero-image"
+              src="./assets/images/hero/main.png"
+              alt="조옥형 박사가 부부와 상담하는 모습"
+              fetchpriority="high"
+              decoding="async"
+            />
           </div>
         </div>
       </section>
@@ -404,109 +431,102 @@
 
       <section class="section contact-section" id="director">
         <div class="container">
-          <div
-            class="director-video-card reveal-item"
-            aria-label="연세부부상담클리닉 소개 영상"
-          >
-            <div class="director-video-shell rounded-2xl">
-              <iframe
-                src="https://www.youtube.com/embed/QNiBTmjgZE8?rel=0&amp;playsinline=1"
-                title="연세부부상담클리닉 조옥형 박사 소개 영상"
-                loading="lazy"
-                allow="
-                  accelerometer;
-                  autoplay;
-                  clipboard-write;
-                  encrypted-media;
-                  gyroscope;
-                  picture-in-picture;
-                  web-share;
-                "
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
-            </div>
-          </div>
-
-          <div class="section-center reveal-item">
-            <p class="eyebrow section-eyebrow-lg">조옥형 박사 소개</p>
-            <p>
-              <span class="copy-line"
-                >오랜 상담 경력과 부부전문 상담을 바탕으로,</span
-              >
-              <span class="copy-line"
-                >부부가 원하는 인생은 조옥형 박사와 다시 시작할 수
-                있습니다.</span
-              >
-            </p>
-          </div>
-
-          <div class="director-showcase reveal-item" data-director>
-            <div class="director-panel director-panel--left">
-              <button
-                type="button"
-                class="director-panel__tab"
-                data-director-tab="left"
-                aria-expanded="false"
-                aria-controls="director-body-credentials"
-              >
-                <span class="director-panel__tab-title">학력 및 경력</span>
-                <span class="director-panel__tab-hint" aria-hidden="true"
-                  ><span class="director-panel__tab-plus">＋</span> 자세히
-                  보기</span
-                >
-              </button>
+          <div class="director-intro-region">
+            <article class="director-profile-card reveal-item">
+            <div class="director-profile-card__top">
               <div
-                class="director-panel__body"
-                id="director-body-credentials"
-                role="region"
-                aria-label="학력 및 경력"
+                class="director-video-shell director-profile-card__video"
+                aria-label="연세부부상담클리닉 소개 영상"
               >
-                <ul class="director-credentials">
+                <iframe
+                  src="https://www.youtube.com/embed/QNiBTmjgZE8?rel=0&amp;playsinline=1"
+                  title="연세부부상담클리닉 조옥형 박사 소개 영상"
+                  loading="lazy"
+                  allow="
+                    accelerometer;
+                    autoplay;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                    web-share;
+                  "
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </div>
+
+              <div class="director-profile-card__identity">
+                <p class="director-profile-card__specialist">Specialist</p>
+                <h3>조옥형 박사</h3>
+                <span class="director-profile-card__divider" aria-hidden="true"></span>
+                <p
+                  class="director-profile-card__description"
+                  data-story-typewriter
+                >
+                  <span class="copy-line"
+                    >오랜 상담 경력과 부부전문 상담을 바탕으로,</span
+                  >
+                  <span class="copy-line">부부가 원하는 인생은</span>
+                  <span class="copy-line"
+                    >조옥형 박사와 다시 시작할 수 있습니다.</span
+                  >
+                </p>
+              </div>
+            </div>
+
+            <div class="director-profile-card__details">
+              <section
+                class="director-profile-card__credentials"
+                aria-labelledby="director-credentials-title"
+              >
+                <div class="director-detail-heading">
+                  <h3 id="director-credentials-title">학력 및 경력</h3>
+                  <button
+                    class="director-detail-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="director-credentials-content"
+                    data-director-detail-toggle
+                  >
+                    <span>자세히 보기</span>
+                  </button>
+                </div>
+                <div
+                  class="director-detail-content"
+                  id="director-credentials-content"
+                >
+                  <ul class="director-credentials">
                   <li>연세대학교 재활학과 학사 졸업</li>
                   <li>경북대학교 아동가족학과(상담 전공) 석사 졸업</li>
                   <li>경북대학교 아동가족학과(상담 전공) 박사 졸업</li>
                   <li>전) 경북대학교 · 인제대학교 외래교수</li>
                   <li>전) 보건복지부 정신건강전문요원 슈퍼바이저</li>
-                </ul>
-              </div>
-            </div>
+                  </ul>
+                </div>
+              </section>
 
-            <div class="director-showcase__portrait">
-              <p class="director-specialist">Specialist</p>
-              <h3>조옥형<span class="doctor-title-gap">박사</span></h3>
-              <figure class="director-portrait">
-                <img
-                  class="director-portrait-photo"
-                  src="./assets/images/director/director-jo-okhyeong-real.PNG"
-                  alt="조옥형 박사 프로필 사진"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-            </div>
-
-            <div class="director-panel director-panel--right">
-              <button
-                type="button"
-                class="director-panel__tab"
-                data-director-tab="right"
-                aria-expanded="false"
-                aria-controls="director-body-principles"
+              <section
+                class="director-profile-card__principles"
+                aria-labelledby="director-principles-title"
               >
-                <span class="director-panel__tab-title">부부상담 철학</span>
-                <span class="director-panel__tab-hint" aria-hidden="true"
-                  ><span class="director-panel__tab-plus">＋</span> 자세히
-                  보기</span
+                <div class="director-detail-heading">
+                  <h3 id="director-principles-title">부부상담 철학</h3>
+                  <button
+                    class="director-detail-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="director-principles-content"
+                    data-director-detail-toggle
+                  >
+                    <span>자세히 보기</span>
+                  </button>
+                </div>
+                <div
+                  class="director-detail-content"
+                  id="director-principles-content"
                 >
-              </button>
-              <div
-                class="director-panel__body"
-                id="director-body-principles"
-                role="region"
-                aria-label="부부상담 철학"
-              >
-                <ol class="director-principles">
+                  <ol class="director-principles">
                   <li class="director-principle">
                     <span class="director-principle__number" aria-hidden="true"
                       >1</span
@@ -552,34 +572,31 @@
                       >
                       <span class="copy-line">문제성 부부 관계 구조를 재건축해서</span>
                       <span class="copy-line"
-                        >다시 부부로 살아갈 수 있도록 진심과</span
+                        >다시 부부로 살아갈 수 있도록 진심과 최고의 능력을
+                        다합니다.</span
                       >
-                      <span class="copy-line">최고의 능력을 다합니다.</span>
                     </p>
                   </li>
-                </ol>
-              </div>
+                  </ol>
+                </div>
+              </section>
             </div>
+            </article>
           </div>
 
-          <section class="review-showcase reveal-item" aria-label="후기 소개">
-            <div class="review-marquee">
-              <div class="review-marquee-inner">
-                <img
-                  class="review-ribbon-image"
-                  src="./assets/images/review.jpg"
-                  alt="대구 연세부부상담클리닉 네이버 방문자 후기"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <img
-                  class="review-ribbon-image"
-                  src="./assets/images/review.jpg"
-                  alt=""
-                  aria-hidden="true"
-                  loading="lazy"
-                  decoding="async"
-                />
+          <section class="review-showcase reveal-item" id="reviews" aria-label="후기 소개">
+            <div class="review-showcase__head">
+              <div class="review-showcase__copy">
+                <h2>
+                  <span class="copy-line">내담자 분들의</span>
+                  <span class="copy-line"
+                    ><strong>진솔한 후기를</strong> 확인해 보세요</span
+                  >
+                </h2>
+                <p class="review-showcase__description">
+                  따뜻한 공감과 전문적인 상담으로 삶의 변화를 함께
+                  만들어가고 있습니다.
+                </p>
               </div>
 
               <a
@@ -588,8 +605,200 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                리뷰 자세히 보러가기
+                <span>리뷰 자세히 보러가기</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path d="m9 18 6-6-6-6" />
+                </svg>
               </a>
+            </div>
+
+            <div class="review-carousel" data-review-carousel>
+              <div class="review-cards" aria-live="off">
+                <article
+                  class="review-card"
+                  data-review-card
+                  data-slot="left"
+                >
+                  <header class="review-card__head">
+                    <span class="review-card__avatar review-card__avatar--mint" aria-hidden="true">클</span>
+                    <span class="review-card__author"><strong>클레어7367</strong><small>리뷰 9</small></span>
+                    <span class="review-card__rating" aria-label="평점 5점"><span aria-hidden="true">★★★★★</span><b>5.0</b></span>
+                  </header>
+                  <p class="review-card__body">
+                    마지막이라고 생각하고 왔는데 정말 잘한 선택이었어요. 확실히 원장님이 전문적이시고 짧은 상담만으로도 방향을 잡을 수 있게 도와주셔서 큰 도움이 되었어요. 감사합니다 :)
+                  </p>
+                  <footer class="review-card__foot">
+                    <span class="review-card__visit"><span>▣</span> 25.09.25. 목 <i></i> 1번째 방문 · 예약</span>
+                    <span class="review-card__helpful">♡ 도움돼요 12</span>
+                  </footer>
+                </article>
+
+                <article
+                  class="review-card"
+                  data-review-card
+                  data-slot="center"
+                >
+                  <header class="review-card__head">
+                    <span class="review-card__avatar review-card__avatar--charcoal" aria-hidden="true">헬</span>
+                    <span class="review-card__author"><strong>헬짱꿈나무</strong><small>리뷰 40 · 사진 32</small></span>
+                    <span class="review-card__rating" aria-label="평점 5점"><span aria-hidden="true">★★★★★</span><b>5.0</b></span>
+                  </header>
+                  <p class="review-card__body">
+                    처음엔 상담받는 게 조금 부담스러웠는데 선생님이 정말 편하게 이야기 들어주셔서 마음이 열렸어요. 막막했던 고민이 정리되고 앞으로 어떻게 해나가야 할지 길이 보였습니다. 감사합니다!
+                  </p>
+                  <footer class="review-card__foot">
+                    <span class="review-card__visit"><span>▣</span> 25.10.14. 화 <i></i> 1번째 방문 · 예약</span>
+                    <span class="review-card__helpful">♡ 도움돼요 18</span>
+                  </footer>
+                </article>
+
+                <article
+                  class="review-card"
+                  data-review-card
+                  data-slot="right"
+                >
+                  <header class="review-card__head">
+                    <span class="review-card__avatar review-card__avatar--sand" aria-hidden="true">N</span>
+                    <span class="review-card__author"><strong>nana_11</strong><small>리뷰 6</small></span>
+                    <span class="review-card__rating" aria-label="평점 5점"><span aria-hidden="true">★★★★★</span><b>5.0</b></span>
+                  </header>
+                  <p class="review-card__body">
+                    부부상담 받았는데 서로를 이해하는 시간이 많아졌어요. 차분하고 따뜻하게 이끌어주셔서 좋은 방향으로 나아갈 수 있을 것 같아요. 감사합니다.
+                  </p>
+                  <footer class="review-card__foot">
+                    <span class="review-card__visit"><span>▣</span> 25.09.30. 화 <i></i> 2번째 방문 · 예약</span>
+                    <span class="review-card__helpful">♡ 도움돼요 9</span>
+                  </footer>
+                </article>
+
+                <article class="review-card" data-review-card data-slot="hidden">
+                  <header class="review-card__head">
+                    <span class="review-card__avatar review-card__avatar--sky" aria-hidden="true">그</span>
+                    <span class="review-card__author"><strong>그래그치</strong><small>리뷰 413 · 사진 118</small></span>
+                    <span class="review-card__rating" aria-label="평점 5점"><span aria-hidden="true">★★★★★</span><b>5.0</b></span>
+                  </header>
+                  <p class="review-card__body">
+                    대화를 시작하면 늘 싸움으로 끝났는데, 무엇이 문제인지 정확하게 짚어주셨어요. 서로의 말을 듣는 방법을 알게 되고 집안 분위기도 한결 편안해졌습니다.
+                  </p>
+                  <footer class="review-card__foot">
+                    <span class="review-card__visit"><span>▣</span> 25.02.24. 월 <i></i> 1번째 방문 · 예약</span>
+                    <span class="review-card__helpful">♡ 도움돼요 21</span>
+                  </footer>
+                </article>
+
+                <article class="review-card" data-review-card data-slot="hidden">
+                  <header class="review-card__head">
+                    <span class="review-card__avatar review-card__avatar--coral" aria-hidden="true">C</span>
+                    <span class="review-card__author"><strong>cmr*****</strong><small>리뷰 217 · 사진 51</small></span>
+                    <span class="review-card__rating" aria-label="평점 5점"><span aria-hidden="true">★★★★★</span><b>5.0</b></span>
+                  </header>
+                  <p class="review-card__body">
+                    부부 사이와 함께 제 자신도 되돌아보는 시간이었어요. 관계가 좋아질 수 있도록 소중한 인연을 지켜갈 방법을 알려주셔서 많이 좋아졌습니다.
+                  </p>
+                  <footer class="review-card__foot">
+                    <span class="review-card__visit"><span>▣</span> 25.01.13. 월 <i></i> 1번째 방문 · 예약</span>
+                    <span class="review-card__helpful">♡ 도움돼요 15</span>
+                  </footer>
+                </article>
+
+                <article class="review-card" data-review-card data-slot="hidden">
+                  <header class="review-card__head">
+                    <span class="review-card__avatar review-card__avatar--lavender" aria-hidden="true">K</span>
+                    <span class="review-card__author"><strong>kaw*****</strong><small>리뷰 199 · 사진 161</small></span>
+                    <span class="review-card__rating" aria-label="평점 5점"><span aria-hidden="true">★★★★★</span><b>5.0</b></span>
+                  </header>
+                  <p class="review-card__body">
+                    솔직하고 친절하게 상담해주셔서 좋았어요. 멀리서 찾아간 보람이 있었고, 우리 부부가 앞으로 시간을 갖게 해주신 원장님께 감사드립니다.
+                  </p>
+                  <footer class="review-card__foot">
+                    <span class="review-card__visit"><span>▣</span> 25.12.19. 금 <i></i> 1번째 방문 · 예약</span>
+                    <span class="review-card__helpful">♡ 도움돼요 24</span>
+                  </footer>
+                </article>
+
+                <article class="review-card" data-review-card data-slot="hidden">
+                  <header class="review-card__head">
+                    <span class="review-card__avatar review-card__avatar--rose" aria-hidden="true">뉴</span>
+                    <span class="review-card__author"><strong>뉴쩌11</strong><small>리뷰 61 · 사진 10</small></span>
+                    <span class="review-card__rating" aria-label="평점 5점"><span aria-hidden="true">★★★★★</span><b>5.0</b></span>
+                  </header>
+                  <p class="review-card__body">
+                    부모님 사이가 확실히 전보다 돈독해졌어요. 감정만 앞세우지 않고 문제의 뿌리를 이해할 수 있도록 도와주셔서 가족 모두에게 의미 있는 시간이었습니다.
+                  </p>
+                  <footer class="review-card__foot">
+                    <span class="review-card__visit"><span>▣</span> 25.12.12. 금 <i></i> 2번째 방문 · 예약</span>
+                    <span class="review-card__helpful">♡ 도움돼요 17</span>
+                  </footer>
+                </article>
+
+                <article class="review-card" data-review-card data-slot="hidden">
+                  <header class="review-card__head">
+                    <span class="review-card__avatar review-card__avatar--olive" aria-hidden="true">W</span>
+                    <span class="review-card__author"><strong>wjd*****</strong><small>리뷰 66 · 사진 15</small></span>
+                    <span class="review-card__rating" aria-label="평점 5점"><span aria-hidden="true">★★★★★</span><b>5.0</b></span>
+                  </header>
+                  <p class="review-card__body">
+                    성격 차이로 지쳐 있었는데 각자 문제점과 해결 방향을 명확하게 설명해주셨어요. 서로에 대해 이해하는 데 많은 도움이 되었고 다시 시작할 용기가 생겼습니다.
+                  </p>
+                  <footer class="review-card__foot">
+                    <span class="review-card__visit"><span>▣</span> 25.12.05. 금 <i></i> 1번째 방문 · 예약</span>
+                    <span class="review-card__helpful">♡ 도움돼요 11</span>
+                  </footer>
+                </article>
+              </div>
+
+              <div class="review-carousel__controls">
+                <button
+                  type="button"
+                  class="review-carousel__button"
+                  data-review-prev
+                  aria-label="이전 리뷰"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="m15 18-6-6 6-6" />
+                  </svg>
+                </button>
+
+                <div class="review-carousel__dots" aria-label="리뷰 순서">
+                  <button
+                    type="button"
+                    data-review-dot="0"
+                    aria-label="첫 번째 리뷰 보기"
+                  ></button>
+                  <button
+                    type="button"
+                    data-review-dot="1"
+                    class="is-active"
+                    aria-label="두 번째 리뷰 보기"
+                    aria-current="true"
+                  ></button>
+                  <button
+                    type="button"
+                    data-review-dot="2"
+                    aria-label="세 번째 리뷰 보기"
+                  ></button>
+                  <button type="button" data-review-dot="3" aria-label="네 번째 리뷰 보기"></button>
+                  <button type="button" data-review-dot="4" aria-label="다섯 번째 리뷰 보기"></button>
+                  <button type="button" data-review-dot="5" aria-label="여섯 번째 리뷰 보기"></button>
+                  <button type="button" data-review-dot="6" aria-label="일곱 번째 리뷰 보기"></button>
+                  <button type="button" data-review-dot="7" aria-label="여덟 번째 리뷰 보기"></button>
+                </div>
+
+                <button
+                  type="button"
+                  class="review-carousel__button"
+                  data-review-next
+                  aria-label="다음 리뷰"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="m9 18 6-6-6-6" />
+                  </svg>
+                </button>
+              </div>
+
+              <p class="review-carousel__note">
+                실제 네이버 리뷰를 기반으로 작성되었습니다.
+              </p>
             </div>
           </section>
         </div>
@@ -598,23 +807,23 @@
       <section class="section programs clinic-programs" id="about">
         <div class="container">
           <div class="intro-split reveal-item">
-            <div class="intro-split__head">
+            <div class="clinic-intro__metric">
               <p class="eyebrow">클리닉 소개</p>
-            </div>
-            <div class="intro-split__body">
               <p class="intro-figure">
                 <strong data-count-up data-count-to="100">
-                  <span data-count-value>100</span>팀
+                  <span data-count-value>100</span><span class="intro-figure__unit">팀</span>
                 </strong>
               </p>
+            </div>
+            <div class="intro-split__body">
               <p>
                 <span class="copy-line"
-                  >매년 소개로만 직접 찾아주시는 분들입니다.</span
+                  >매년 <em class="clinic-copy-accent">소개로만</em> 직접 찾아주시는 분들입니다.</span
                 >
                 <span class="copy-line">연세부부상담클리닉 조옥형 박사는</span>
                 <span class="copy-line">상담실에 오래 머무는 것이 아닌,</span>
                 <span class="copy-line"
-                  >더 이상 오지 않는 것을 목표로 합니다.</span
+                  ><em class="clinic-copy-accent clinic-copy-accent--strong">더 이상 오지 않는 것</em>을 목표로 합니다.</span
                 >
               </p>
             </div>
@@ -626,16 +835,15 @@
             aria-labelledby="topic-title"
           >
             <div class="topic-showcase-head">
-              <p class="eyebrow">주요 상담 주제</p>
               <h3 id="topic-title">
-                조옥형 박사가 효과를 잘 내는 부부 상담 주제
+                조옥형 박사가 <span>효과를 잘 내는</span> 부부 상담 주제
               </h3>
               <p class="topic-showcase-description">
                 <span class="copy-line"
                   >다른 곳에서는 부작용이 많거나 효과를 보기 어려운
                   문제라도,</span
                 >
-                <span class="copy-line">조옥형 박사는 큰 효과를 냅니다.</span>
+                <span class="copy-line">조옥형 박사는 <em class="clinic-copy-accent">큰 효과</em>를 냅니다.</span>
               </p>
             </div>
 
@@ -753,130 +961,104 @@
         </div>
       </section>
 
-      <section class="section philosophy">
-        <div class="container">
-          <div class="philosophy-grid">
-            <div class="philosophy-copy promise-copy reveal-item">
-              <div class="promise-copy__style">
-                <h2 class="promise-copy__style-title">
-                  조옥형 박사의 상담 스타일
-                </h2>
-                <p>
-                  <span class="copy-line"
-                    >통찰, 인식, 공감과 수용, 이런 애매한 단어로 매듭짓는 상담은 하지 않습니다.</span
-                  >
-                  <span class="copy-line"
-                    >간단, 정확, 명시적인 단어와 문장을 사용하며 공감을 기본으로 하되,</span
-                  >
-                  <span class="copy-line"
-                    >기질, 심리, 성격 분석 판단, 반복성 패턴 원인과 해결책을</span
-                  >
-                  <span class="copy-line"
-                    >동시에 제시하는 속이 후련한 상담을 합니다.</span
-                  >
-                  <span class="copy-line">부드럽지만 힘이 있습니다.</span>
-                </p>
-                <p>
-                  <span class="copy-line"
-                    >부부가 억울하고 답답함의 굴레에서 벗어나게 하고 쳇바퀴가</span
-                  >
-                  <span class="copy-line"
-                    >또 돌아가는 시작 버튼을 누르지 않게 하는 명석한 상담을 합니다.</span
-                  >
-                </p>
-              </div>
+      <section class="section philosophy" id="philosophy">
+        <div class="philosophy-layout">
+          <div class="philosophy-panel reveal-item">
+            <div class="philosophy-panel__heading">
+              <p class="philosophy-kicker">COUPLE COUNSELLING</p>
+              <p class="philosophy-panel__label">조옥형 박사의 상담 스타일</p>
             </div>
+
+            <h2>
+              <span>부드럽지만</span>
+              <span>힘이 있습니다.</span>
+            </h2>
+
+            <p class="philosophy-panel__description">
+              <span class="copy-line"
+                >부부가 억울하고 답답함의 굴레에서 벗어나게 하고 쳇바퀴가</span
+              >
+              <span class="copy-line"
+                >또 돌아가는 시작 버튼을 누르지 않게 하는 명석한 상담을 합니다.</span
+              >
+            </p>
           </div>
 
-          <div
-            class="feature-carousel reveal-item"
-            data-feature-carousel
-            aria-label="상담 특징"
-          >
-            <button
-              class="feature-carousel-button feature-carousel-button--prev"
-              type="button"
-              data-feature-carousel-prev
-              aria-label="이전 상담 특징 보기"
-            >
-              <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
-                <path d="M15 6L9 12L15 18" />
-              </svg>
-            </button>
+          <div class="philosophy-content reveal-item">
+            <p class="philosophy-content__intro">
+              <span class="copy-line"
+                >통찰, 인식, 공감과 수용, 이런 애매한 단어로 매듭짓는 상담은 하지 않습니다.</span
+              >
+              <span class="copy-line"
+                >간단, 정확, 명시적인 단어와 문장을 사용하며 공감을 기본으로 하되,</span
+              >
+              <span class="copy-line"
+                >기질, 심리, 성격 분석 판단, 반복성 패턴 원인과 해결책을</span
+              >
+              <span class="copy-line"
+                >동시에 제시하는 속이 후련한 상담을 합니다.</span
+              >
+            </p>
 
-            <div class="feature-carousel-viewport">
-              <div class="feature-grid">
-                <article class="feature-card">
-                  <h3>풍부한 임상경험</h3>
-                  <p>
-                    <span class="copy-line"
-                      >2003년 개원 이후 다양한 사례를 꾸준히 다루며</span
-                    >
-                    <span class="copy-line"
-                      >각 갈등의 결을 깊이 있게 살펴왔습니다.</span
-                    >
-                  </p>
-                </article>
-                <article class="feature-card">
-                  <h3>문제별 치료기술 적용</h3>
-                  <p>
-                    <span class="copy-line">부부 문제 상태에 따라</span>
-                    <span class="copy-line"
-                      >적시적소에 맞는 상담 치료기술을 적용합니다.</span
-                    >
-                  </p>
-                </article>
-                <article class="feature-card">
-                  <h3>주말 · 야간 상담비 동일</h3>
-                  <p>
-                    <span class="copy-line"
-                      >월요일부터 일요일까지(공휴일 포함)</span
-                    >
-                    <span class="copy-line"
-                      >오전 8시부터 밤 11시까지 예약 가능합니다.</span
-                    >
-                  </p>
-                </article>
-                <article class="feature-card">
-                  <h3>조옥형 박사 1인 운영 상담</h3>
-                  <p>
-                    <span class="copy-line"
-                      >처음부터 끝까지 조옥형 박사가 직접 상담하며</span
-                    >
-                    <span class="copy-line">관계의 흐름을 놓치지 않고</span>
-                    <span class="copy-line"
-                      >3회기 근본 집중 부부상담을 합니다.</span
-                    >
-                  </p>
-                </article>
-              </div>
+            <div class="philosophy-features" aria-label="상담 특징">
+              <article class="philosophy-feature">
+                <span class="philosophy-feature__number" aria-hidden="true">01</span>
+                <h3>주말 · 야간 상담비 동일</h3>
+                <p>
+                  <span class="copy-line">월요일부터 일요일까지(공휴일 포함)</span>
+                  <span class="copy-line">오전 8시부터 밤 11시까지 예약 가능합니다.</span>
+                </p>
+              </article>
+
+              <article class="philosophy-feature">
+                <span class="philosophy-feature__number" aria-hidden="true">02</span>
+                <h3>조옥형 박사 1인 운영 상담</h3>
+                <p>
+                  <span class="copy-line">처음부터 끝까지 조옥형 박사가 직접 상담하며</span>
+                  <span class="copy-line">관계의 흐름을 놓치지 않고</span>
+                  <span class="copy-line">3회기 근본 집중 부부상담을 합니다.</span>
+                </p>
+              </article>
+
+              <article class="philosophy-feature">
+                <span class="philosophy-feature__number" aria-hidden="true">03</span>
+                <h3>풍부한 임상경험</h3>
+                <p>
+                  <span class="copy-line">2003년 개원 이후 다양한 사례를 꾸준히 다루며</span>
+                  <span class="copy-line">각 갈등의 결을 깊이 있게 살펴왔습니다.</span>
+                </p>
+              </article>
+
+              <article class="philosophy-feature">
+                <span class="philosophy-feature__number" aria-hidden="true">04</span>
+                <h3>문제별 치료기술 적용</h3>
+                <p>
+                  <span class="copy-line">부부 문제 상태에 따라</span>
+                  <span class="copy-line">적시적소에 맞는 상담 치료기술을 적용합니다.</span>
+                </p>
+              </article>
             </div>
-
-            <button
-              class="feature-carousel-button feature-carousel-button--next"
-              type="button"
-              data-feature-carousel-next
-              aria-label="다음 상담 특징 보기"
-            >
-              <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
-                <path d="M9 6L15 12L9 18" />
-              </svg>
-            </button>
           </div>
         </div>
       </section>
 
-      <section class="section clip-section" aria-labelledby="clip-title">
-        <div class="container">
-          <div class="section-center reveal-item">
-            <p class="eyebrow">네이버 클립</p>
+      <section class="section clip-section" id="clips" aria-labelledby="clip-title">
+        <div class="clip-layout">
+          <aside class="clip-brand reveal-item">
+            <div class="clip-brand__logo" aria-label="NAVER Clip">
+              <svg viewBox="0 -3 58 63" aria-hidden="true">
+                <path d="M9 7.5a7 7 0 0 1 10.5-5.9l30.6 21.1a7 7 0 0 1 0 11.6L19.5 55.4A7 7 0 0 1 9 49.5v-42Z" />
+                <path d="m24 16.5 18 12-18 12v-24Z" />
+              </svg>
+              <strong>NAVER</strong>
+              <span>Clip</span>
+            </div>
             <h2 id="clip-title">
               <span class="copy-line">짧은 영상으로 먼저 만나보는</span>
-              <span class="copy-line"
-                >연세부부상담클리닉 조옥형 박사 이야기</span
-              >
+              <span class="copy-line">연세부부상담클리닉</span>
+              <span class="copy-line">조옥형 박사 이야기</span>
             </h2>
-          </div>
+          </aside>
 
           <div class="clip-grid" aria-label="상담 클립 영상 목록">
             <figure class="clip-card reveal-item">
@@ -956,14 +1138,7 @@
             <ol class="session-cards">
               <li class="session-card">
                 <div class="session-card__head">
-                  <span class="session-card__icon" aria-hidden="true">
-                    <img
-                      src="./assets/images/process/1-icon-v2.png"
-                      alt=""
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </span>
+                  <span class="session-card__icon" aria-hidden="true">01</span>
                   <h3>1차 상담</h3>
                 </div>
                 <ul class="session-card__list">
@@ -975,14 +1150,7 @@
 
               <li class="session-card">
                 <div class="session-card__head">
-                  <span class="session-card__icon" aria-hidden="true">
-                    <img
-                      src="./assets/images/process/2-icon-v2.png"
-                      alt=""
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </span>
+                  <span class="session-card__icon" aria-hidden="true">02</span>
                   <h3>2차 상담</h3>
                 </div>
                 <ul class="session-card__list">
@@ -994,14 +1162,7 @@
 
               <li class="session-card">
                 <div class="session-card__head">
-                  <span class="session-card__icon" aria-hidden="true">
-                    <img
-                      src="./assets/images/process/3-icon-v2.png"
-                      alt=""
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </span>
+                  <span class="session-card__icon" aria-hidden="true">03</span>
                   <h3>3차 상담</h3>
                 </div>
                 <ul class="session-card__list">
@@ -1013,7 +1174,7 @@
             </ol>
 
             <p class="session-quote">
-              “문제의 근본을 정확히 진단하고, 실질적인 해결책을 제시합니다.”
+              문제의 근본을 정확히 진단하고, 실질적인 해결책을 제시합니다.
             </p>
           </div>
 
@@ -1121,14 +1282,45 @@
 
             <div class="location-info-table">
               <div class="location-info-row">
-                <div class="location-info-label">주소</div>
+                <div class="location-info-label" aria-hidden="true">
+                  <svg
+                    class="location-info-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 100 100"
+                  >
+                    <path d="M0 0h100v100H0z" fill="none" />
+                    <path
+                      fill="currentColor"
+                      d="M50.001 0C33.65 0 20.25 13.36 20.25 29.666c0 6.318 2.018 12.19 5.433 17.016L46.37 82.445c2.897 3.785 4.823 3.066 7.232-.2l22.818-38.83c.46-.834.822-1.722 1.137-2.629a29.3 29.3 0 0 0 2.192-11.12C79.75 13.36 66.354 0 50.001 0m0 13.9c8.806 0 15.808 6.986 15.808 15.766S58.807 45.43 50.001 45.43c-8.805 0-15.81-6.982-15.81-15.763S41.196 13.901 50 13.901"
+                    />
+                    <path
+                      fill="currentColor"
+                      d="m68.913 48.908l-.048.126l.042-.115zm-5.065 24.446l-1.383 1.71c1.87.226 3.68.491 5.375.812l-5.479 1.623l7.313 1.945l5.451-1.719c3.348 1.123 7.984 2.496 9.52 4.057h-10.93l1.086 3.176h11.342c-.034 1.79-3.234 3.244-6.29 4.422l-7.751-1.676l-7.303 2.617l7.8 1.78c-4.554 1.24-12.2 1.994-18.53 2.341l-.266-3.64h-7.606l-.267 3.64c-6.33-.347-13.975-1.1-18.53-2.34l7.801-1.781l-7.303-2.617l-7.752 1.676c-3.012-.915-6.255-2.632-6.289-4.422H25.2l1.086-3.176h-10.93c1.536-1.561 6.172-2.934 9.52-4.057l5.451 1.719l7.313-1.945l-5.479-1.623a83 83 0 0 1 5.336-.807l-1.363-1.713c-14.785 1.537-27.073 4.81-30.295 9.979C.7 91.573 19.658 99.86 49.37 99.989c.442.022.878.006 1.29 0c29.695-.136 48.636-8.42 43.501-16.654c-3.224-5.171-15.52-8.445-30.314-9.981"
+                    />
+                  </svg>
+                </div>
                 <div class="location-info-value">
-                  대구시 수성구 청수로108(두산동 13), 퍼플하임수성, 상가 2층
+                  <strong class="location-info-title">주소</strong>
+                  <span class="copy-line">대구시 수성구 청수로108(두산동 13),</span>
+                  <span class="copy-line">퍼플하임수성, 상가 2층</span>
                 </div>
               </div>
               <div class="location-info-row">
-                <div class="location-info-label">전화</div>
+                <div class="location-info-label" aria-hidden="true">
+                  <svg
+                    class="location-info-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M0 0h24v24H0z" fill="none" />
+                    <path
+                      fill="currentColor"
+                      d="M16 2H8a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2m-3 19h-2v-1h2zm3-2H8V5h8z"
+                    />
+                  </svg>
+                </div>
                 <div class="location-info-value">
+                  <strong class="location-info-title">전화</strong>
                   <a class="location-phone" href="tel:0537548275"
                     >053-754-8275</a
                   >
@@ -1140,8 +1332,21 @@
                 </div>
               </div>
               <div class="location-info-row">
-                <div class="location-info-label">위치 안내</div>
+                <div class="location-info-label" aria-hidden="true">
+                  <svg
+                    class="location-info-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 576 512"
+                  >
+                    <path d="M0 0h576v512H0z" fill="none" />
+                    <path
+                      fill="currentColor"
+                      d="M408 120c0 54.6-73.1 151.9-105.2 192c-7.7 9.6-22 9.6-29.6 0C241.1 271.9 168 174.6 168 120C168 53.7 221.7 0 288 0s120 53.7 120 120m8 80.4c3.5-6.9 6.7-13.8 9.6-20.6c.5-1.2 1-2.5 1.5-3.7l116-46.4c15.8-6.3 32.9 5.3 32.9 22.3v270.8c0 9.8-6 18.6-15.1 22.3L416 503zm-278.4-62.1c2.4 14.1 7.2 28.3 12.8 41.5c2.9 6.8 6.1 13.7 9.6 20.6v251.4L32.9 502.7C17.1 509 0 497.4 0 480.4V209.6c0-9.8 6-18.6 15.1-22.3l122.6-49zM327.8 332c13.9-17.4 35.7-45.7 56.2-77v249.3l-192-54.9V255c20.5 31.3 42.3 59.6 56.2 77c20.5 25.6 59.1 25.6 79.6 0M288 152a40 40 0 1 0 0-80a40 40 0 1 0 0 80"
+                    />
+                  </svg>
+                </div>
                 <div class="location-info-value">
+                  <strong class="location-info-title">위치 안내</strong>
                   <ul class="location-guide-list">
                     <li>
                       수성구 황금네거리(SK리더스뷰 아파트)에서 들안길네거리 방향
@@ -1235,6 +1440,79 @@
             }
           });
         });
+
+        const headerSectionLinks = Array.from(
+          document.querySelectorAll('.main-nav a[href^="#"]'),
+        );
+
+        const alignSectionBelowHeader = (target, behavior = "smooth") => {
+          if (!target) return;
+
+          const headerHeight = header
+            ? Math.round(header.getBoundingClientRect().height)
+            : 0;
+          const targetTop = Math.max(
+            0,
+            Math.round(target.getBoundingClientRect().top + window.scrollY - headerHeight),
+          );
+
+          window.scrollTo({ top: targetTop, behavior });
+        };
+
+        headerSectionLinks.forEach((link) => {
+          link.addEventListener("click", (event) => {
+            const hash = link.getAttribute("href");
+            if (!hash || hash === "#") return;
+
+            const target = document.getElementById(hash.slice(1));
+            if (!target) return;
+
+            event.preventDefault();
+            const behavior = window.matchMedia(
+              "(prefers-reduced-motion: reduce)",
+            ).matches
+              ? "auto"
+              : "smooth";
+
+            alignSectionBelowHeader(target, behavior);
+            history.pushState(null, "", hash);
+          });
+        });
+
+        const mobileLocationLink = document.querySelector(
+          ".mobile-footer-location",
+        );
+
+        mobileLocationLink?.addEventListener("click", (event) => {
+          const locationSection = document.getElementById("location");
+          if (!locationSection) return;
+
+          event.preventDefault();
+          const behavior = window.matchMedia(
+            "(prefers-reduced-motion: reduce)",
+          ).matches
+            ? "auto"
+            : "smooth";
+
+          alignSectionBelowHeader(locationSection, behavior);
+          history.pushState(null, "", "#location");
+        });
+
+        window.addEventListener(
+          "load",
+          () => {
+            const hash = window.location.hash;
+            if (!hash || !headerSectionLinks.some((link) => link.getAttribute("href") === hash)) {
+              return;
+            }
+
+            const target = document.getElementById(hash.slice(1));
+            window.requestAnimationFrame(() =>
+              alignSectionBelowHeader(target, "auto"),
+            );
+          },
+          { once: true },
+        );
 
         /*
         상담 안내 팝업 비활성화
@@ -1538,6 +1816,74 @@
         const reduceMotion = window.matchMedia(
           "(prefers-reduced-motion: reduce)",
         ).matches;
+
+        const storyTypewriter = document.querySelector(
+          "[data-story-typewriter]",
+        );
+
+        if (storyTypewriter) {
+          const storyLines = Array.from(
+            storyTypewriter.querySelectorAll(".copy-line"),
+          );
+          const storyLineTexts = storyLines.map((line) =>
+            line.textContent.trim(),
+          );
+          let storyStarted = false;
+
+          storyTypewriter.setAttribute(
+            "aria-label",
+            storyLineTexts.join(" "),
+          );
+
+          const waitForStoryType = (duration) =>
+            new Promise((resolve) => window.setTimeout(resolve, duration));
+
+          const playStoryTypewriter = async () => {
+            if (storyStarted) return;
+            storyStarted = true;
+            storyTypewriter.classList.add("is-typewriter-active");
+
+            for (let lineIndex = 0; lineIndex < storyLines.length; lineIndex += 1) {
+              const line = storyLines[lineIndex];
+              const characters = Array.from(storyLineTexts[lineIndex]);
+              line.classList.add("is-typing");
+
+              for (const character of characters) {
+                line.textContent += character;
+                await waitForStoryType(character === " " ? 26 : 48);
+              }
+
+              line.classList.remove("is-typing");
+              await waitForStoryType(lineIndex === storyLines.length - 1 ? 120 : 210);
+            }
+
+            storyTypewriter.classList.remove("is-typewriter-active");
+            storyTypewriter.classList.add("is-typewriter-complete");
+          };
+
+          if (reduceMotion) {
+            storyTypewriter.classList.add("is-typewriter-complete");
+          } else {
+            storyLines.forEach((line) => {
+              line.textContent = "";
+            });
+
+            if ("IntersectionObserver" in window) {
+              const storyObserver = new IntersectionObserver(
+                ([entry], observer) => {
+                  if (!entry.isIntersecting) return;
+                  observer.disconnect();
+                  playStoryTypewriter();
+                },
+                { threshold: 0.5 },
+              );
+              storyObserver.observe(storyTypewriter);
+            } else {
+              playStoryTypewriter();
+            }
+          }
+        }
+
         const countUpItems = Array.from(
           document.querySelectorAll("[data-count-up]"),
         );
@@ -1631,6 +1977,306 @@
               }
             });
           });
+        }
+
+        const directorDetailToggles = Array.from(
+          document.querySelectorAll("[data-director-detail-toggle]"),
+        );
+        const directorDetailMobileQuery = window.matchMedia(
+          "(max-width: 700px)",
+        );
+
+        const setDirectorDetailState = (toggle, isOpen) => {
+          const detailSection = toggle.closest(
+            ".director-profile-card__credentials, .director-profile-card__principles",
+          );
+          const toggleLabel = toggle.querySelector("span");
+
+          detailSection?.classList.toggle("is-detail-open", isOpen);
+          toggle.setAttribute("aria-expanded", String(isOpen));
+          if (toggleLabel) {
+            toggleLabel.textContent = isOpen ? "닫기" : "자세히 보기";
+          }
+        };
+
+        const closeDirectorDetails = () => {
+          directorDetailToggles.forEach((toggle) =>
+            setDirectorDetailState(toggle, false),
+          );
+        };
+
+        directorDetailToggles.forEach((toggle) => {
+          toggle.addEventListener("click", () => {
+            if (!directorDetailMobileQuery.matches) return;
+            const isOpen = toggle.getAttribute("aria-expanded") === "true";
+            setDirectorDetailState(toggle, !isOpen);
+          });
+        });
+
+        directorDetailMobileQuery.addEventListener?.("change", (event) => {
+          if (event.matches) closeDirectorDetails();
+        });
+        closeDirectorDetails();
+
+        const reviewCarousel = document.querySelector(
+          "[data-review-carousel]",
+        );
+
+        if (reviewCarousel) {
+          const reviewCards = Array.from(
+            reviewCarousel.querySelectorAll("[data-review-card]"),
+          );
+          const reviewDots = Array.from(
+            reviewCarousel.querySelectorAll("[data-review-dot]"),
+          );
+          const reviewPrev = reviewCarousel.querySelector("[data-review-prev]");
+          const reviewNext = reviewCarousel.querySelector("[data-review-next]");
+          const reviewCardsStage = reviewCarousel.querySelector(".review-cards");
+          const reviewAutoplayDelay = 3000;
+          const reviewAnimationDuration = 1150;
+          const reviewAnimationEasing = "cubic-bezier(0.16, 1, 0.3, 1)";
+          let reviewAutoplayTimer = 0;
+          let reviewCarouselVisible = false;
+          let reviewIndex = Math.max(
+            0,
+            reviewCards.findIndex(
+              (card) => card.getAttribute("data-slot") === "center",
+            ),
+          );
+          let reviewTransitionTimer = 0;
+          let reviewIsTransitioning = false;
+          const reviewMobileQuery = window.matchMedia("(max-width: 900px)");
+
+          const updateReviewCarousel = (
+            shouldAnimate = true,
+            direction = 1,
+          ) => {
+            const total = reviewCards.length;
+            if (!total) return;
+
+            const previousSlots = new Map(
+              reviewCards.map((card) => [
+                card,
+                card.getAttribute("data-slot") || "hidden",
+              ]),
+            );
+            const previousIndex = (reviewIndex - 1 + total) % total;
+            const nextIndex = (reviewIndex + 1) % total;
+            const finalSlots = new Map();
+
+            reviewCards.forEach((card, cardIndex) => {
+              const slot =
+                cardIndex === reviewIndex
+                  ? "center"
+                  : cardIndex === nextIndex
+                    ? "right"
+                    : cardIndex === previousIndex
+                      ? "left"
+                      : "hidden";
+              finalSlots.set(card, slot);
+            });
+
+            reviewDots.forEach((dot, dotIndex) => {
+              const isActive = dotIndex === reviewIndex;
+              dot.classList.toggle("is-active", isActive);
+              if (isActive) {
+                dot.setAttribute("aria-current", "true");
+              } else {
+                dot.removeAttribute("aria-current");
+              }
+            });
+
+            const applyFinalSlots = () => {
+              reviewCards.forEach((card) => {
+                const slot = finalSlots.get(card) || "hidden";
+                card.setAttribute("data-slot", slot);
+                if (slot === "hidden") {
+                  card.setAttribute("aria-hidden", "true");
+                } else {
+                  card.removeAttribute("aria-hidden");
+                }
+              });
+            };
+
+            if (!shouldAnimate || reduceMotion || !reviewCardsStage) {
+              applyFinalSlots();
+              reviewIsTransitioning = false;
+              return;
+            }
+
+            window.clearTimeout(reviewTransitionTimer);
+            reviewIsTransitioning = true;
+
+            if (reviewMobileQuery.matches) {
+              applyFinalSlots();
+              const centerCard = reviewCards.find(
+                (card) => finalSlots.get(card) === "center",
+              );
+              centerCard?.animate(
+                [
+                  {
+                    opacity: 0,
+                    transform: `translateX(${direction > 0 ? 16 : -16}px)`,
+                  },
+                  { opacity: 1, transform: "translateX(0)" },
+                ],
+                {
+                  duration: 620,
+                  easing: reviewAnimationEasing,
+                },
+              );
+              reviewTransitionTimer = window.setTimeout(() => {
+                reviewIsTransitioning = false;
+              }, 660);
+              return;
+            }
+
+            const enteringSlot = direction > 0 ? "far-right" : "far-left";
+            const exitingSlot = direction > 0 ? "far-left" : "far-right";
+            const enteringCards = reviewCards.filter(
+              (card) =>
+                previousSlots.get(card) === "hidden" &&
+                finalSlots.get(card) !== "hidden",
+            );
+            const exitingCards = reviewCards.filter(
+              (card) =>
+                previousSlots.get(card) !== "hidden" &&
+                finalSlots.get(card) === "hidden",
+            );
+
+            enteringCards.forEach((card) => {
+              card.style.transition = "none";
+              card.setAttribute("data-slot", enteringSlot);
+              card.removeAttribute("aria-hidden");
+            });
+            void reviewCardsStage.offsetWidth;
+            enteringCards.forEach((card) =>
+              card.style.removeProperty("transition"),
+            );
+
+            reviewCards.forEach((card) => {
+              const finalSlot = finalSlots.get(card) || "hidden";
+              if (finalSlot !== "hidden") {
+                card.setAttribute("data-slot", finalSlot);
+                card.removeAttribute("aria-hidden");
+              } else if (exitingCards.includes(card)) {
+                card.setAttribute("data-slot", exitingSlot);
+                card.setAttribute("aria-hidden", "true");
+              } else {
+                card.setAttribute("data-slot", "hidden");
+                card.setAttribute("aria-hidden", "true");
+              }
+            });
+
+            reviewTransitionTimer = window.setTimeout(() => {
+              exitingCards.forEach((card) => {
+                if (
+                  card.getAttribute("data-slot") === "far-left" ||
+                  card.getAttribute("data-slot") === "far-right"
+                ) {
+                  card.setAttribute("data-slot", "hidden");
+                }
+              });
+              reviewIsTransitioning = false;
+            }, reviewAnimationDuration + 80);
+          };
+
+          const moveReviewCarousel = (direction) => {
+            if (!reviewCards.length || reviewIsTransitioning) return;
+            reviewIndex =
+              (reviewIndex + direction + reviewCards.length) %
+              reviewCards.length;
+            updateReviewCarousel(true, direction);
+          };
+
+          const stopReviewAutoplay = () => {
+            if (!reviewAutoplayTimer) return;
+            window.clearTimeout(reviewAutoplayTimer);
+            reviewAutoplayTimer = 0;
+          };
+
+          const startReviewAutoplay = () => {
+            stopReviewAutoplay();
+            if (
+              reduceMotion ||
+              document.hidden ||
+              reviewCards.length < 2 ||
+              !reviewCarouselVisible
+            ) {
+              return;
+            }
+            reviewAutoplayTimer = window.setTimeout(() => {
+              moveReviewCarousel(1);
+              startReviewAutoplay();
+            }, reviewAutoplayDelay);
+          };
+
+          const restartReviewAutoplay = () => {
+            stopReviewAutoplay();
+            startReviewAutoplay();
+          };
+
+          reviewPrev?.addEventListener("click", () => {
+            moveReviewCarousel(-1);
+            restartReviewAutoplay();
+          });
+          reviewNext?.addEventListener("click", () => {
+            moveReviewCarousel(1);
+            restartReviewAutoplay();
+          });
+
+          reviewDots.forEach((dot) => {
+            dot.addEventListener("click", () => {
+              if (reviewIsTransitioning) return;
+              const nextIndex = Number.parseInt(
+                dot.getAttribute("data-review-dot") || "0",
+                10,
+              );
+              if (!Number.isNaN(nextIndex)) {
+                const forwardDistance =
+                  (nextIndex - reviewIndex + reviewCards.length) %
+                  reviewCards.length;
+                const backwardDistance =
+                  (reviewIndex - nextIndex + reviewCards.length) %
+                  reviewCards.length;
+                const direction =
+                  forwardDistance <= backwardDistance ? 1 : -1;
+                reviewIndex = nextIndex;
+                updateReviewCarousel(true, direction);
+                restartReviewAutoplay();
+              }
+            });
+          });
+
+          document.addEventListener("visibilitychange", () => {
+            if (document.hidden) {
+              stopReviewAutoplay();
+            } else {
+              startReviewAutoplay();
+            }
+          });
+
+          if ("IntersectionObserver" in window) {
+            const reviewVisibilityObserver = new IntersectionObserver(
+              ([entry]) => {
+                reviewCarouselVisible = entry.isIntersecting;
+                if (reviewCarouselVisible) {
+                  startReviewAutoplay();
+                } else {
+                  stopReviewAutoplay();
+                }
+              },
+              {
+                threshold: 0.15,
+              },
+            );
+            reviewVisibilityObserver.observe(reviewCarousel);
+          } else {
+            reviewCarouselVisible = true;
+          }
+
+          updateReviewCarousel(false);
+          startReviewAutoplay();
         }
 
         const items = Array.from(document.querySelectorAll(".reveal-item"));
