@@ -11964,3 +11964,413 @@ html:not(.js) .director-panel__body > * {
     line-height: 1.65;
   }
 }
+
+/* =========================================================
+   헤더 · 우측 퀵 네비 가독성 / 네이버 클립 컴팩트 레이아웃
+   ========================================================= */
+@media (min-width: 1281px) {
+  .site-header .main-nav a,
+  .site-header.is-condensed .main-nav a {
+    font-size: 1.12rem;
+    font-weight: 600;
+  }
+}
+
+@media (min-width: 921px) and (max-width: 1280px) {
+  .site-header .main-nav a,
+  .site-header.is-condensed .main-nav a {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+}
+
+@media (min-width: 921px) {
+  .quick-sidebar .quick-link__icon,
+  .quick-sidebar .quick-link__icon img {
+    width: 27px;
+    height: 27px;
+    flex: 0 0 27px;
+  }
+
+  .quick-sidebar .quick-link__icon img {
+    transform: scale(1.16);
+  }
+
+  .quick-sidebar .quick-link {
+    gap: 14px;
+  }
+
+  .quick-sidebar .quick-link__text strong {
+    font-size: 0.98rem;
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 920px) {
+  .site-header .main-nav a,
+  .site-header.is-condensed .main-nav a {
+    font-size: clamp(0.74rem, 2.9vw, 0.9rem);
+    font-weight: 600;
+  }
+}
+
+@media (min-width: 1041px) {
+  .clip-section {
+    height: 580px;
+    min-height: 580px;
+  }
+
+  .clip-layout {
+    height: 580px;
+  }
+
+  .clip-grid {
+    gap: clamp(14px, 1.2vw, 20px);
+    padding: 24px clamp(24px, 3vw, 50px);
+  }
+
+  .clip-grid .clip-card {
+    width: min(100%, 280px);
+    max-width: 280px;
+    justify-self: center;
+  }
+
+  .clip-brand {
+    padding: 34px clamp(38px, 4vw, 66px);
+  }
+
+  .clip-brand__logo {
+    gap: 9px;
+    min-height: 54px;
+  }
+
+  .clip-brand__logo svg {
+    width: 45px;
+    height: 51px;
+  }
+
+  .clip-brand__logo strong {
+    font-size: clamp(1.72rem, 2vw, 2.15rem);
+  }
+
+  .clip-brand__logo span {
+    font-size: clamp(1.65rem, 1.9vw, 2.02rem);
+  }
+
+  .clip-brand h2 {
+    margin-top: 18px;
+  }
+
+  .clip-brand h2::before {
+    width: 42px;
+    height: 2px;
+    margin-bottom: 18px;
+  }
+
+  .clip-brand h2 .copy-line:first-child {
+    margin-bottom: 7px;
+    font-size: clamp(1.22rem, 1.42vw, 1.48rem);
+  }
+
+  .clip-brand h2 .copy-line:nth-child(n + 2) {
+    font-size: clamp(1.9rem, 2.5vw, 2.58rem);
+    line-height: 1.3;
+  }
+}
+
+/* 상담 스타일: 우측 고정 퀵 네비를 제외한 가시 영역의 정중앙에 분할선 배치 */
+@media (min-width: 1041px) {
+  .philosophy-content {
+    padding-right: calc(
+      clamp(50px, 5.8vw, 96px) + var(--quick-rail-width)
+    );
+  }
+
+  .philosophy-features::before {
+    left: 50%;
+    transform: translateX(-0.5px);
+  }
+}
+
+@media (min-width: 921px) and (max-width: 1040px) {
+  .philosophy-content {
+    padding-right: calc(
+      clamp(38px, 4.8vw, 62px) + var(--quick-rail-width)
+    );
+  }
+
+  .philosophy-features::before {
+    left: 50%;
+    transform: translateX(-0.5px);
+  }
+}
+
+/* =========================================================
+   클리닉 소개 — 상단 지표 / 하단 9개 주제 + 강조 카피
+   ========================================================= */
+@media (min-width: 1041px) {
+  .clinic-programs {
+    height: 805px;
+    min-height: 805px;
+    padding: 0 var(--quick-rail-width) 0 0;
+    overflow: hidden;
+    background: linear-gradient(
+      180deg,
+      #f1f6fb 0,
+      #f6f9fc 38.5%,
+      #fff 38.5%,
+      #fff 100%
+    );
+  }
+
+  .clinic-programs .container {
+    display: grid;
+    grid-template-rows: 310px 495px;
+    width: min(calc(100% - 72px), 1480px);
+    height: 805px;
+    margin: 0 auto;
+  }
+
+  .clinic-programs .intro-split {
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: minmax(360px, 44%) minmax(0, 56%);
+    align-items: center;
+    width: min(100%, 1040px);
+    max-width: none;
+    height: 100%;
+    margin: 0 auto;
+  }
+
+  .clinic-programs .clinic-intro__metric {
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+    padding: 0 78px 0 0;
+  }
+
+  .clinic-programs .clinic-intro__metric .eyebrow {
+    margin-bottom: 34px;
+    color: #092b57;
+    font-size: 1.14rem;
+    font-weight: 800;
+  }
+
+  .clinic-programs .clinic-intro__metric .eyebrow::after {
+    bottom: -18px;
+    width: 50px;
+    background: #e96b27;
+  }
+
+  .clinic-programs .intro-figure strong {
+    color: #082b5b;
+    font-size: clamp(7.2rem, 8.8vw, 9.25rem);
+    font-weight: 500;
+    line-height: 0.78;
+    letter-spacing: -0.09em;
+  }
+
+  .clinic-programs .intro-figure__unit {
+    margin-left: 0.08em;
+    font-size: 0.42em;
+    font-weight: 700;
+  }
+
+  .clinic-programs .intro-split__body {
+    align-items: center;
+    height: 252px;
+    padding: 0 0 0 clamp(70px, 5vw, 96px);
+    border-left: 1px solid rgba(208, 151, 98, 0.48);
+  }
+
+  .clinic-programs .intro-split__body > p:not(.intro-figure) {
+    color: #102e57;
+    font-size: clamp(1.08rem, 1.28vw, 1.34rem);
+    font-weight: 500;
+    line-height: 2.16;
+  }
+
+  .clinic-programs .clinic-copy-accent {
+    color: #d1682d;
+    font-weight: 800;
+  }
+
+  .clinic-programs .clinic-copy-accent--strong {
+    color: #d1682d;
+  }
+
+  .clinic-programs .topic-showcase {
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: minmax(0, 60%) minmax(0, 40%);
+    align-items: stretch;
+    width: 100%;
+    height: 495px;
+    margin: 0;
+    padding: 32px 0 34px;
+    overflow: visible;
+  }
+
+  .clinic-programs .topic-circle-grid {
+    grid-column: 1;
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    margin: 0;
+  }
+
+  .clinic-programs .topic-circle,
+  .clinic-programs .topic-circle:first-child {
+    display: grid;
+    grid-template-columns: clamp(82px, 7.2vw, 128px) minmax(0, 1fr);
+    align-items: center;
+    width: auto;
+    min-width: 0;
+    min-height: 0;
+    height: auto;
+    padding: 17px 22px 12px 38px;
+    overflow: visible;
+    border: 0;
+    border-right: 1px solid rgba(211, 177, 140, 0.12);
+    border-bottom: 1px solid rgba(211, 177, 140, 0.12);
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .clinic-programs .topic-circle:nth-child(3n) {
+    border-right: 0;
+  }
+
+  .clinic-programs .topic-circle:nth-child(n + 7) {
+    border-bottom: 0;
+    box-shadow: none;
+  }
+
+  .clinic-programs .topic-circle:hover,
+  .clinic-programs .topic-circle:nth-child(n + 7):hover {
+    border-color: rgba(211, 177, 140, 0.18);
+    background: rgba(243, 248, 252, 0.68);
+    box-shadow: none;
+    transform: none;
+  }
+
+  .clinic-programs .topic-circle::before {
+    display: none;
+  }
+
+  .clinic-programs .topic-circle__index {
+    position: absolute;
+    top: 18px;
+    left: 38px;
+    display: block;
+    width: auto;
+    height: auto;
+    border-radius: 0;
+    background: transparent;
+    color: #d56628;
+    font-size: 0.88rem;
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  .clinic-programs .topic-circle__index::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    display: block;
+    width: 22px;
+    height: 1px;
+    background: #e07034;
+  }
+
+  .clinic-programs .topic-circle__icon {
+    width: 100%;
+    height: 82px;
+    margin: 17px 0 0;
+    padding: 0 17px 0 0;
+  }
+
+  .clinic-programs .topic-circle__icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .clinic-programs .topic-circle h4,
+  .clinic-programs .topic-circle:nth-child(7) h4,
+  .clinic-programs .topic-circle:nth-child(8) h4 {
+    align-self: center;
+    justify-self: stretch;
+    width: 100%;
+    margin: 12px 0 0;
+    padding: 0;
+    color: #092b57;
+    font-size: clamp(1.06rem, 1.24vw, 1.3rem);
+    font-weight: 800;
+    text-align: left;
+  }
+
+  .clinic-programs .topic-showcase-head {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    margin: 0;
+    padding: 0 clamp(42px, 4.4vw, 76px);
+    border-left: 1px solid rgba(211, 177, 140, 0.5);
+    text-align: left;
+  }
+
+  .clinic-programs .topic-showcase-head::before {
+    content: "";
+    display: block;
+    width: 54px;
+    height: 2px;
+    margin-bottom: 35px;
+    background: #ed6b25;
+  }
+
+  .clinic-programs .topic-showcase-head h3 {
+    margin: 0;
+    padding: 0 0 34px;
+    color: #092b57;
+    font-size: clamp(2.45rem, 3.25vw, 3.48rem);
+    font-weight: 800;
+    line-height: 1.22;
+    letter-spacing: -0.055em;
+  }
+
+  .clinic-programs .topic-showcase-head h3 > span {
+    display: block;
+    color: #d16b2f;
+  }
+
+  .clinic-programs .topic-showcase-head h3::after {
+    left: 0;
+    bottom: 0;
+    width: 52px;
+    height: 2px;
+    background: #ed6b25;
+    transform: none;
+  }
+
+  .clinic-programs .topic-showcase-description {
+    margin-top: 22px;
+    color: #3d4650;
+    font-size: clamp(0.94rem, 1.04vw, 1.08rem);
+    line-height: 1.82;
+    text-align: left;
+  }
+}
